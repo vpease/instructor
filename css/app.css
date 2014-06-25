@@ -1,0 +1,7 @@
+/*
+/usr/bin/sass:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+ }
