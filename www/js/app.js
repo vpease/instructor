@@ -229,6 +229,13 @@ app.controller('EvalAlumnoController',['$scope',
         this.enviar = function(){
             estadoFactory.irInicio();
         };
+        this.alerta = function(indice){
+            var val = $scope.valores[indice].res;
+            val = val + 5;
+            if (val>20) val=5;
+            console.log('El valor de val es:'+ val);
+            $scope.valores[indice].res=val;
+        };
     }])
 app.config(function($stateProvider,$urlRouterProvider){
     $urlRouterProvider.otherwise("/login");

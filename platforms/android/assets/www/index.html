@@ -224,18 +224,15 @@
                     name="evaluaForm"
                     class="form"
                     ng-submit="evaluaForm.$valid&& evalua.enviar()">
-                  <div class="row"
-                       ng-repeat="valor in valores">
-                      <div class="col col-67">
-                          {{valor.nombre}}
-                      </div>
-                      <div class="col">
-                          <select name="calif"
-                                  ng-model="valores[$index].res"
-                                  data-native-menu="false"
-                                  style="position: relative; z-index: 999;"
-                                  ng-options="nota.valor as nota.nota for nota in evalua.notas">
-                          </select>
+                  <div class="list">
+                      <div class="item item-input item-input item-select item-text-wrap"
+                           ng-repeat="valor in valores"
+                           ng-click="evalua.alerta($index)">
+                          <div class ="input-label">
+                              {{valor.nombre}}
+                          </div>
+                          <select ng-model="valores[$index].res"
+                                  ng-options="nota.valor as nota.nota for nota in evalua.notas"></select>
                       </div>
                   </div>
                   <input type="Submit" value="Enviar"
