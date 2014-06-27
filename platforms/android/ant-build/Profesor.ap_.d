@@ -27,12 +27,21 @@
 /Users/vpease/Documents/boca/instructor/platforms/android/assets/www/css/ionic.app.css \
 /Users/vpease/Documents/boca/instructor/platforms/android/assets/www/css/ionic.app.min.css \
 /Users/vpease/Documents/boca/instructor/platforms/android/assets/www/css/style.css \
+/Users/vpease/Documents/boca/instructor/platforms/android/assets/www/img/Back-icon blue.png \
+/Users/vpease/Documents/boca/instructor/platforms/android/assets/www/img/Download-icon blue.png \
+/Users/vpease/Documents/boca/instructor/platforms/android/assets/www/img/Forward-icon blue.png \
 /Users/vpease/Documents/boca/instructor/platforms/android/assets/www/img/icon.png \
 /Users/vpease/Documents/boca/instructor/platforms/android/assets/www/img/ionic.png \
+/Users/vpease/Documents/boca/instructor/platforms/android/assets/www/img/Login-icon blue.png \
 /Users/vpease/Documents/boca/instructor/platforms/android/assets/www/img/logo-small.png \
 /Users/vpease/Documents/boca/instructor/platforms/android/assets/www/img/logo.png \
+/Users/vpease/Documents/boca/instructor/platforms/android/assets/www/img/Logout-icon blue.png \
+/Users/vpease/Documents/boca/instructor/platforms/android/assets/www/img/Qualify-icon blue.png \
+/Users/vpease/Documents/boca/instructor/platforms/android/assets/www/img/Settings-icon blue.png \
 /Users/vpease/Documents/boca/instructor/platforms/android/assets/www/img/splash.9.png \
 /Users/vpease/Documents/boca/instructor/platforms/android/assets/www/img/splash.png \
+/Users/vpease/Documents/boca/instructor/platforms/android/assets/www/img/Upload-icon blue.png \
+/Users/vpease/Documents/boca/instructor/platforms/android/assets/www/img/User-List-icon blue.png \
 /Users/vpease/Documents/boca/instructor/platforms/android/assets/www/js/app.js \
 /Users/vpease/Documents/boca/instructor/platforms/android/assets/www/lib/ionic \
 /Users/vpease/Documents/boca/instructor/platforms/android/assets/www/lib/ngCordova.js \

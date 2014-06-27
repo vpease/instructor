@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport"
-          content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+          content="initial-scale=1, maximum-scale=1, user-scalable=yes, width=device-width">
     <title>Boca Juniors Perú</title>
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
     <!-- link href="css/style.css" rel="stylesheet" -->
@@ -48,20 +48,22 @@
                           <input ng-model="login.usuario.pass" type="password"
                                  placeholder="******" title="Clave" required/>
                       </label>
-                      <input type="Submit" value="Enviar"
-                             class="button button-block button-positive"/>
+                      <input type="Submit" value="Ingresar"
+                             class="button button-block button-positive"
+                              background-image="/img/Login-icon blue.png"
+                              background-position="left"/>
                   </div>
               </form>
           </ion-content>
       </ion-view>
   </script>
   <script id="data.html" type="text/ng-template" nav-clear="true">
-      <ion-view title='Descargar información' >
+      <ion-view title='Datos' >
           <ion-content >
               <div class="list" name="sinDatos" ng-show="!data.checkData()">
                   <div class="card">
-                      <b>Bienvenido: {{data.getUsuario().nombre}}</b></br>
-                      <b>Fecha:  {{ data.getFecha()| date}}</b>
+                      <p><b>Bienvenido: {{data.getUsuario().nombre}}</b></p>
+                      <p><b>Fecha: {{ data.getFecha()| date}}</b></p>
                       <div class="item item-divider">
                           <button name="descargar"
                                   class="button"
@@ -71,8 +73,8 @@
               </div>
               <div class="list" name="conDatos" ng-show="data.checkData()">
                   <div class="card">
-                      <b>Bienvenido: {{data.getUsuario().nombre}}</b></br>
-                      <b>Fecha:  {{ data.getFecha()| date}}</b>
+                      <p><b>Bienvenido: {{data.getUsuario().nombre}}</b></p>
+                      <p><b>Fecha: {{ data.getFecha()| date}}</b></p>
                       <div class="item-divider">
                           <button name="inicio"
                                   class="button"
@@ -94,16 +96,11 @@
   </script>
   <script id="horarios.html" type="text/ng-template">
       <ion-view title='Horarios:'>
-          <ion-nav-buttons side="right">
-              <button class="button" ng-click="hora.irInicio()">
-                  Inicio
-              </button>
-          </ion-nav-buttons>
           <ion-content>
               <div class="list">
                   <div class="card">
-                      <b>Bienvenido: {{hora.getUsuario().nombre}}</b></br>
-                      <b>Fecha:  {{ hora.getFecha()| date}}</b>
+                      <p><b>Bienvenido: {{hora.getUsuario().nombre}}</b></p>
+                      <p><b>Fecha:  {{ hora.getFecha()| date}}</b></p>
                       <div class="item item-divider">
                           <button name="descargar"
                                   class="button"
@@ -131,11 +128,6 @@
   </script>
   <script id="acciones.html" type="text/ng-template">
       <ion-view title="Acciones">
-          <ion-nav-buttons side="right">
-              <button class="button" ng-click="irInicio()">
-                  Inicio
-              </button>
-          </ion-nav-buttons>
           <ion-content>
               <div class="list">
                   <div class="card">
@@ -171,11 +163,6 @@
   </script>
   <script id="asistencia.html" type="text/ng-template">
       <ion-view title="Asistencia: {{asiste.getFecha() | date}}">
-          <ion-nav-buttons side="right">
-              <button class="button" ng-click="irInicio()">
-                  Inicio
-              </button>
-          </ion-nav-buttons>
           <ion-content>
               <div class="card">
                   <p><b>Horario: {{asiste.horario.nombre}}</b></p>
@@ -200,11 +187,6 @@
   </script>
   <script id="evaluacion.html" type="text/ng-template">
       <ion-view title="Evaluacion: {{eval.getFecha() | date}}">
-          <ion-nav-buttons side="right">
-              <button class="button" ng-click="eval.irInicio()">
-                  Inicio
-              </button>
-          </ion-nav-buttons>
           <ion-content>
               <div class="card">
                   <p><b>Horario: {{eval.horario.nombre}}</b></p>
@@ -232,11 +214,6 @@
   </script>
   <script id="evalalumno.html" type="text/ng-template">
       <ion-view title="Evaluacion: {{evalua.getFecha() | date}}">
-          <ion-nav-buttons side="right">
-              <button class="button" ng-click="evalua.irInicio()">
-                  Inicio
-              </button>
-          </ion-nav-buttons>
           <ion-content>
               <div class="card">
                   <p><b>Horario: {{evalua.horario.nombre}}</b></p>
@@ -246,20 +223,21 @@
               <form novalidate
                     name="evaluaForm"
                     class="form"
-                    ng-submit="evaluaForm.$valid">
-                  <div class="list">
-                      <label class="item item-input item-select"
-                              ng-repeat="valor in valores">
-                          <div class="input-label">
-                              {{valor.nombre}}
-                          </div>
-                          <select name="calif">
-                              <option ng-repeat="nota in evalua.notas"
-                                      value = "{{nota.valor}}">
-                                  {{nota.nota}}
-                              </option>
+                    ng-submit="evaluaForm.$valid&& evalua.enviar()">
+                  <div class="row"
+                       ng-repeat="valor in valores">
+                      <div class="col col-67"
+                              ng-click="alert('click')">
+                          {{valor.nombre}}
+                      </div>
+                      <div class="col">
+                          <select name="calif"
+                                  ng-model="valores[$index].res"
+                                  data-native-menu="false"
+                                  style="position: relative; z-index: 999;"
+                                  ng-options="nota.valor as nota.nota for nota in evalua.notas">
                           </select>
-                      </label>
+                      </div>
                   </div>
                   <input type="Submit" value="Enviar"
                              class="button button-block button-positive"/>

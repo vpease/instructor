@@ -97,11 +97,11 @@ app.controller('HoraController',
             };
         }])
 app.controller('DataController',
-    ['$scope',
+    ['$state','$scope',
         '$ionicPlatform',
         '$ionicActionSheet',
         'estadoFactory',
-        function($scope,$ionicPlatform,$ionicActionSheet,estadoFactory){
+        function($state,$scope,$ionicPlatform,$ionicActionSheet,estadoFactory){
             this.fecha = estadoFactory.getFecha();
             this.usuario = estadoFactory.getUser();
             this.showMenu = function() {
@@ -113,8 +113,10 @@ app.controller('DataController',
                         {text: 'Cancelar'}
                     ],
                     buttonClicked: function (index){
-                        if (index==0) estadoFactory.salir();
-                        else if (index==1);
+                        if (index==0)
+                            estadoFactory.salir();
+                        else if (index==1)
+                            $state.go('data');
                     }
                 });
             };
@@ -204,12 +206,29 @@ app.controller('EvalAlumnoController',['$scope',
     function($scope,estadoFactory){
         this.horario = estadoFactory.getHorario();
         this.notas = estadoFactory.getNotas();
+        this.alumno = estadoFactory.getAlumno();
+        this.eval = [];
         $scope.valores = [];
         estadoFactory.getValores(this.horario.idHorario)
             .then(function(valores){
                 var res = valores;
-                $scope.valores = res;
+                var tempAr=[];
+                for(i=0;i< valores.length;i++){
+                    var temp = {
+                        idValorhorario:'',
+                        res:0,
+                        nombre:''
+                    }
+                    temp.idValorhorario = valores[i].idValorhorario;
+                    temp.nombre = valores[i].nombre;
+                    temp.res = 5;
+                    tempAr.push(temp);
+                }
+                $scope.valores = tempAr;
             });
+        this.enviar = function(){
+            estadoFactory.irInicio();
+        };
     }])
 app.config(function($stateProvider,$urlRouterProvider){
     $urlRouterProvider.otherwise("/login");
@@ -350,6 +369,9 @@ app.factory('estadoFactory',
     factory.getValid = function(){
         return valido;
     };
+    factory.getAlumno = function(){
+        return alumno;
+    };
     factory.irInicio = function(){
         $state.go('horarios');
     };
@@ -362,6 +384,9 @@ app.factory('estadoFactory',
         $state.go('evaluacion');
     };
     factory.Evaluar = function(idJugador,nombre,idInscripcion,idHorario){
+        alumno.idJugador = idJugador;
+        alumno.nombre = nombre;
+        alumno.idInscripcion = idInscripcion;
         $state.go('evalalumno');
     };
     factory.login2 = function(puser,ppass){
@@ -550,8 +575,10 @@ app.factory('estadoFactory',
                 Consultas.getSynced()
                     .then(function(result){
                         var res = false;
-                        if (result.length()>0) res = true;
-                        else res = false;
+                        if (result.length()>0)
+                            res = true;
+                        else
+                            res = false;
                         dataOk = res;
                         $state.go('data');
                     });
@@ -655,6 +682,23 @@ app.factory('Consultas', function(DB) {
     var self = this;
     self.init= function(){
         DB.init();
+    };
+    self.execTx = function(lista){
+        if (DB.db){
+            DB.db.transaction(function(tx){
+                for (var i = 0; i < lista.length; i++){
+                    tx.executeSql(lista[i]),
+                        [],
+                        function(tx,res){
+                            console.log(lista[i]+' exito');
+                        },
+                        function(tx,error){
+                            console.log(lista[i]+' fallo');
+                        };
+                };
+            });
+            console.log('Todos los comandos ejecutados');
+        };
     };
     self.deleteAll = function(){
         if (DB.db) {
