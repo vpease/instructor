@@ -48,10 +48,8 @@
                           <input ng-model="login.usuario.pass" type="password"
                                  placeholder="******" title="Clave" required/>
                       </label>
-                      <input type="Submit" value="Ingresar"
-                             class="button button-block button-positive"
-                              background-image="/img/Login-icon blue.png"
-                              background-position="left"/>
+                      <button ng-click="submit()"
+                              class="button button-block button-positive ion-log-in"/>
                   </div>
               </form>
           </ion-content>
@@ -66,8 +64,8 @@
                       <p><b>Fecha: {{ data.getFecha()| date}}</b></p>
                       <div class="item item-divider">
                           <button name="descargar"
-                                  class="button"
-                                  ng-click="data.descargar()">Descargar Datos</button>
+                                  class="button ion-ios7-download-outline"
+                                  ng-click="data.descargar()"></button>
                       </div>
                   </div>
               </div>
@@ -77,18 +75,18 @@
                       <p><b>Fecha: {{ data.getFecha()| date}}</b></p>
                       <div class="item-divider">
                           <button name="inicio"
-                                  class="button"
-                                  ng-click="data.irInicio()">Ir a inicio</button>
+                                  class="button ion-ios7-arrow-forward"
+                                  ng-click="data.irInicio()"></button>
                           <button name="enviar"
-                                  class="button"
+                                  class="button ion-ios7-upload-outline"
                                   ng-click="data.enviar()"
-                                  ng-show="data.checkDataToSend()">Enviar Datos</button>
+                                  ng-show="data.checkDataToSend()"></button>
                       </div>
                   </div>
                   <div class="card" ng-show="data.checkData()">
                       <button name="opciones"
-                              class="button"
-                              ng-click="data.opciones()">Opciones</button>
+                              class="button ion-ios7-gear-outline"
+                              ng-click="data.opciones()"></button>
                   </div>
               </div>
           </ion-content>
@@ -103,11 +101,11 @@
                       <p><b>Fecha:  {{ hora.getFecha()| date}}</b></p>
                       <div class="item item-divider">
                           <button name="descargar"
-                                  class="button"
-                                  ng-show="!hora.checkData()">Descargar Datos</button>
+                                  class="button ion-ios7-download-outline"
+                                  ng-show="!hora.checkData()"></button>
                           <button name="enviar"
-                                  class="button"
-                                  ng-show="hora.checkDataToSend()">Enviar Datos</button>
+                                  class="button ion-ios7-upload-outline"
+                                  ng-show="hora.checkDataToSend()"></button>
                       </div>
                   </div>
               </div>
@@ -139,9 +137,8 @@
                           Asistencia:
                       </div>
                       <div align="center">
-                          <button class="button button-positive"
+                          <button class="button button-positive ion-ios7-people-outline"
                                   ng-click="acciones.irAsistencia()">
-                              Tomar asistencia
                           </button>
                       </div>
                   </div>
@@ -150,9 +147,8 @@
                           Evaluación:
                       </div>
                       <div align="center">
-                          <button class="button button-positive"
+                          <button class="button button-positive ion-ios7-compose-outline"
                                   ng-click="acciones.irEvaluacion()">
-                              Tomar Evaluación
                           </button>
                       </div>
                   </div>
@@ -235,8 +231,8 @@
                                   ng-options="nota.valor as nota.nota for nota in evalua.notas"></select>
                       </div>
                   </div>
-                  <input type="Submit" value="Enviar"
-                             class="button button-block button-positive"/>
+                  <button ng-click="submit()"
+                             class="button button-block button-positive ion-ios7-filing-outline"/>
               </form>
           </ion-content>
       </ion-view>
