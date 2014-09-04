@@ -227,6 +227,8 @@ app.controller('EvalAlumnoController',['$scope',
                 $scope.valores = tempAr;
             });
         this.enviar = function(){
+            
+
             estadoFactory.irInicio();
         };
         this.alerta = function(indice){
@@ -390,7 +392,7 @@ app.factory('estadoFactory',
     factory.irEvaluacion = function() {
         $state.go('evaluacion');
     };
-    factory.Evaluar = function(idJugador,nombre,idInscripcion,idHorario){
+    factory.Evaluar = function(idJugador,nombre,idInscripcion){
         alumno.idJugador = idJugador;
         alumno.nombre = nombre;
         alumno.idInscripcion = idInscripcion;
