@@ -333,7 +333,7 @@ app.factory('estadoFactory',
     var fecha='';
     var factory = {};
     var valido=false;
-    var server ='http://app.bocajuniors.com.pe/bocarest/index.php';
+    var server ='http://www.bocajuniors.com.pe/app/bocarest/index.php';
     //var server ='http://192.168.1.100/bocarest'
 
     factory.irInicio = function(){

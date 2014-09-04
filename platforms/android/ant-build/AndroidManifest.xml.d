@@ -1,2 +1,2 @@
-D:\GitHub\instructor\platforms\android\ant-build\AndroidManifest.xml : \
-D:\GitHub\instructor\platforms\android\AndroidManifest.xml \
+H:\projects\instructor\platforms\android\ant-build\AndroidManifest.xml : \
+H:\projects\instructor\platforms\android\AndroidManifest.xml \
