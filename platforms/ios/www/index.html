@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="initial-scale=1, maximum-scale=1, user-scalable=yes, width=device-width">
+    <title>Boca Juniors Perú</title>
+    <!-- compiled css output -->
+    <link href="css/ionic.app.css" rel="stylesheet">
+
+      <script src="lib/ionic/js/ionic.bundle.js"></script>
+      <script src="lib/ngCordova.js"></script>
+      <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+  </head>
+  <body ng-app="control" class="platform-ios platform-cordova platform-webview">
+  <ion-nav-bar class="bar-positive nav-title-slide-ios7">
+      <ion-nav-back-button class="button-clear">
+          <i class="ion-arrow-left-c"></i> Regresar
+      </ion-nav-back-button>
+  </ion-nav-bar>
+  <ion-nav-view></ion-nav-view>
+
+  <script id="login.html" type="text/ng-template" nav-clear="true">
+      <ion-view title="Boca Juniors Perú - Profesores"
+                hide-back-button="true">
+          <ion-content>
+              <form novalidate
+                    name="loginForm"
+                    class="form"
+                    ng-submit="loginForm.$valid && login.checkUser()">
+                  <div class="list">
+                      <div align="center" class="list">
+                          <img align="center" src="img/logo-small.png"/>
+                      </div>
+                      <label class="item item-input">
+                          <span class="input-label">Usuario</span>
+                          <input ng-model="login.usuario.user" type="text"
+                                 placeholder="usuario" title="Usuario" required/>
+                      </label>
+                      <label class="item item-input">
+                          <span class="input-label">Clave</span>
+                          <input ng-model="login.usuario.pass" type="password"
+                                 placeholder="******" title="Clave" required/>
+                      </label>
+                      <button ng-click="submit()"
+                              class="button button-block button-positive ion-log-in"/>
+                  </div>
+              </form>
+          </ion-content>
+      </ion-view>
+  </script>
+  <script id="data.html" type="text/ng-template" nav-clear="true">
+      <ion-view title='Datos' >
+          <ion-content >
+              <div class="list" name="sinDatos" ng-show="!data.checkData()">
+                  <div class="card">
+                      <p><b>Bienvenido: {{data.getUsuario().nombre}}</b></p>
+                      <p><b>Fecha: {{ data.getFecha()| date}}</b></p>
+                      <div class="item item-divider">
+                          <button name="descargar"
+                                  class="button ion-ios7-download-outline"
+                                  ng-click="data.descargar()"></button>
+                      </div>
+                  </div>
+              </div>
+              <div class="list" name="conDatos" ng-show="data.checkData()">
+                  <div class="card">
+                      <p><b>Bienvenido: {{data.getUsuario().nombre}}</b></p>
+                      <p><b>Fecha: {{ data.getFecha()| date}}</b></p>
+                      <div class="item-divider">
+                          <button name="inicio"
+                                  class="button ion-ios7-arrow-forward"
+                                  ng-click="data.irInicio()"></button>
+                          <button name="enviar"
+                                  class="button ion-ios7-upload-outline"
+                                  ng-click="data.enviar()"
+                                  ng-show="data.checkDataToSend()"></button>
+                      </div>
+                  </div>
+                  <div class="card" ng-show="data.checkData()">
+                      <button name="opciones"
+                              class="button ion-ios7-gear-outline"
+                              ng-click="data.opciones()"></button>
+                  </div>
+              </div>
+          </ion-content>
+      </ion-view>
+  </script>
+  <script id="horarios.html" type="text/ng-template">
+      <ion-view title='Horarios:'>
+          <ion-content>
+              <div class="list">
+                  <div class="card">
+                      <p><b>Bienvenido: {{hora.getUsuario().nombre}}</b></p>
+                      <p><b>Fecha:  {{ hora.getFecha()| date}}</b></p>
+                      <div class="item item-divider">
+                          <button name="descargar"
+                                  class="button ion-ios7-download-outline"
+                                  ng-show="!hora.checkData()"></button>
+                          <button name="enviar"
+                                  class="button ion-ios7-upload-outline"
+                                  ng-show="hora.checkDataToSend()"></button>
+                      </div>
+                  </div>
+              </div>
+              <div class="list">
+                  <div class="item item-button-right item-text-wrap"
+                          ng-repeat="horario in horarios"
+                          ng-click="hora.select(horario.idHorario,horario.nombre,horario.cancha)">
+                      <p><b>{{horario.nombre}}</b></br>
+                      {{horario.cancha}}</p>
+                      <button class="button button-positive"
+                              ng-click="hora.select(horario.idHorario,horario.nombre,horario.cancha)">
+                          <i class="icon ion-ios7-arrow-forward"></i>
+                      </button>
+                  </div>
+              </div>
+          </ion-content>
+      </ion-view>
+  </script>
+  <script id="acciones.html" type="text/ng-template">
+      <ion-view title="Acciones">
+          <ion-content>
+              <div class="list">
+                  <div class="card">
+                      <p><b>Horario: {{acciones.horario.nombre}}</b></p>
+                      <p>Cancha: {{acciones.horario.cancha}}</p>
+                  </div>
+                  <div class="card">
+                      <div class="item item-divider">
+                          Asistencia:
+                      </div>
+                      <div align="center">
+                          <button class="button button-positive ion-ios7-people-outline"
+                                  ng-click="acciones.irAsistencia()">
+                          </button>
+                      </div>
+                  </div>
+                  <div class="card" ng-show="acciones.checkEvaluacion()">
+                      <div class="item item-divider">
+                          Evaluación:
+                      </div>
+                      <div align="center">
+                          <button class="button button-positive ion-ios7-compose-outline"
+                                  ng-click="acciones.irEvaluacion()">
+                          </button>
+                      </div>
+                  </div>
+              </div>
+              </form>
+          </ion-content>
+      </ion-view>
+  </script>
+  <script id="asistencia.html" type="text/ng-template">
+      <ion-view title="Asistencia: {{asiste.getFecha() | date}}">
+          <ion-content>
+              <div class="card">
+                  <p><b>Horario: {{asiste.horario.nombre}}</b></p>
+                  <p>Cancha: {{asiste.horario.cancha}}</p>
+              </div>
+              <div class="card">
+                  <div class="item item-divider">
+                      Alumnos:
+                  </div>
+                  <div class="list">
+                      <ion-checkbox ng-repeat="alumno in alumnos"
+                                    ng-model="alumno.asiste"
+                                    ng-checked = "alumno.asiste"
+                                    ng-true="1"
+                                    ng-false="0"
+                                    ng-change="asiste.updAsiste($index)">{{alumno.nombre}}
+                      </ion-checkbox>
+                  </div>
+              </div>
+          </ion-content>
+      </ion-view>
+  </script>
+  <script id="evaluacion.html" type="text/ng-template">
+      <ion-view title="Evaluacion: {{eval.getFecha() | date}}">
+          <ion-content>
+              <div class="card">
+                  <p><b>Horario: {{eval.horario.nombre}}</b></p>
+                  <p>Cancha: {{eval.horario.cancha}}</p>
+              </div>
+              <div class="card">
+                  <div class="item item-divider">
+                      Alumnos:
+                  </div>
+                  <div class="list">
+                      <div class="item item-button-right item-text-wrap"
+                           ng-click="eval.Evaluar(alumno.idJugador,alumno.nombre,alumno.idInscripcion)"
+                           ng-repeat="alumno in alumnos"
+                           ng-show = "alumno.asiste==1">
+                          <p><b>{{alumno.nombre}}</b></p>
+                          <button class="button button-positive"
+                                  ng-click="eval.Evaluar(alumno.idJugador,alumno.nombre,alumno.idInscripcion)">
+                              <i class="icon ion-ios7-arrow-forward"></i>
+                          </button>
+                      </div>
+                  </div>
+              </div>
+          </ion-content>
+      </ion-view>
+  </script>
+  <script id="evalalumno.html" type="text/ng-template">
+      <ion-view title="Evaluacion: {{evalua.getFecha() | date}}">
+          <ion-content>
+              <div class="card">
+                  <p><b>Horario: {{evalua.horario.nombre}}</b></p>
+                  <p>Cancha: {{evalua.horario.cancha}}</p>
+                  <p>Alumno: {{evalua.alumno.nombre}}</p>
+              </div>
+              <form novalidate
+                    name="evaluaForm"
+                    class="form"
+                    ng-submit="evaluaForm.$valid&& evalua.enviar()">
+                  <div class="list">
+                      <div class="item item-input item-input item-select item-text-wrap"
+                           ng-repeat="valor in valores"
+                           ng-click="evalua.alerta($index)">
+                          <div class ="input-label">
+                              {{valor.nombre}}
+                          </div>
+                          <select
+                                  ng-model="valores[$index].res"
+                                  ng-options="nota.valor as nota.nota for nota in evalua.notas"></select>
+                      </div>
+                  </div>
+                  <button ng-click="submit()"
+                             class="button button-block button-positive ion-ios7-filing-outline"/>
+              </form>
+          </ion-content>
+      </ion-view>
+  </script>
+  </body>
+</html>

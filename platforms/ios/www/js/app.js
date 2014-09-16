@@ -51,7 +51,7 @@ app.constant('DB_CONFIG', {
             {
                 name: 'evaluacion',
                 columns: [
-                    {name: 'idEvalua', type: 'integer primary key autoincrement'},
+                    {name: 'idEvalua', type: 'integer primary key'},
                     {name: 'idValorhorario', type: 'integer'},
                     {name: 'idInscripcion', type: 'integer'},
                     {name: 'res', type: 'integer'},
@@ -209,17 +209,12 @@ app.controller('EvalAlumnoController',['$scope',
         this.alumno = estadoFactory.getAlumno();
         this.eval = [];
         $scope.valores = [];
-        var evals;
-        evals = estadoFactory.getEvaluacion(this.alumno.idInscripcion);
-
-        if (evals.length ==0)
         estadoFactory.getValores(this.horario.idHorario)
             .then(function(valores){
                 var res = valores;
                 var tempAr=[];
                 for(i=0;i< valores.length;i++){
                     var temp = {
-                        idEvalua:'',
                         idValorhorario:'',
                         res:0,
                         nombre:''
@@ -231,17 +226,8 @@ app.controller('EvalAlumnoController',['$scope',
                 }
                 $scope.valores = tempAr;
             });
-        else $scope.valores = evals;
-
         this.enviar = function(){
-            for (i=0;i< $scope.valores.length; i++){
-                estadoFactory.insEvaluacion(
-                    $scope.valores[i].idEvalua,
-                    $scope.valores[i].idValorhorario,
-                    this.alumno.idInscripcion,
-                    $scope.valores[i].res,
-                    $scope.valores[i].nombre);
-            }
+            
 
             estadoFactory.irInicio();
         };
@@ -252,7 +238,7 @@ app.controller('EvalAlumnoController',['$scope',
             console.log('El valor de val es:'+ val);
             $scope.valores[indice].res=val;
         };
-    }]);
+    }])
 app.config(function($stateProvider,$urlRouterProvider){
     $urlRouterProvider.otherwise("/login");
     $stateProvider
@@ -315,7 +301,7 @@ app.factory('estadoFactory',
     var credenciales = {
         user: '',
         pass: ''
-    };
+    }
     var local = {
         idLocal:'',
         nombre: ''
@@ -629,18 +615,15 @@ app.factory('estadoFactory',
         var res = Consultas.getNotas();
         return res;
     };
-    self.getEvaluacion = function(idInscripcion) {
-        return Consultas.getEvaluacion(idInscripcion);
-    };
     factory.insAsistencia = function(idHorario,idJugador,nombre) {
-        var res = Consultas.insAsistencia(
+        var res = Consulta.insAsistencia(
             idHorario,
             idJugador,
             nombre);
         if (res) dataToSend = true;
     };
     factory.insEvaluacion = function(idValorHorario,idJugador,res,nombre) {
-        var res = Consultas.insEvaluacion(
+        var res = Consulta.insEvaluacion(
             idValorHorario,
             idJugador,
             res,
@@ -680,10 +663,8 @@ app.factory('DB',function($q, DB_CONFIG) {
 
             self.db.transaction(function(transaction) {
                 transaction.executeSql(query, bindings, function(transaction, result) {
-                    console.log("Todo ok en : "+query + "//"+ bindings);
                     deferred.resolve(result);
                 }, function(transaction, error) {
-                    console.log("Todo ko en : "+query + "//"+ bindings);
                     deferred.reject(error);
                 });
             });
@@ -726,7 +707,7 @@ app.factory('Consultas', function(DB) {
                 };
             });
             console.log('Todos los comandos ejecutados');
-        }
+        };
     };
     self.deleteAll = function(){
         if (DB.db) {
@@ -781,7 +762,7 @@ app.factory('Consultas', function(DB) {
                     });
             });
             console.log('Todos los datos borrados');
-        }
+        };
     };
     self.getAsistencias = function(){
         return DB.query('select * from asistencia')
@@ -793,28 +774,24 @@ app.factory('Consultas', function(DB) {
         return DB.query('select idHorario,nombre,cancha FROM horario')
             .then(function(result){
                 console.log('Horarios ok');
-                return DB.fetchAll(result);
+                var res = DB.fetchAll(result);
+                return res;
             });
     };
     self.getAlumnos = function(idHorario) {
         return DB.query('select idJugador,idInscripcion,nombre,asiste from alumno where idHorario= ?',[idHorario])
             .then(function(result){
                 console.log('Alumnos ok');
-                return DB.fetchAll(result);
+                var res = DB.fetchAll(result);
+                return res;
             });
     };
     self.getValores = function(idHorario) {
-        return DB.query('select icdValorhorario,idValor,nombre from valor where idHorario= ?',[idHorario])
+        return DB.query('select idValorhorario,idValor,nombre from valor where idHorario= ?',[idHorario])
             .then(function(result){
                 console.log('Valores ok');
-                return DB.fetchAll(result);
-            });
-    };
-    self.getEvaluacion = function(idInscripcion) {
-        return DB.query('select idEvalua,idValorhorario,res,nombre from valor where idInscripcion= ?',[idInscripcion])
-            .then(function(result){
-                console.log('Valores ok');
-                return DB.fetchAll(result);
+                var res = DB.fetchAll(result);
+                return res;
             });
     };
     self.getNotas = function () {
@@ -865,7 +842,7 @@ app.factory('Consultas', function(DB) {
             currentDate.getFullYear();
         return DB.query('insert into sync (syncdate) values (?)', [synced])
             .then(function(result){
-                console.log('Ya inserte la fecha de sync');
+                console.log('Ya inserte la fecha de sync')
                 console.log("Sync insertId: " + result.insertId + " -- probably 1");
                 console.log("Sync rowsAffected: " + result.rowsAffected + " -- should be 1");
             },function(error){
@@ -895,37 +872,22 @@ app.factory('Consultas', function(DB) {
                 console.log("rowsAffected: " + result.rowsAffected + " -- should be 1");
             });
     };
-    self.insValores = function(idEvalua,idValorHorario,idValor,idHorario,nombre) {
-        if (idEvalua=='')
+    self.insValores = function(idValorHorario,idValor,idHorario,nombre) {
         return DB.query('insert into valor values (?,?,?,?)',
             [idValorHorario,idValor,idHorario,nombre])
             .then(function(result){
                 console.log("insertId: " + result.insertId + " -- probably 1");
                 console.log("rowsAffected: " + result.rowsAffected + " -- should be 1");
-                return true;
             });
-        else
-            return DB.query('insert or ipdate into valor values (?,?,?,?,?)',
-                [idEvalua,idValorHorario,idValor,idHorario,nombre])
-                .then(function(result){
-                    console.log("insertId: " + result.insertId + " -- probably 1");
-                    console.log("rowsAffected: " + result.rowsAffected + " -- should be 1");
-                    return true;
-                });
-
     };
     self.insEvaluacion = function(idValorHorario,idJugador,res,nombre) {
-        return DB.query("insert into evaluacion(idEvalua,idValorhorario,idInscripcion,res,nombre) values (NULL,?,?,?,?)",
+        return DB.query('insert into evaluacion(idValorhorario,idJugador,res,nombre) values (?,?,?,?)',
             [idValorHorario,idJugador,res,nombre])
             .then(function(result){
                 console.log("insertId: " + result.insertId + " -- probably 1");
                 console.log("rowsAffected: " + result.rowsAffected + " -- should be 1");
                 return true;
-            })
-            .then(function(error){
-                console.log("El error es: "+error.toString());
-                return false;
-            })
+            });
     };
     return self;
 });
