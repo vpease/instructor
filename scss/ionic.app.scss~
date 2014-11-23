@@ -15,14 +15,9 @@ $royal:                           #8a6de9 !default;
 $dark:                            #444 !default;
 */
 
-//$yellow:          #FFCC00;
-//$silvergray:      #CCCCCC;
-//$gray:            #595959;
-//$blue:            #0066FF;
-//$darkblue:        #002680;
-//$positive:        #0066FF;
-
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../lib/ionic/fonts" !default;
+
 // Include all of Ionic
-@import "../www/lib/ionic/scss/ionic.scss";
+@import "www/lib/ionic/scss/ionic";
+
