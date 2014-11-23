@@ -49,7 +49,8 @@ app.constant('DB_CONFIG', {
             {
                 name: 'sync',
                 columns: [
-                    {name: 'syncdate', type: 'text primary key'}
+                    {name: 'syncdate', type: 'text primary key'},
+                    {name: 'usuario', type: 'text'}
                 ]
             }
         ]

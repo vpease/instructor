@@ -476,7 +476,7 @@ service.factory('Consultas', function(DB) {
     self.getSynced = function() {
         return DB.query('SELECT * FROM sync')
             .then(function(result){
-                if (result){
+                if (result.rowsAffected>0){
                     console.log('hay algo en sync!!');
                     return DB.fetchAll(result);
                 }
@@ -492,11 +492,10 @@ service.factory('Consultas', function(DB) {
     self.insSync = function() {
         console.log('insertando fecha de sync');
         var currentDate = new Date();
-        var synced = "synced " +
-            currentDate.getDate() +"/"+
-            (currentDate.getMonth()+1) +"/" +
-            currentDate.getFullYear();
-        return DB.query('insert into sync (syncdate) values (?)', [synced])
+        var synced = currentDate.getFullYear()+"/"+
+            currentDate.getDate()+"/"+
+            (currentDate.getMonth()+1);
+        return DB.query('insert into sync (syncdate,usuario) values (?,?)', [synced,usuario.user])
             .then(function(result){
                 console.log('Ya inserte la fecha de sync');
                 console.log("Sync insertId: " + result.insertId + " -- probably 1");
@@ -528,24 +527,13 @@ service.factory('Consultas', function(DB) {
                 console.log("rowsAffected: " + result.rowsAffected + " -- should be 1");
             });
     };
-    self.insValores = function(idEvalua,idValorHorario,idValor,idHorario,nombre) {
-        if (idEvalua=='')
-            return DB.query('insert into valor values (?,?,?,?)',
-                [idValorHorario,idValor,idHorario,nombre])
-                .then(function(result){
-                    console.log("insertId: " + result.insertId + " -- probably 1");
-                    console.log("rowsAffected: " + result.rowsAffected + " -- should be 1");
-                    return true;
-                });
-        else
-            return DB.query('insert or ipdate into valor values (?,?,?,?,?)',
-                [idEvalua,idValorHorario,idValor,idHorario,nombre])
-                .then(function(result){
-                    console.log("insertId: " + result.insertId + " -- probably 1");
-                    console.log("rowsAffected: " + result.rowsAffected + " -- should be 1");
-                    return true;
-                });
-
+    self.insValores = function(idValorHorario,idValor,idHorario,nombre) {
+        return DB.query('insert into valor(idValorhorario,idValor,idHorario,nombre) values (?,?,?,?)',
+            [idValorHorario,idValor,idHorario,nombre])
+            .then(function(result){
+                console.log("insertId: " + result.insertId + " -- probably 1");
+                console.log("rowsAffected: " + result.rowsAffected + " -- should be 1");
+            });
     };
     self.insEvaluacion = function(idValorHorario,idJugador,res,nombre) {
         return DB.query("insert into evaluacion(idEvalua,idValorhorario,idInscripcion,res,nombre) values (NULL,?,?,?,?)",
