@@ -57,6 +57,33 @@
           </ion-content>
       </ion-view>
   </script>
+  <script id="date.html" type="text/ng-template" nav-clear="true">
+      <ion-view title='Fecha'>
+          <ion-nav-back-button class="button-clear">
+              <i class="ion-arrow-left-c"></i> Regresar
+          </ion-nav-back-button>
+          <ion-content>
+              <div class="card">
+                  <form name="dateForm" novalidate>
+                      <div class="list">
+                          <label class="item item-input item-stacked-label">
+                              <span class="input-label">Elegir Fecha: {{date.usuario.fechatran | date:'yyyy-MM-dd'}}</span>
+                              <input type="date" ng-model = "date.usuario.fechatran"
+                                     placeholder="Elegir Fecha" value="{{ date.usuario.fechatran | date:'yyyy-MM-dd'}}" required>
+                          </label>
+                      </div>
+                      <div class="padding">
+                          <button class="button button-block button-positive"
+                                  ng-click="date.ingresar()">Siguiente</button>
+                      </div>
+                      <div class="list">
+                          <p>Error message</p>
+                      </div>
+                  </form>
+              </div>
+          </ion-content>
+      </ion-view>
+  </script>
   <script id="data.html" type="text/ng-template" nav-clear="true">
       <ion-view title='Datos' >
           <ion-content >

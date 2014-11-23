@@ -7,22 +7,24 @@ db.factory('DB',function($q, DB_CONFIG) {
     var self = this;
     self.db = null;
     self.init = function() {
-        if (window.sqlitePlugin !== undefined){
-            self.db = window.sqlitePlugin.openDatabase({name: DB_CONFIG.name});
-        } else {
-            self.db = window.openDatabase(DB_CONFIG.name,"1.0",DB_CONFIG,-1);
-        };
+        if (!self.db) {
+            if (window.sqlitePlugin !== undefined){
+                self.db = window.sqlitePlugin.openDatabase({name: DB_CONFIG.name});
+            } else {
+                self.db = window.openDatabase(DB_CONFIG.name,"1.0",DB_CONFIG,-1);
+            };
 
-        angular.forEach(DB_CONFIG.tables, function(table) {
-            var columns = [];
-            angular.forEach(table.columns, function(column) {
-                columns.push(column.name + ' ' + column.type);
+            angular.forEach(DB_CONFIG.tables, function(table) {
+                var columns = [];
+                angular.forEach(table.columns, function(column) {
+                    columns.push(column.name + ' ' + column.type);
+                });
+                var query = 'CREATE TABLE IF NOT EXISTS ' + table.name + ' (' + columns.join(',') + ')';
+                self.query(query);
+                console.log('Table ' + table.name + ' initialized');
             });
-            var query = 'CREATE TABLE IF NOT EXISTS ' + table.name + ' (' + columns.join(',') + ')';
-            self.query(query);
-            console.log('Table ' + table.name + ' initialized');
-        });
-        console.log('Terminó el Init de la base de datos');
+            console.log('Terminó el Init de la base de datos');
+        }
     };
 
     self.query = function(query, bindings) {

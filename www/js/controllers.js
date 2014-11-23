@@ -10,33 +10,15 @@ control.controller('LoginController',['estadoFactory',
             var res = estadoFactory.login2(this.usuario.user, this.usuario.pass);
         }
     }]);
-control.controller('HoraController',['$scope','estadoFactory',
-    function($scope,estadoFactory){
-        this.irInicio = function(){
-            estadoFactory.irInicio();
-        };
-        this.fecha = estadoFactory.getFecha();
-        this.usuario = estadoFactory.getUser();
-        $scope.horarios = [];
-        estadoFactory.getHorarios().then(function(horarios){
-            $scope.horarios = horarios;
-        });
-        this.getFecha = function(){
-            return this.fecha;
-        };
-        this.getUsuario = function(){
-            return this.usuario;
-        };
-        this.checkData = function(){
-            return estadoFactory.checkData();
-        };
-        this.checkDataToSend = function(){
-            return estadoFactory.checkDataToSend();
-        };
-        this.select = function(idHorario,nombre,cancha){
-            estadoFactory.selectHorario(idHorario,nombre,cancha);
-        };
-    }]);
+control.controller('DateController',
+    ['estadoFactory',
+        function(estadoFactory){
+            this.usuario = { fechatran: '' };
+            this.usuario.fechatran = new Date();
+            this.ingresar = function() {
+                estadoFactory.setFecha(this.usuario.fechatran);
+            }
+        }]);
 control.controller('DataController',['$state','$ionicActionSheet','estadoFactory',
     function($state,$ionicActionSheet,estadoFactory){
         this.fecha = estadoFactory.getFecha();
@@ -50,10 +32,8 @@ control.controller('DataController',['$state','$ionicActionSheet','estadoFactory
                     {text: 'Cancelar'}
                 ],
                 buttonClicked: function (index){
-                    if (index==0)
-                        estadoFactory.salir();
-                    else if (index==1)
-                        $state.go('data');
+                    if (index==0) estadoFactory.salir();
+                    else if (index==1) $state.go('data');
                 }
             });
         };
@@ -83,6 +63,34 @@ control.controller('DataController',['$state','$ionicActionSheet','estadoFactory
             estadoFactory.irInicio();
         };
     }]);
+control.controller('HoraController',['$scope','estadoFactory',
+    function($scope,estadoFactory){
+        this.irInicio = function(){
+            estadoFactory.irInicio();
+        };
+        this.fecha = estadoFactory.getFecha();
+        this.usuario = estadoFactory.getUser();
+        $scope.horarios = [];
+        estadoFactory.getHorarios().then(function(horarios){
+            $scope.horarios = horarios;
+        });
+        this.getFecha = function(){
+            return this.fecha;
+        };
+        this.getUsuario = function(){
+            return this.usuario;
+        };
+        this.checkData = function(){
+            return estadoFactory.checkData();
+        };
+        this.checkDataToSend = function(){
+            return estadoFactory.checkDataToSend();
+        };
+        this.select = function(idHorario,nombre,cancha){
+            estadoFactory.selectHorario(idHorario,nombre,cancha);
+        };
+    }]);
+
 control.controller('AccionesController',['$scope','estadoFactory',
     function($scope,estadoFactory){
         this.horario = estadoFactory.getHorario();
@@ -143,7 +151,8 @@ control.controller('EvalAlumnoController',['$scope','estadoFactory',
         var evals;
         evals = estadoFactory.getEvaluacion(this.alumno.idInscripcion);
 
-        if (evals.length ==0)
+
+        if (evals.length == 0 || typeof evals.length === 'undefined')
             estadoFactory.getValores(this.horario.idHorario)
                 .then(function(valores){
                     var res = valores;

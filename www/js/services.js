@@ -6,7 +6,6 @@ var service = angular.module('services',['db']);
 service.factory('estadoFactory',['$http','$state','Consultas',
     function($http,$state,Consultas){
         var self = this;
-        self.db = null;
         var cambiarUser = false;
         var credenciales = {
             user: '',
@@ -106,6 +105,10 @@ service.factory('estadoFactory',['$http','$state','Consultas',
             alumno.nombre = nombre;
             alumno.idInscripcion = idInscripcion;
             $state.go('evalalumno');
+        };
+        factory.setFecha = function(pDate) {
+            usuario.fechatran = pDate;
+            $state.go('data');
         };
         factory.login2 = function(puser,ppass){
             var res='';
@@ -235,9 +238,10 @@ service.factory('estadoFactory',['$http','$state','Consultas',
         factory.getdata = function(){
             var res='';
             var url=server+'/usuario/tablas.json';
+            var pfecha = '2014-11-19';
             $http({url:url,
                 method:"GET",
-                params:{idInstructor:usuario.idInstructor, idLocal: usuario.idLocal, fecha:'2014-11-19'}})
+                params:{idInstructor:usuario.idInstructor, idLocal: usuario.idLocal, fecha: pfecha}})
                 .success(function(data){
                     var horarios = data.Horarios;
                     var alumnos = data.Alumnos;
@@ -266,10 +270,11 @@ service.factory('estadoFactory',['$http','$state','Consultas',
                             valor.nombreValor);
                     });
                     console.log('Ya termine de insertar datos remotos');
-                    Consultas.insSync()
+                    Consultas.insSync(pfecha,usuario.user)
                         .then(function(result){
                             dataOk = true;
                             dataToSend = true;
+                            console.log("Hay datos para envair");
                             $state.go('horarios');
                         });
                 })
@@ -315,7 +320,7 @@ service.factory('estadoFactory',['$http','$state','Consultas',
             var res = Consultas.getNotas();
             return res;
         };
-        self.getEvaluacion = function(idInscripcion) {
+        factory.getEvaluacion = function(idInscripcion) {
             return Consultas.getEvaluacion(idInscripcion);
         };
         factory.insAsistencia = function(idHorario,idJugador,nombre) {
@@ -437,10 +442,12 @@ service.factory('Consultas', function(DB) {
             });
     };
     self.getValores = function(idHorario) {
-        return DB.query('select icdValorhorario,idValor,nombre from valor where idHorario= ?',[idHorario])
+        return DB.query('select idValorhorario,idValor,nombre from valor where idHorario= ?',[idHorario])
             .then(function(result){
                 console.log('Valores ok');
                 return DB.fetchAll(result);
+            },function(error){
+                console.log('Error en getValores:'+error.toString());
             });
     };
     self.getEvaluacion = function(idInscripcion) {
@@ -489,13 +496,10 @@ service.factory('Consultas', function(DB) {
                 return false;
             });
     };
-    self.insSync = function() {
+    self.insSync = function(fecha,user) {
         console.log('insertando fecha de sync');
-        var currentDate = new Date();
-        var synced = currentDate.getFullYear()+"/"+
-            currentDate.getDate()+"/"+
-            (currentDate.getMonth()+1);
-        return DB.query('insert into sync (syncdate,usuario) values (?,?)', [synced,usuario.user])
+        var synced = fecha;
+        return DB.query('insert into sync (syncdate,usuario) values (?,?)', [synced,user])
             .then(function(result){
                 console.log('Ya inserte la fecha de sync');
                 console.log("Sync insertId: " + result.insertId + " -- probably 1");
