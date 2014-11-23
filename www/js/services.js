@@ -66,6 +66,7 @@ service.factory('estadoFactory',['$http','$state','Consultas',
             $state.go('login');
         };
         factory.checkData = function(){
+
             return dataOk;
         };
         factory.checkDataToSend= function(){
@@ -138,12 +139,14 @@ service.factory('estadoFactory',['$http','$state','Consultas',
                                 nombre: '',
                                 user: '',
                                 idLocal: '',
-                                pass: ''
+                                pass: '',
+                                fecha: ''
                             };
                             usuario.idInstructor = result[0];
                             usuario.idOperador = result[1];
                             usuario.user = result[2];
                             usuario.nombre = result[3];
+                            usuario.fecha = result[4];
                             fecha = result[4];
                             usuario.idLocal = result[5];
                             console.log('voy a comparar si hay cambio de usuario');

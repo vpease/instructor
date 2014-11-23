@@ -5,7 +5,8 @@ var control = angular.module('controllers',[]);
 
 control.controller('LoginController',['estadoFactory',
     function(estadoFactory){
-        this.usuario = { user: '', pass: ''};
+        this.usuario = { user: '', fecha: ''};
+        this.usuario = estadoFactory.checkData();
         this.checkUser = function () {
             var res = estadoFactory.login2(this.usuario.user, this.usuario.pass);
         }
