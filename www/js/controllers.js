@@ -20,13 +20,15 @@ control.controller('LoginController',['estadoFactory','creds',
                 tempAr.push(temp);
             };
             if (tempAr.length>0){
-                this.usuario = {
+                var temp = {fecha:'',user:'',pass:''};
+                temp = {
                     user: tempAr[0].user,
                     fecha: tempAr[0].fecha,
                     pass: tempAr[0].pass
                 };
+                estadoFactory.setNoUser(temp,false);
+                this.usuario = temp;
             };
-            estadoFactory.setNoUser(this.usuario,false);
             console.log('Usuario ya guardado');
         }
         console.log('Usuario ingresado es:' + this.usuario.user);

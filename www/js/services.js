@@ -12,6 +12,10 @@ service.factory('estadoFactory',['$http','$state','Consultas',
             pass: '',
             fecha:''
         };
+        var userDb = {
+            user:'',
+            fecha:''
+        };
         var local = {
             idLocal:'',
             nombre: ''
@@ -26,10 +30,7 @@ service.factory('estadoFactory',['$http','$state','Consultas',
             fecha:'',
             fechatran:''
         };
-        var userDatos = {
-            user:'',
-            fecha:''
-        };
+
         var horario = {
             idHorario: '',
             nombre:'',
@@ -45,6 +46,7 @@ service.factory('estadoFactory',['$http','$state','Consultas',
             idInscripcion:'',
             asiste:''
         };
+        var olduser;
         var dataOk = false;
         var dataToSend = false;
         var dataOkEvaluacion = false;
@@ -74,11 +76,13 @@ service.factory('estadoFactory',['$http','$state','Consultas',
             $state.go('login');
         };
         factory.getUserDatos = function(){
-            return credDb;
+            return userDb;
         };
         factory.setNoUser = function(pusuario,state){
-            credDb = pusuario;
+            olduser = pusuario.user;
+            userDb = pusuario;
             dataOk = !state;
+            console.log('Ya cambio el userDB a :'+userDb.user);
         };
         factory.getNoUser = function(){
             return dataOk;
@@ -197,16 +201,18 @@ service.factory('estadoFactory',['$http','$state','Consultas',
                         pusuario.idLocal = result[5];
                         usuario = pusuario;
                         console.log('voy a comparar si hay cambio de usuario');
-                        if (credDb.user != puser) {
+                        console.log('el userDb es:'+olduser);
+                        if (olduser != puser) {
                             console.log('Si hay cambio de usuario');
                             cambiarUser = true
-                            credDb = {
+                            userDb = {
                                 user: puser,
                                 pass: ppass,
                                 fecha: result[4]
                             };
                             Consultas.deleteAll();
                             console.log('Ya mandé a borrar todo');
+                            dataOk=false;
                             $state.go('date');
                         } else {
                             console.log('No hay cambio de usuario');
@@ -362,42 +368,42 @@ service.factory('Consultas', function(DB,$q) {
             DB.init();
         }
         DB.db.transaction(function(tx){
-            tx.executeSql('delete * from asistencia',[],
+            tx.executeSql('delete from asistencia',[],
                 function(tx,res){
                     console.log('asistencia borrado');
                 },
                 function(tx,error){
-                    console.log('Error en asistencia:'+error.toString());
+                    console.log('Error al borrar asistencia:'+error.details);
                 });
-            tx.executeSql('delete * from horario',[],
+            tx.executeSql('delete from horario',[],
                 function(tx,res){
                     console.log('horario borrado');
                 },
                 function(tx,error){
                     console.log('Error en horario:'+error.toString());
                 });
-            tx.executeSql('delete * from alumno',[],
+            tx.executeSql('delete from alumno',[],
                 function(tx,res){
                     console.log('alumno borrado');
                 },
                 function(tx,error){
                     console.log('Error en alumno:'+error.toString());
                 });
-            tx.executeSql('delete * from valor',[],
+            tx.executeSql('delete from valor',[],
                 function(tx,res){
                     console.log('valor borrado');
                 },
                 function(tx,error){
                     console.log('Error en valor:'+error.toString());
                 });
-            tx.executeSql('delete * from evaluacion',[],
+            tx.executeSql('delete from evaluacion',[],
                 function(tx,res){
                     console.log('evaluacion borrado');
                 },
                 function(tx,error){
                     console.log('Error en evaluacion:'+error.toString());
                 });
-            tx.executeSql('delete * from sync',[],
+            tx.executeSql('delete from sync',[],
                 function(tx,res){
                     console.log('sync borrado');
                 },
