@@ -1,1487 +1,0 @@
-TProfesor
-v6
-r1
-cCheck dependencies
-cProcessInfoPlistFile /Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app/Info.plist /Users/vpease/Documents/instructor/platforms/ios/Profesor/Profesor-Info.plist
-cPhaseScriptExecution Copy\ www\ directory /Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Script-304B58A110DAC018002A0835.sh
-cCpResource Profesor/Resources/icons/icon-76.png build/emulator/Profesor.app/icon-76.png
-cCpResource Profesor/Resources/icons/icon-40@2x.png build/emulator/Profesor.app/icon-40@2x.png
-cCpResource Profesor/Resources/icons/icon-72.png build/emulator/Profesor.app/icon-72.png
-cCpResource Profesor/Resources/icons/icon.png build/emulator/Profesor.app/icon.png
-cCopyStringsFile /Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app/en.lproj/Localizable.strings Profesor/Resources/en.lproj/Localizable.strings
-cCpResource Profesor/Resources/icons/icon@2x.png build/emulator/Profesor.app/icon@2x.png
-cCompileXIB /Users/vpease/Documents/instructor/platforms/ios/Profesor/Classes/MainViewController.xib
-cCopyStringsFile /Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app/de.lproj/Localizable.strings Profesor/Resources/de.lproj/Localizable.strings
-cCpResource Profesor/Resources/icons/icon-50.png build/emulator/Profesor.app/icon-50.png
-cCpResource Profesor/Resources/icons/icon-60@2x.png build/emulator/Profesor.app/icon-60@2x.png
-cCpResource Profesor/Resources/splash/Default-Landscape@2x~ipad.png build/emulator/Profesor.app/Default-Landscape@2x~ipad.png
-cCpResource Profesor/Resources/icons/icon-small.png build/emulator/Profesor.app/icon-small.png
-cCpResource Profesor/Resources/splash/Default-Landscape~ipad.png build/emulator/Profesor.app/Default-Landscape~ipad.png
-cCpResource Profesor/Resources/splash/Default-Portrait@2x~ipad.png build/emulator/Profesor.app/Default-Portrait@2x~ipad.png
-cCpResource Profesor/Resources/icons/icon-small@2x.png build/emulator/Profesor.app/icon-small@2x.png
-cCpResource Profesor/Resources/splash/Default-Portrait~ipad.png build/emulator/Profesor.app/Default-Portrait~ipad.png
-cCpResource Profesor/Resources/splash/Default@2x~iphone.png build/emulator/Profesor.app/Default@2x~iphone.png
-cCpResource Profesor/Resources/icons/icon-40.png build/emulator/Profesor.app/icon-40.png
-cCpResource Profesor/Resources/icons/icon-60.png build/emulator/Profesor.app/icon-60.png
-cCpResource Profesor/Resources/splash/Default~iphone.png build/emulator/Profesor.app/Default~iphone.png
-cCpResource Profesor/Resources/splash/Default-568h@2x~iphone.png build/emulator/Profesor.app/Default-568h@2x~iphone.png
-cCpResource Profesor/Resources/icons/icon-50@2x.png build/emulator/Profesor.app/icon-50@2x.png
-cCpResource Profesor/Resources/icons/icon-76@2x.png build/emulator/Profesor.app/icon-76@2x.png
-cCpResource Profesor/Resources/icons/icon-72@2x.png build/emulator/Profesor.app/icon-72@2x.png
-cProcessPCH /var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/Profesor-Prefix-bafqxsqjfqwhhfesmrfaqwdlqiez/Profesor-Prefix.pch.pch Profesor/Profesor-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/main.o /Users/vpease/Documents/instructor/platforms/ios/Profesor/main.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/AppDelegate.o /Users/vpease/Documents/instructor/platforms/ios/Profesor/Classes/AppDelegate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/MainViewController.o /Users/vpease/Documents/instructor/platforms/ios/Profesor/Classes/MainViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/IonicKeyboard.o /Users/vpease/Documents/instructor/platforms/ios/Profesor/Plugins/com.ionic.keyboard/IonicKeyboard.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/UIWebViewExtension.o /Users/vpease/Documents/instructor/platforms/ios/Profesor/Plugins/com.ionic.keyboard/UIWebViewExtension.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/SQLitePlugin.o /Users/vpease/Documents/instructor/platforms/ios/Profesor/Plugins/com.phonegap.plugins.sqlite/SQLitePlugin.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/CDVLogger.o /Users/vpease/Documents/instructor/platforms/ios/Profesor/Plugins/org.apache.cordova.console/CDVLogger.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/CDVDevice.o /Users/vpease/Documents/instructor/platforms/ios/Profesor/Plugins/org.apache.cordova.device/CDVDevice.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cLd /Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app/Profesor normal i386
-cGenerateDSYMFile /Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app.dSYM /Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app/Profesor
-cTouch /Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk
-c00000000536B5DCE0000000000000198
-t1399545294
-s408
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/SDKSettings.plist
-c000000005330C51800000000000003B4
-t1395705112
-s948
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/CoreServices/SystemVersion.plist
-c000000005330C524000000000000019E
-t1395705124
-s414
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/AVFoundation.framework/AVFoundation
-c000000005330C5260000000000484210
-t1395705126
-s4735504
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/AVFoundation.framework/libAVFAudio.dylib
-c000000005330C5260000000000098030
-t1395705126
-s622640
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/AssetsLibrary.framework/AssetsLibrary
-c000000005330C5250000000000059340
-t1395705125
-s365376
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
-c000000005330C52700000000005B82F0
-t1395705127
-s5997296
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
-c00000000536B5CBB0000000000446820
-t1399545019
-s4483104
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/CoreLocation.framework/CoreLocation
-c000000005330C52700000000000F1A80
-t1395705127
-s989824
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/CoreMedia.framework/CoreMedia
-c000000005330C527000000000013B8C0
-t1395705127
-s1292480
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/Foundation.framework/Foundation
-c000000005330C529000000000088D8C0
-t1395705129
-s8968384
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
-c000000005330C52A00000000001BE790
-t1395705130
-s1828752
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/UIKit.framework/UIKit
-c000000005330C52E0000000001F1DE10
-t1395705134
-s32628240
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
-c000000005330C54A00000000002BC360
-t1395705162
-s2868064
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/crt1.o
-c000000005330C5550000000000002338
-t1395705173
-s9016
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libSystem.dylib
-c000000005330C556000000000008D370
-t1395705174
-s578416
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libobjc.dylib
-c000000005330C5560000000000392E20
-t1395705174
-s3747360
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libsqlite3.dylib
-c000000005330C55600000000001D35B0
-t1395705174
-s1914288
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/host/libdyld.dylib
-c0000000053FBFFF60000000000013FE0
-t1409023990
-s81888
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libcache_sim.dylib
-c000000005330C5560000000000014A80
-t1395705174
-s84608
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libcommonCrypto_sim.dylib
-c000000005330C5560000000000033BA0
-t1395705174
-s211872
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libcompiler_rt_sim.dylib
-c000000005330C556000000000001CFB0
-t1395705174
-s118704
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libcopyfile_sim.dylib
-c000000005330C556000000000001B2B0
-t1395705174
-s111280
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libcorecrypto_sim.dylib
-c000000005330C55600000000000C9570
-t1395705174
-s824688
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libdispatch.dylib
-c000000005330C5560000000000063280
-t1395705174
-s406144
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libdyld_sim.dylib
-c000000005330C5560000000000008880
-t1395705174
-s34944
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libmacho_sim.dylib
-c000000005330C5560000000000015080
-t1395705174
-s86144
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libnotify_sim.dylib
-c000000005330C55600000000000230F0
-t1395705174
-s143600
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libremovefile_sim.dylib
-c000000005330C556000000000000E380
-t1395705174
-s58240
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_network.dylib
-c000000005330C5560000000000089380
-t1395705174
-s562048
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_override.dylib
-c000000005330C5560000000000017320
-t1395705174
-s95008
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_sim_asl.dylib
-c000000005330C5560000000000039CD0
-t1395705174
-s236752
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_sim_blocks.dylib
-c000000005330C556000000000000B0B0
-t1395705174
-s45232
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_sim_c.dylib
-c000000005330C5560000000000167E80
-t1395705174
-s1474176
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_sim_configuration.dylib
-c000000005330C55600000000000106A0
-t1395705174
-s67232
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_sim_dnssd.dylib
-c000000005330C556000000000001CE40
-t1395705174
-s118336
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_sim_info.dylib
-c000000005330C55600000000000740C0
-t1395705174
-s475328
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_sim_m.dylib
-c000000005330C556000000000006CA60
-t1395705174
-s445024
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libunwind_sim.dylib
-c000000005330C556000000000001BAD0
-t1395705174
-s113360
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libxpc.dylib
-c000000005330C5560000000000084A20
-t1395705174
-s543264
-
-N/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/5.1/lib/darwin/libclang_rt.ios.a
-c00000000536B5CBB000000000000514C
-t1399545019
-s20812
-
-N/Users/vpease/Documents/instructor/platforms/ios/Profesor/Classes/AppDelegate.h
-c00000000540BA1FD00000000000005B5
-t1410048509
-s1461
-
-N/Users/vpease/Documents/instructor/platforms/ios/Profesor/Classes/AppDelegate.m
-c00000000540BA1FD000000000000176B
-t1410048509
-s5995
-
-N/Users/vpease/Documents/instructor/platforms/ios/Profesor/Classes/MainViewController.h
-c00000000540BA1FD00000000000004CE
-t1410048509
-s1230
-
-N/Users/vpease/Documents/instructor/platforms/ios/Profesor/Classes/MainViewController.m
-c00000000540BA1FD0000000000001269
-t1410048509
-s4713
-
-N/Users/vpease/Documents/instructor/platforms/ios/Profesor/Classes/MainViewController.xib
-c00000000540BA1FD0000000000001759
-t1410048509
-s5977
-
-N/Users/vpease/Documents/instructor/platforms/ios/Profesor/Plugins/com.ionic.keyboard/IonicKeyboard.h
-c00000000540BA2010000000000000157
-t1410048513
-s343
-
-N/Users/vpease/Documents/instructor/platforms/ios/Profesor/Plugins/com.ionic.keyboard/IonicKeyboard.m
-c00000000540BA20100000000000013F3
-t1410048513
-s5107
-
-N/Users/vpease/Documents/instructor/platforms/ios/Profesor/Plugins/com.ionic.keyboard/UIWebViewExtension.h
-c00000000540BA20100000000000000AC
-t1410048513
-s172
-
-N/Users/vpease/Documents/instructor/platforms/ios/Profesor/Plugins/com.ionic.keyboard/UIWebViewExtension.m
-c00000000540BA2010000000000000E00
-t1410048513
-s3584
-
-N/Users/vpease/Documents/instructor/platforms/ios/Profesor/Plugins/com.phonegap.plugins.sqlite/SQLitePlugin.h
-c00000000540BA201000000000000069B
-t1410048513
-s1691
-
-N/Users/vpease/Documents/instructor/platforms/ios/Profesor/Plugins/com.phonegap.plugins.sqlite/SQLitePlugin.m
-c00000000540BA2010000000000005000
-t1410048513
-s20480
-
-N/Users/vpease/Documents/instructor/platforms/ios/Profesor/Plugins/org.apache.cordova.console/CDVLogger.h
-c00000000540BA201000000000000037F
-t1410048513
-s895
-
-N/Users/vpease/Documents/instructor/platforms/ios/Profesor/Plugins/org.apache.cordova.console/CDVLogger.m
-c00000000540BA2010000000000000490
-t1410048513
-s1168
-
-N/Users/vpease/Documents/instructor/platforms/ios/Profesor/Plugins/org.apache.cordova.device/CDVDevice.h
-c00000000540BA20100000000000003BD
-t1410048513
-s957
-
-N/Users/vpease/Documents/instructor/platforms/ios/Profesor/Plugins/org.apache.cordova.device/CDVDevice.m
-c00000000540BA2010000000000000C22
-t1410048513
-s3106
-
-N/Users/vpease/Documents/instructor/platforms/ios/Profesor/Profesor-Info.plist
-c00000000540BA6CA0000000000000A0B
-t1410049738
-s2571
-
-N/Users/vpease/Documents/instructor/platforms/ios/Profesor/Profesor-Prefix.pch
-c00000000540BA1FD00000000000003C1
-t1410048509
-s961
-
-N/Users/vpease/Documents/instructor/platforms/ios/Profesor/Resources/de.lproj/Localizable.strings
-c00000000540BA1FD00000000000004C0
-t1410048509
-s1216
-
-N/Users/vpease/Documents/instructor/platforms/ios/Profesor/Resources/en.lproj/Localizable.strings
-c00000000540BA1FD00000000000004AB
-t1410048509
-s1195
-
-N/Users/vpease/Documents/instructor/platforms/ios/Profesor/Resources/icons/icon-40.png
-c00000000540BA6CA0000000000001737
-t1410049738
-s5943
-
-N/Users/vpease/Documents/instructor/platforms/ios/Profesor/Resources/icons/icon-40@2x.png
-c00000000540BA6CA0000000000001737
-t1410049738
-s5943
-
-N/Users/vpease/Documents/instructor/platforms/ios/Profesor/Resources/icons/icon-50.png
-c00000000540BA6CA0000000000001737
-t1410049738
-s5943
-
-N/Users/vpease/Documents/instructor/platforms/ios/Profesor/Resources/icons/icon-50@2x.png
-c00000000540BA6CA0000000000001737
-t1410049738
-s5943
-
-N/Users/vpease/Documents/instructor/platforms/ios/Profesor/Resources/icons/icon-60.png
-c00000000540BA6CA0000000000001737
-t1410049738
-s5943
-
-N/Users/vpease/Documents/instructor/platforms/ios/Profesor/Resources/icons/icon-60@2x.png
-c00000000540BA6CA0000000000001737
-t1410049738
-s5943
-
-N/Users/vpease/Documents/instructor/platforms/ios/Profesor/Resources/icons/icon-72.png
-c00000000540BA6CA0000000000001737
-t1410049738
-s5943
-
-N/Users/vpease/Documents/instructor/platforms/ios/Profesor/Resources/icons/icon-72@2x.png
-c00000000540BA6CA0000000000001737
-t1410049738
-s5943
-
-N/Users/vpease/Documents/instructor/platforms/ios/Profesor/Resources/icons/icon-76.png
-c00000000540BA6CA0000000000001737
-t1410049738
-s5943
-
-N/Users/vpease/Documents/instructor/platforms/ios/Profesor/Resources/icons/icon-76@2x.png
-c00000000540BA6CA0000000000001737
-t1410049738
-s5943
-
-N/Users/vpease/Documents/instructor/platforms/ios/Profesor/Resources/icons/icon-small.png
-c00000000540BA6CA0000000000001737
-t1410049738
-s5943
-
-N/Users/vpease/Documents/instructor/platforms/ios/Profesor/Resources/icons/icon-small@2x.png
-c00000000540BA6CA0000000000001737
-t1410049738
-s5943
-
-N/Users/vpease/Documents/instructor/platforms/ios/Profesor/Resources/icons/icon.png
-c00000000540BA6CA0000000000001737
-t1410049738
-s5943
-
-N/Users/vpease/Documents/instructor/platforms/ios/Profesor/Resources/icons/icon@2x.png
-c00000000540BA6CA0000000000001737
-t1410049738
-s5943
-
-N/Users/vpease/Documents/instructor/platforms/ios/Profesor/Resources/splash/Default-568h@2x~iphone.png
-c00000000540BA1FD00000000000085B1
-t1410048509
-s34225
-
-N/Users/vpease/Documents/instructor/platforms/ios/Profesor/Resources/splash/Default-Landscape@2x~ipad.png
-c00000000540BA1FD0000000000033D0A
-t1410048509
-s212234
-
-N/Users/vpease/Documents/instructor/platforms/ios/Profesor/Resources/splash/Default-Landscape~ipad.png
-c00000000540BA1FD00000000000166A2
-t1410048509
-s91810
-
-N/Users/vpease/Documents/instructor/platforms/ios/Profesor/Resources/splash/Default-Portrait@2x~ipad.png
-c00000000540BA1FD0000000000033F7C
-t1410048509
-s212860
-
-N/Users/vpease/Documents/instructor/platforms/ios/Profesor/Resources/splash/Default-Portrait~ipad.png
-c00000000540BA1FD0000000000016641
-t1410048509
-s91713
-
-N/Users/vpease/Documents/instructor/platforms/ios/Profesor/Resources/splash/Default@2x~iphone.png
-c00000000540BA1FD0000000000007323
-t1410048509
-s29475
-
-N/Users/vpease/Documents/instructor/platforms/ios/Profesor/Resources/splash/Default~iphone.png
-c00000000540BA1FD000000000000289A
-t1410048509
-s10394
-
-N/Users/vpease/Documents/instructor/platforms/ios/Profesor/main.m
-c00000000540BA1FD000000000000045A
-t1410048509
-s1114
-
-N/Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/AppDelegate.o
-t1410048849
-s77360
-
-N/Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/CDVDevice.o
-t1410048849
-s50304
-
-N/Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/CDVLogger.o
-t1410048849
-s41500
-
-N/Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/IonicKeyboard.o
-t1410048849
-s63708
-
-N/Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/MainViewController.o
-t1410048849
-s51536
-
-N/Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/Profesor.LinkFileList
-c00000000540BA332000000000000046E
-t1410048818
-s1134
-
-N/Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/SQLitePlugin.o
-t1410048849
-s91780
-
-N/Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/UIWebViewExtension.o
-t1410048849
-s46292
-
-N/Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/main.o
-t1410048849
-s2964
-
-N/Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Script-304B58A110DAC018002A0835.sh
-c00000000540BA332000000000000002D
-t1410048818
-s45
-
-N/Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app
-t1410049745
-s1020
-
-N/Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app.dSYM
-t1410048850
-s102
-
-N/Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app/Default-568h@2x~iphone.png
-t1410048819
-s34225
-
-N/Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app/Default-Landscape@2x~ipad.png
-t1410048819
-s212234
-
-N/Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app/Default-Landscape~ipad.png
-t1410048819
-s91810
-
-N/Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app/Default-Portrait@2x~ipad.png
-t1410048819
-s212860
-
-N/Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app/Default-Portrait~ipad.png
-t1410048819
-s91713
-
-N/Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app/Default@2x~iphone.png
-t1410048819
-s29475
-
-N/Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app/Default~iphone.png
-t1410048819
-s10394
-
-N/Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app/Info.plist
-t1410049744
-s1273
-
-N/Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app/MainViewController.nib
-t1410048848
-s836
-
-N/Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app/PkgInfo
-t2
-s0
-
-N/Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app/Profesor
-t1410048850
-s327896
-
-N/Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app/de.lproj/Localizable.strings
-t1410048819
-s280
-
-N/Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app/en.lproj/Localizable.strings
-t1410048819
-s166
-
-N/Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app/icon-40.png
-t1410049745
-s5943
-
-N/Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app/icon-40@2x.png
-t1410049745
-s5943
-
-N/Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app/icon-50.png
-t1410049745
-s5943
-
-N/Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app/icon-50@2x.png
-t1410049745
-s5943
-
-N/Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app/icon-60.png
-t1410049745
-s5943
-
-N/Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app/icon-60@2x.png
-t1410049745
-s5943
-
-N/Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app/icon-72.png
-t1410049745
-s5943
-
-N/Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app/icon-72@2x.png
-t1410049745
-s5943
-
-N/Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app/icon-76.png
-t1410049745
-s5943
-
-N/Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app/icon-76@2x.png
-t1410049745
-s5943
-
-N/Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app/icon-small.png
-t1410049745
-s5943
-
-N/Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app/icon-small@2x.png
-t1410049745
-s5943
-
-N/Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app/icon.png
-t1410049745
-s5943
-
-N/Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app/icon@2x.png
-t1410049745
-s5943
-
-N/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDV.h
-c00000000540BA32C0000000000000516
-t1410048812
-s1302
-
-N/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVAvailability.h
-c00000000540BA32C0000000000000D19
-t1410048812
-s3353
-
-N/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVCommandDelegate.h
-c00000000540BA32C00000000000008BA
-t1410048812
-s2234
-
-N/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVCommandDelegateImpl.h
-c00000000540BA32C00000000000004E2
-t1410048812
-s1250
-
-N/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVCommandQueue.h
-c00000000540BA32C0000000000000503
-t1410048812
-s1283
-
-N/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVDebug.h
-c00000000540BA32C0000000000000401
-t1410048812
-s1025
-
-N/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVInvokedUrlCommand.h
-c00000000540BA32C00000000000007E6
-t1410048812
-s2022
-
-N/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVJSON.h
-c00000000540BA32C00000000000003DA
-t1410048812
-s986
-
-N/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVLocalStorage.h
-c00000000540BA32C00000000000006CF
-t1410048812
-s1743
-
-N/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVPlugin.h
-c00000000540BA32C00000000000008F3
-t1410048812
-s2291
-
-N/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVPluginResult.h
-c00000000540BA32C0000000000000C13
-t1410048812
-s3091
-
-N/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVScreenOrientationDelegate.h
-c00000000540BA32C0000000000000408
-t1410048812
-s1032
-
-N/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVTimer.h
-c00000000540BA32C000000000000038D
-t1410048812
-s909
-
-N/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVURLProtocol.h
-c00000000540BA32C000000000000041C
-t1410048812
-s1052
-
-N/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVViewController.h
-c00000000540BA32C0000000000000ACC
-t1410048812
-s2764
-
-N/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVWhitelist.h
-c00000000540BA32C00000000000004B4
-t1410048812
-s1204
-
-N/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/NSArray+Comparisons.h
-c00000000540BA32C0000000000000392
-t1410048812
-s914
-
-N/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/NSData+Base64.h
-c00000000540BA32C000000000000037D
-t1410048812
-s893
-
-N/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/NSDictionary+Extensions.h
-c00000000540BA32C00000000000005DA
-t1410048812
-s1498
-
-N/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/NSMutableArray+QueueAdditions.h
-c00000000540BA32C00000000000003A0
-t1410048812
-s928
-
-N/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/UIDevice+Extensions.h
-c00000000540BA32C0000000000000476
-t1410048812
-s1142
-
-N/Users/vpease/Documents/instructor/platforms/ios/build/emulator/libCordova.a
-c00000000540BA33200000000000D41C8
-t1410048818
-s868808
-
-N/usr/lib/libSystem.B.dylib
-c0000000053FC0040000000000000CCF0
-t1409024064
-s52464
-
-N/usr/lib/system/libcache.dylib
-c0000000053E4BC8F0000000000012840
-t1407499407
-s75840
-
-N/usr/lib/system/libcommonCrypto.dylib
-c0000000053E4BC9E00000000000304B0
-t1407499422
-s197808
-
-N/usr/lib/system/libcompiler_rt.dylib
-c0000000053E4BCFD0000000000021620
-t1407499517
-s136736
-
-N/usr/lib/system/libcopyfile.dylib
-c0000000053E4BD03000000000001D530
-t1407499523
-s120112
-
-N/usr/lib/system/libcorecrypto.dylib
-c0000000053EC8960000000000014A840
-t1408010592
-s1353792
-
-N/usr/lib/system/libdyld.dylib
-c0000000053FBFFF60000000000013FE0
-t1409023990
-s81888
-
-N/usr/lib/system/libkeymgr.dylib
-c0000000053E4BC810000000000008EA0
-t1407499393
-s36512
-
-N/usr/lib/system/liblaunch.dylib
-c0000000053F80E6E000000000000C550
-t1408765550
-s50512
-
-N/usr/lib/system/libmacho.dylib
-c0000000053E4BCBE0000000000015FF0
-t1407499454
-s90096
-
-N/usr/lib/system/libquarantine.dylib
-c0000000053E4BC87000000000000FFA0
-t1407499399
-s65440
-
-N/usr/lib/system/libremovefile.dylib
-c0000000053E4BD0A000000000000C260
-t1407499530
-s49760
-
-N/usr/lib/system/libsystem_asl.dylib
-c0000000053E4BD450000000000044680
-t1407499589
-s280192
-
-N/usr/lib/system/libsystem_blocks.dylib
-c0000000053D15175000000000000BF50
-t1406226805
-s48976
-
-N/usr/lib/system/libsystem_c.dylib
-c0000000053FEFAC3000000000016F4E0
-t1409219267
-s1504480
-
-N/usr/lib/system/libsystem_configuration.dylib
-c0000000053F54B8800000000000101A0
-t1408584584
-s65952
-
-N/usr/lib/system/libsystem_coreservices.dylib
-c0000000053E4BD38000000000000E510
-t1407499576
-s58640
-
-N/usr/lib/system/libsystem_coretls.dylib
-c0000000053E4BD2F0000000000040DC0
-t1407499567
-s265664
-
-N/usr/lib/system/libsystem_dnssd.dylib
-c0000000053E4BC86000000000001CB00
-t1407499398
-s117504
-
-N/usr/lib/system/libsystem_info.dylib
-c0000000053E4BCA10000000000077560
-t1407499425
-s488800
-
-N/usr/lib/system/libsystem_kernel.dylib
-c0000000053FC000A0000000000065090
-t1409024010
-s413840
-
-N/usr/lib/system/libsystem_m.dylib
-c0000000053E4BCEE000000000007A9B0
-t1407499502
-s502192
-
-N/usr/lib/system/libsystem_malloc.dylib
-c0000000053EEB7410000000000046DA0
-t1408153409
-s290208
-
-N/usr/lib/system/libsystem_networkextension.dylib
-c0000000053F6729B000000000001E010
-t1408660123
-s122896
-
-N/usr/lib/system/libsystem_notify.dylib
-c0000000053E4BCCB0000000000021CA0
-t1407499467
-s138400
-
-N/usr/lib/system/libsystem_platform.dylib
-c0000000053E4BCA8000000000001E780
-t1407499432
-s124800
-
-N/usr/lib/system/libsystem_pthread.dylib
-c0000000053E4BD2A0000000000021BD0
-t1407499562
-s138192
-
-N/usr/lib/system/libsystem_sandbox.dylib
-c0000000053F54B7D00000000000101F0
-t1408584573
-s66032
-
-N/usr/lib/system/libsystem_secinit.dylib
-c0000000053E4BD3E000000000000D280
-t1407499582
-s53888
-
-N/usr/lib/system/libsystem_trace.dylib
-c0000000053F2A845000000000001E450
-t1408411717
-s123984
-
-N/usr/lib/system/libunc.dylib
-c0000000053EAAB1C0000000000006560
-t1407888156
-s25952
-
-N/usr/lib/system/libunwind.dylib
-c0000000053E4BC96000000000001A7B0
-t1407499414
-s108464
-
-N/var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/Profesor-Prefix-bafqxsqjfqwhhfesmrfaqwdlqiez/Profesor-Prefix.pch.pch
-t1410048849
-s5376484
-
-CCheck dependencies
-r0
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies18"Check dependencies0a139e50debbb941^aad29e50debbb941^---0#1#1#--18"Check dependencies36"F8DE9D13-9ADF-4DEC-AFA5-56BBAEB829AE-
-
-CCompileC build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/AppDelegate.o /Users/vpease/Documents/instructor/platforms/ios/Profesor/Classes/AppDelegate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s431741649.382908
-e431741649.543968
-r1
-xCompileC
-xbuild/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/AppDelegate.o
-x/Users/vpease/Documents/instructor/platforms/ios/Profesor/Classes/AppDelegate.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.llvm.clang.1_0.compiler
-d/Users/vpease/Documents/instructor/platforms/ios/Profesor/Classes/AppDelegate.m
-d/Users/vpease/Documents/instructor/platforms/ios/Profesor/Classes/AppDelegate.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVViewController.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVAvailability.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVInvokedUrlCommand.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVCommandDelegate.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVCommandQueue.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVWhitelist.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVScreenOrientationDelegate.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVPlugin.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVPluginResult.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/NSMutableArray+QueueAdditions.h
-d/Users/vpease/Documents/instructor/platforms/ios/Profesor/Classes/MainViewController.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVCommandDelegateImpl.h
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection87"Compile /Users/vpease/Documents/instructor/platforms/ios/Profesor/Classes/AppDelegate.m199"CompileC build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/AppDelegate.o Profesor/Classes/AppDelegate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compileraf2762d1dabbb941^514b8bd1dabbb941^---0#0#1#-19%DVTDocumentLocation2@86"file:///Users/vpease/Documents/instructor/platforms/ios/Profesor/Classes/AppDelegate.m0000000000000000^3964"CompileC build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/AppDelegate.o Profesor/Classes/AppDelegate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/vpease/Documents/instructor/platforms/ios    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/libs/android-sdk-mac_x86/platform-tools:/libs/android-sdk-mac_x86/tools:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Applications/Server.app/Contents/ServerRoot/usr/bin:/Applications/Server.app/Contents/ServerRoot/usr/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=c99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -fvisibility=hidden -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=6.0 -iquote /Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Profesor-generated-files.hmap -I/Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Profesor-own-target-headers.hmap -I/Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Profesor-all-target-headers.hmap -iquote /Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Profesor-project-headers.hmap -I/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include -I/Users/vpease/Documents/instructor/platforms/ios/build/emulator/usr/local/lib/include -I/Users/vpease/Documents/instructor/platforms/ios/build/UninstalledProducts/include -I/Users/vpease/Documents/instructor/platforms/ios/build/emulator -I/Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/DerivedSources/i386 -I/Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/DerivedSources -F/Users/vpease/Documents/instructor/platforms/ios/build/emulator -include /var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/Profesor-Prefix-bafqxsqjfqwhhfesmrfaqwdlqiez/Profesor-Prefix.pch -MMD -MT dependencies -MF /Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/AppDelegate.d --serialize-diagnostics /Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/AppDelegate.dia -c /Users/vpease/Documents/instructor/platforms/ios/Profesor/Classes/AppDelegate.m -o /Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/AppDelegate.o36"885CBA5D-2ADA-4859-AAB0-01B5143492B7-
-b48381B91-1051-438F-8D9B-5127DDF2CCD2
-
-CCompileC build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/CDVDevice.o /Users/vpease/Documents/instructor/platforms/ios/Profesor/Plugins/org.apache.cordova.device/CDVDevice.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s431741649.549818
-e431741649.807869
-r1
-xCompileC
-xbuild/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/CDVDevice.o
-x/Users/vpease/Documents/instructor/platforms/ios/Profesor/Plugins/org.apache.cordova.device/CDVDevice.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.llvm.clang.1_0.compiler
-d/Users/vpease/Documents/instructor/platforms/ios/Profesor/Plugins/org.apache.cordova.device/CDVDevice.m
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDV.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVAvailability.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVPlugin.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVPluginResult.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/NSMutableArray+QueueAdditions.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVCommandDelegate.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVInvokedUrlCommand.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVViewController.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVCommandQueue.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVWhitelist.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVScreenOrientationDelegate.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVURLProtocol.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVDebug.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVLocalStorage.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVTimer.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/NSArray+Comparisons.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/NSData+Base64.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/NSDictionary+Extensions.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/UIDevice+Extensions.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVJSON.h
-d/Users/vpease/Documents/instructor/platforms/ios/Profesor/Plugins/org.apache.cordova.device/CDVDevice.h
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection111"Compile /Users/vpease/Documents/instructor/platforms/ios/Profesor/Plugins/org.apache.cordova.device/CDVDevice.m221"CompileC build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/CDVDevice.o Profesor/Plugins/org.apache.cordova.device/CDVDevice.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compilerd6e58cd1dabbb941^f6d0ced1dabbb941^---0#0#1#-19%DVTDocumentLocation2@110"file:///Users/vpease/Documents/instructor/platforms/ios/Profesor/Plugins/org.apache.cordova.device/CDVDevice.m0000000000000000^4004"CompileC build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/CDVDevice.o Profesor/Plugins/org.apache.cordova.device/CDVDevice.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/vpease/Documents/instructor/platforms/ios    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/libs/android-sdk-mac_x86/platform-tools:/libs/android-sdk-mac_x86/tools:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Applications/Server.app/Contents/ServerRoot/usr/bin:/Applications/Server.app/Contents/ServerRoot/usr/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=c99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -fvisibility=hidden -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=6.0 -iquote /Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Profesor-generated-files.hmap -I/Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Profesor-own-target-headers.hmap -I/Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Profesor-all-target-headers.hmap -iquote /Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Profesor-project-headers.hmap -I/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include -I/Users/vpease/Documents/instructor/platforms/ios/build/emulator/usr/local/lib/include -I/Users/vpease/Documents/instructor/platforms/ios/build/UninstalledProducts/include -I/Users/vpease/Documents/instructor/platforms/ios/build/emulator -I/Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/DerivedSources/i386 -I/Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/DerivedSources -F/Users/vpease/Documents/instructor/platforms/ios/build/emulator -include /var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/Profesor-Prefix-bafqxsqjfqwhhfesmrfaqwdlqiez/Profesor-Prefix.pch -MMD -MT dependencies -MF /Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/CDVDevice.d --serialize-diagnostics /Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/CDVDevice.dia -c /Users/vpease/Documents/instructor/platforms/ios/Profesor/Plugins/org.apache.cordova.device/CDVDevice.m -o /Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/CDVDevice.o36"DA2FE284-14C1-4771-A8D5-CC780DC0664A-
-b48381B91-1051-438F-8D9B-5127DDF2CCD2
-
-CCompileC build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/CDVLogger.o /Users/vpease/Documents/instructor/platforms/ios/Profesor/Plugins/org.apache.cordova.console/CDVLogger.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s431741649.523529
-e431741649.639375
-r1
-xCompileC
-xbuild/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/CDVLogger.o
-x/Users/vpease/Documents/instructor/platforms/ios/Profesor/Plugins/org.apache.cordova.console/CDVLogger.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.llvm.clang.1_0.compiler
-d/Users/vpease/Documents/instructor/platforms/ios/Profesor/Plugins/org.apache.cordova.console/CDVLogger.m
-d/Users/vpease/Documents/instructor/platforms/ios/Profesor/Plugins/org.apache.cordova.console/CDVLogger.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVPlugin.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVPluginResult.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/NSMutableArray+QueueAdditions.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVCommandDelegate.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVAvailability.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVInvokedUrlCommand.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDV.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVViewController.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVCommandQueue.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVWhitelist.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVScreenOrientationDelegate.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVURLProtocol.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVDebug.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVLocalStorage.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVTimer.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/NSArray+Comparisons.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/NSData+Base64.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/NSDictionary+Extensions.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/UIDevice+Extensions.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVJSON.h
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection112"Compile /Users/vpease/Documents/instructor/platforms/ios/Profesor/Plugins/org.apache.cordova.console/CDVLogger.m222"CompileC build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/CDVLogger.o Profesor/Plugins/org.apache.cordova.console/CDVLogger.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compilera93086d1dabbb941^cdaea3d1dabbb941^---0#0#1#-19%DVTDocumentLocation2@111"file:///Users/vpease/Documents/instructor/platforms/ios/Profesor/Plugins/org.apache.cordova.console/CDVLogger.m0000000000000000^4006"CompileC build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/CDVLogger.o Profesor/Plugins/org.apache.cordova.console/CDVLogger.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/vpease/Documents/instructor/platforms/ios    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/libs/android-sdk-mac_x86/platform-tools:/libs/android-sdk-mac_x86/tools:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Applications/Server.app/Contents/ServerRoot/usr/bin:/Applications/Server.app/Contents/ServerRoot/usr/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=c99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -fvisibility=hidden -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=6.0 -iquote /Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Profesor-generated-files.hmap -I/Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Profesor-own-target-headers.hmap -I/Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Profesor-all-target-headers.hmap -iquote /Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Profesor-project-headers.hmap -I/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include -I/Users/vpease/Documents/instructor/platforms/ios/build/emulator/usr/local/lib/include -I/Users/vpease/Documents/instructor/platforms/ios/build/UninstalledProducts/include -I/Users/vpease/Documents/instructor/platforms/ios/build/emulator -I/Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/DerivedSources/i386 -I/Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/DerivedSources -F/Users/vpease/Documents/instructor/platforms/ios/build/emulator -include /var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/Profesor-Prefix-bafqxsqjfqwhhfesmrfaqwdlqiez/Profesor-Prefix.pch -MMD -MT dependencies -MF /Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/CDVLogger.d --serialize-diagnostics /Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/CDVLogger.dia -c /Users/vpease/Documents/instructor/platforms/ios/Profesor/Plugins/org.apache.cordova.console/CDVLogger.m -o /Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/CDVLogger.o36"9DDF93F6-678A-48E3-87F8-BAB4BA5E0272-
-b48381B91-1051-438F-8D9B-5127DDF2CCD2
-
-CCompileC build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/IonicKeyboard.o /Users/vpease/Documents/instructor/platforms/ios/Profesor/Plugins/com.ionic.keyboard/IonicKeyboard.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s431741649.383993
-e431741649.519271
-r1
-xCompileC
-xbuild/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/IonicKeyboard.o
-x/Users/vpease/Documents/instructor/platforms/ios/Profesor/Plugins/com.ionic.keyboard/IonicKeyboard.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.llvm.clang.1_0.compiler
-d/Users/vpease/Documents/instructor/platforms/ios/Profesor/Plugins/com.ionic.keyboard/IonicKeyboard.m
-d/Users/vpease/Documents/instructor/platforms/ios/Profesor/Plugins/com.ionic.keyboard/IonicKeyboard.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVPlugin.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVPluginResult.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/NSMutableArray+QueueAdditions.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVCommandDelegate.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVAvailability.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVInvokedUrlCommand.h
-d/Users/vpease/Documents/instructor/platforms/ios/Profesor/Plugins/com.ionic.keyboard/UIWebViewExtension.h
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection108"Compile /Users/vpease/Documents/instructor/platforms/ios/Profesor/Plugins/com.ionic.keyboard/IonicKeyboard.m222"CompileC build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/IonicKeyboard.o Profesor/Plugins/com.ionic.keyboard/IonicKeyboard.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler827362d1dabbb941^24ef84d1dabbb941^---0#0#1#-19%DVTDocumentLocation2@107"file:///Users/vpease/Documents/instructor/platforms/ios/Profesor/Plugins/com.ionic.keyboard/IonicKeyboard.m0000000000000000^4014"CompileC build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/IonicKeyboard.o Profesor/Plugins/com.ionic.keyboard/IonicKeyboard.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/vpease/Documents/instructor/platforms/ios    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/libs/android-sdk-mac_x86/platform-tools:/libs/android-sdk-mac_x86/tools:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Applications/Server.app/Contents/ServerRoot/usr/bin:/Applications/Server.app/Contents/ServerRoot/usr/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=c99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -fvisibility=hidden -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=6.0 -iquote /Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Profesor-generated-files.hmap -I/Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Profesor-own-target-headers.hmap -I/Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Profesor-all-target-headers.hmap -iquote /Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Profesor-project-headers.hmap -I/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include -I/Users/vpease/Documents/instructor/platforms/ios/build/emulator/usr/local/lib/include -I/Users/vpease/Documents/instructor/platforms/ios/build/UninstalledProducts/include -I/Users/vpease/Documents/instructor/platforms/ios/build/emulator -I/Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/DerivedSources/i386 -I/Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/DerivedSources -F/Users/vpease/Documents/instructor/platforms/ios/build/emulator -include /var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/Profesor-Prefix-bafqxsqjfqwhhfesmrfaqwdlqiez/Profesor-Prefix.pch -MMD -MT dependencies -MF /Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/IonicKeyboard.d --serialize-diagnostics /Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/IonicKeyboard.dia -c /Users/vpease/Documents/instructor/platforms/ios/Profesor/Plugins/com.ionic.keyboard/IonicKeyboard.m -o /Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/IonicKeyboard.o36"89412BFB-E63C-4329-960D-7175586210D7-
-b48381B91-1051-438F-8D9B-5127DDF2CCD2
-
-CCompileC build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/MainViewController.o /Users/vpease/Documents/instructor/platforms/ios/Profesor/Classes/MainViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s431741649.383276
-e431741649.501876
-r1
-xCompileC
-xbuild/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/MainViewController.o
-x/Users/vpease/Documents/instructor/platforms/ios/Profesor/Classes/MainViewController.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.llvm.clang.1_0.compiler
-d/Users/vpease/Documents/instructor/platforms/ios/Profesor/Classes/MainViewController.m
-d/Users/vpease/Documents/instructor/platforms/ios/Profesor/Classes/MainViewController.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVViewController.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVAvailability.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVInvokedUrlCommand.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVCommandDelegate.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVCommandQueue.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVWhitelist.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVScreenOrientationDelegate.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVPlugin.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVPluginResult.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/NSMutableArray+QueueAdditions.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVCommandDelegateImpl.h
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection94"Compile /Users/vpease/Documents/instructor/platforms/ios/Profesor/Classes/MainViewController.m213"CompileC build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/MainViewController.o Profesor/Classes/MainViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler363f62d1dabbb941^577b80d1dabbb941^---0#0#1#-19%DVTDocumentLocation2@93"file:///Users/vpease/Documents/instructor/platforms/ios/Profesor/Classes/MainViewController.m0000000000000000^4006"CompileC build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/MainViewController.o Profesor/Classes/MainViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/vpease/Documents/instructor/platforms/ios    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/libs/android-sdk-mac_x86/platform-tools:/libs/android-sdk-mac_x86/tools:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Applications/Server.app/Contents/ServerRoot/usr/bin:/Applications/Server.app/Contents/ServerRoot/usr/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=c99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -fvisibility=hidden -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=6.0 -iquote /Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Profesor-generated-files.hmap -I/Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Profesor-own-target-headers.hmap -I/Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Profesor-all-target-headers.hmap -iquote /Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Profesor-project-headers.hmap -I/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include -I/Users/vpease/Documents/instructor/platforms/ios/build/emulator/usr/local/lib/include -I/Users/vpease/Documents/instructor/platforms/ios/build/UninstalledProducts/include -I/Users/vpease/Documents/instructor/platforms/ios/build/emulator -I/Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/DerivedSources/i386 -I/Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/DerivedSources -F/Users/vpease/Documents/instructor/platforms/ios/build/emulator -include /var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/Profesor-Prefix-bafqxsqjfqwhhfesmrfaqwdlqiez/Profesor-Prefix.pch -MMD -MT dependencies -MF /Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/MainViewController.d --serialize-diagnostics /Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/MainViewController.dia -c /Users/vpease/Documents/instructor/platforms/ios/Profesor/Classes/MainViewController.m -o /Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/MainViewController.o36"9534FB69-4662-4CD0-9522-C20B534E400F-
-b48381B91-1051-438F-8D9B-5127DDF2CCD2
-
-CCompileC build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/SQLitePlugin.o /Users/vpease/Documents/instructor/platforms/ios/Profesor/Plugins/com.phonegap.plugins.sqlite/SQLitePlugin.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s431741649.504641
-e431741649.747107
-r1
-xCompileC
-xbuild/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/SQLitePlugin.o
-x/Users/vpease/Documents/instructor/platforms/ios/Profesor/Plugins/com.phonegap.plugins.sqlite/SQLitePlugin.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.llvm.clang.1_0.compiler
-d/Users/vpease/Documents/instructor/platforms/ios/Profesor/Plugins/com.phonegap.plugins.sqlite/SQLitePlugin.m
-d/Users/vpease/Documents/instructor/platforms/ios/Profesor/Plugins/com.phonegap.plugins.sqlite/SQLitePlugin.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVPlugin.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVPluginResult.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/NSMutableArray+QueueAdditions.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVCommandDelegate.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVAvailability.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVInvokedUrlCommand.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVJSON.h
-d/Users/vpease/Documents/instructor/platforms/ios/Profesor/Classes/AppDelegate.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVViewController.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVCommandQueue.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVWhitelist.h
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include/Cordova/CDVScreenOrientationDelegate.h
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection116"Compile /Users/vpease/Documents/instructor/platforms/ios/Profesor/Plugins/com.phonegap.plugins.sqlite/SQLitePlugin.m229"CompileC build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/SQLitePlugin.o Profesor/Plugins/com.phonegap.plugins.sqlite/SQLitePlugin.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compilera35981d1dabbb941^3d44bfd1dabbb941^---0#0#1#-19%DVTDocumentLocation2@115"file:///Users/vpease/Documents/instructor/platforms/ios/Profesor/Plugins/com.phonegap.plugins.sqlite/SQLitePlugin.m0000000000000000^4026"CompileC build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/SQLitePlugin.o Profesor/Plugins/com.phonegap.plugins.sqlite/SQLitePlugin.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/vpease/Documents/instructor/platforms/ios    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/libs/android-sdk-mac_x86/platform-tools:/libs/android-sdk-mac_x86/tools:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Applications/Server.app/Contents/ServerRoot/usr/bin:/Applications/Server.app/Contents/ServerRoot/usr/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=c99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -fvisibility=hidden -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=6.0 -iquote /Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Profesor-generated-files.hmap -I/Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Profesor-own-target-headers.hmap -I/Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Profesor-all-target-headers.hmap -iquote /Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Profesor-project-headers.hmap -I/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include -I/Users/vpease/Documents/instructor/platforms/ios/build/emulator/usr/local/lib/include -I/Users/vpease/Documents/instructor/platforms/ios/build/UninstalledProducts/include -I/Users/vpease/Documents/instructor/platforms/ios/build/emulator -I/Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/DerivedSources/i386 -I/Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/DerivedSources -F/Users/vpease/Documents/instructor/platforms/ios/build/emulator -include /var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/Profesor-Prefix-bafqxsqjfqwhhfesmrfaqwdlqiez/Profesor-Prefix.pch -MMD -MT dependencies -MF /Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/SQLitePlugin.d --serialize-diagnostics /Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/SQLitePlugin.dia -c /Users/vpease/Documents/instructor/platforms/ios/Profesor/Plugins/com.phonegap.plugins.sqlite/SQLitePlugin.m -o /Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/SQLitePlugin.o36"F6457374-773D-4D5C-8E9E-39B6E93E7EFD-
-b48381B91-1051-438F-8D9B-5127DDF2CCD2
-
-CCompileC build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/UIWebViewExtension.o /Users/vpease/Documents/instructor/platforms/ios/Profesor/Plugins/com.ionic.keyboard/UIWebViewExtension.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s431741649.428855
-e431741649.544991
-r1
-xCompileC
-xbuild/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/UIWebViewExtension.o
-x/Users/vpease/Documents/instructor/platforms/ios/Profesor/Plugins/com.ionic.keyboard/UIWebViewExtension.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.llvm.clang.1_0.compiler
-d/Users/vpease/Documents/instructor/platforms/ios/Profesor/Plugins/com.ionic.keyboard/UIWebViewExtension.m
-d/Users/vpease/Documents/instructor/platforms/ios/Profesor/Plugins/com.ionic.keyboard/UIWebViewExtension.h
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection113"Compile /Users/vpease/Documents/instructor/platforms/ios/Profesor/Plugins/com.ionic.keyboard/UIWebViewExtension.m232"CompileC build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/UIWebViewExtension.o Profesor/Plugins/com.ionic.keyboard/UIWebViewExtension.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler9d106ed1dabbb941^eb8c8bd1dabbb941^---0#0#1#-19%DVTDocumentLocation2@112"file:///Users/vpease/Documents/instructor/platforms/ios/Profesor/Plugins/com.ionic.keyboard/UIWebViewExtension.m0000000000000000^4044"CompileC build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/UIWebViewExtension.o Profesor/Plugins/com.ionic.keyboard/UIWebViewExtension.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/vpease/Documents/instructor/platforms/ios    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/libs/android-sdk-mac_x86/platform-tools:/libs/android-sdk-mac_x86/tools:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Applications/Server.app/Contents/ServerRoot/usr/bin:/Applications/Server.app/Contents/ServerRoot/usr/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=c99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -fvisibility=hidden -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=6.0 -iquote /Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Profesor-generated-files.hmap -I/Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Profesor-own-target-headers.hmap -I/Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Profesor-all-target-headers.hmap -iquote /Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Profesor-project-headers.hmap -I/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include -I/Users/vpease/Documents/instructor/platforms/ios/build/emulator/usr/local/lib/include -I/Users/vpease/Documents/instructor/platforms/ios/build/UninstalledProducts/include -I/Users/vpease/Documents/instructor/platforms/ios/build/emulator -I/Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/DerivedSources/i386 -I/Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/DerivedSources -F/Users/vpease/Documents/instructor/platforms/ios/build/emulator -include /var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/Profesor-Prefix-bafqxsqjfqwhhfesmrfaqwdlqiez/Profesor-Prefix.pch -MMD -MT dependencies -MF /Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/UIWebViewExtension.d --serialize-diagnostics /Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/UIWebViewExtension.dia -c /Users/vpease/Documents/instructor/platforms/ios/Profesor/Plugins/com.ionic.keyboard/UIWebViewExtension.m -o /Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/UIWebViewExtension.o36"EA188ABF-CA50-457B-951C-CB55508D6CE0-
-b48381B91-1051-438F-8D9B-5127DDF2CCD2
-
-CCompileC build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/main.o /Users/vpease/Documents/instructor/platforms/ios/Profesor/main.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s431741649.382680
-e431741649.422205
-r1
-xCompileC
-xbuild/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/main.o
-x/Users/vpease/Documents/instructor/platforms/ios/Profesor/main.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.llvm.clang.1_0.compiler
-d/Users/vpease/Documents/instructor/platforms/ios/Profesor/main.m
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection72"Compile /Users/vpease/Documents/instructor/platforms/ios/Profesor/main.m177"CompileC build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/main.o Profesor/main.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler171062d1dabbb941^c8276cd1dabbb941^---0#0#1#-19%DVTDocumentLocation2@71"file:///Users/vpease/Documents/instructor/platforms/ios/Profesor/main.m0000000000000000^3906"CompileC build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/main.o Profesor/main.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/vpease/Documents/instructor/platforms/ios    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/libs/android-sdk-mac_x86/platform-tools:/libs/android-sdk-mac_x86/tools:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Applications/Server.app/Contents/ServerRoot/usr/bin:/Applications/Server.app/Contents/ServerRoot/usr/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=c99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -fvisibility=hidden -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=6.0 -iquote /Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Profesor-generated-files.hmap -I/Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Profesor-own-target-headers.hmap -I/Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Profesor-all-target-headers.hmap -iquote /Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Profesor-project-headers.hmap -I/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include -I/Users/vpease/Documents/instructor/platforms/ios/build/emulator/usr/local/lib/include -I/Users/vpease/Documents/instructor/platforms/ios/build/UninstalledProducts/include -I/Users/vpease/Documents/instructor/platforms/ios/build/emulator -I/Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/DerivedSources/i386 -I/Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/DerivedSources -F/Users/vpease/Documents/instructor/platforms/ios/build/emulator -include /var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/Profesor-Prefix-bafqxsqjfqwhhfesmrfaqwdlqiez/Profesor-Prefix.pch -MMD -MT dependencies -MF /Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/main.d --serialize-diagnostics /Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/main.dia -c /Users/vpease/Documents/instructor/platforms/ios/Profesor/main.m -o /Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/main.o36"EC0261CC-AB74-48F7-BD41-3666FC663861-
-b48381B91-1051-438F-8D9B-5127DDF2CCD2
-
-CCompileXIB /Users/vpease/Documents/instructor/platforms/ios/Profesor/Classes/MainViewController.xib
-s431741619.065522
-e431741648.866772
-r1
-xCompileXIB
-x/Users/vpease/Documents/instructor/platforms/ios/Profesor/Classes/MainViewController.xib
-o2014-09-06 19:14:08.105 Interface Builder Cocoa Touch Tool[3486:303] CFPreferences: user home directory at file:///var/root/Library/Application%20Support/iPhone%20Simulator/User/ is unavailable. User domains will be volatile.
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection98"Compiling /Users/vpease/Documents/instructor/platforms/ios/Profesor/Classes/MainViewController.xib50"CompileXIB Profesor/Classes/MainViewController.xib37df10b3dabbb941^a7e7ddd0dabbb941^-226"2014-09-06 19:14:08.105 Interface Builder Cocoa Touch Tool[3486:303] CFPreferences: user home directory at file:///var/root/Library/Application%20Support/iPhone%20Simulator/User/ is unavailable. User domains will be volatile.-0#0#1#-19%DVTDocumentLocation2@95"file:///Users/vpease/Documents/instructor/platforms/ios/Profesor/Classes/MainViewController.xib0000000000000000^1104"CompileXIB Profesor/Classes/MainViewController.xib    cd /Users/vpease/Documents/instructor/platforms/ios    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/libs/android-sdk-mac_x86/platform-tools:/libs/android-sdk-mac_x86/tools:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Applications/Server.app/Contents/ServerRoot/usr/bin:/Applications/Server.app/Contents/ServerRoot/usr/sbin"    export XCODE_DEVELOPER_USR_PATH=/Applications/Xcode.app/Contents/Developer/usr/bin/..    /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/ibtool --errors --warnings --notices --minimum-deployment-target 6.0 --output-format human-readable-text --compile /Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app/MainViewController.nib /Users/vpease/Documents/instructor/platforms/ios/Profesor/Classes/MainViewController.xib36"BE049230-028B-48B9-8E66-C869FBEB6777-
-b48381B91-1051-438F-8D9B-5127DDF2CCD2
-
-CCopyStringsFile /Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app/de.lproj/Localizable.strings Profesor/Resources/de.lproj/Localizable.strings
-s431741619.068656
-e431741619.070399
-r1
-xCopyStringsFile
-x/Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app/de.lproj/Localizable.strings
-xProfesor/Resources/de.lproj/Localizable.strings
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection52"Copy Profesor/Resources/de.lproj/Localizable.strings120"CopyStringsFile build/emulator/Profesor.app/de.lproj/Localizable.strings Profesor/Resources/de.lproj/Localizable.stringsc1ab11b3dabbb941^180812b3dabbb941^---0#0#1#-19%DVTDocumentLocation2@103"file:///Users/vpease/Documents/instructor/platforms/ios/Profesor/Resources/de.lproj/Localizable.strings0000000000000000^907"CopyStringsFile build/emulator/Profesor.app/de.lproj/Localizable.strings Profesor/Resources/de.lproj/Localizable.strings    cd /Users/vpease/Documents/instructor/platforms/ios    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/libs/android-sdk-mac_x86/platform-tools:/libs/android-sdk-mac_x86/tools:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Applications/Server.app/Contents/ServerRoot/usr/bin:/Applications/Server.app/Contents/ServerRoot/usr/sbin"    builtin-copyStrings --validate --inputencoding utf-8 --outputencoding binary --outdir /Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app/de.lproj -- Profesor/Resources/de.lproj/Localizable.strings36"B893B942-4A72-4A50-918D-526B79D9422F-
-b48381B91-1051-438F-8D9B-5127DDF2CCD2
-
-CCopyStringsFile /Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app/en.lproj/Localizable.strings Profesor/Resources/en.lproj/Localizable.strings
-s431741619.064571
-e431741619.067816
-r1
-xCopyStringsFile
-x/Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app/en.lproj/Localizable.strings
-xProfesor/Resources/en.lproj/Localizable.strings
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection52"Copy Profesor/Resources/en.lproj/Localizable.strings120"CopyStringsFile build/emulator/Profesor.app/en.lproj/Localizable.strings Profesor/Resources/en.lproj/Localizable.strings87a610b3dabbb941^f96411b3dabbb941^---0#0#1#-19%DVTDocumentLocation2@103"file:///Users/vpease/Documents/instructor/platforms/ios/Profesor/Resources/en.lproj/Localizable.strings0000000000000000^907"CopyStringsFile build/emulator/Profesor.app/en.lproj/Localizable.strings Profesor/Resources/en.lproj/Localizable.strings    cd /Users/vpease/Documents/instructor/platforms/ios    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/libs/android-sdk-mac_x86/platform-tools:/libs/android-sdk-mac_x86/tools:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Applications/Server.app/Contents/ServerRoot/usr/bin:/Applications/Server.app/Contents/ServerRoot/usr/sbin"    builtin-copyStrings --validate --inputencoding utf-8 --outputencoding binary --outdir /Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app/en.lproj -- Profesor/Resources/en.lproj/Localizable.strings36"A29E658A-5399-4EC6-BD1C-3BA9DDAAA2C1-
-b48381B91-1051-438F-8D9B-5127DDF2CCD2
-
-CCpResource Profesor/Resources/icons/icon-40.png build/emulator/Profesor.app/icon-40.png
-s431742545.057416
-e431742545.059411
-r1
-xCpResource
-xProfesor/Resources/icons/icon-40.png
-xbuild/emulator/Profesor.app/icon-40.png
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection44"Copy build/emulator/Profesor.app/icon-40.png87"CpResource Profesor/Resources/icons/icon-40.png build/emulator/Profesor.app/icon-40.png9fcd0e51debbb941^71380f51debbb941^---0#0#1#-19%DVTDocumentLocation2@95"file:///Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app/icon-40.png0000000000000000^922"CpResource Profesor/Resources/icons/icon-40.png build/emulator/Profesor.app/icon-40.png    cd /Users/vpease/Documents/instructor/platforms/ios    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/libs/android-sdk-mac_x86/platform-tools:/libs/android-sdk-mac_x86/tools:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Applications/Server.app/Contents/ServerRoot/usr/bin:/Applications/Server.app/Contents/ServerRoot/usr/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/vpease/Documents/instructor/platforms/ios/Profesor/Resources/icons/icon-40.png /Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app36"645D25B8-C3E0-413B-AFAA-F61086FA0084-
-b5081172C-91B6-4577-86C2-DE825205BB4F
-
-CCpResource Profesor/Resources/icons/icon-40@2x.png build/emulator/Profesor.app/icon-40@2x.png
-s431742545.048990
-e431742545.051020
-r1
-xCpResource
-xProfesor/Resources/icons/icon-40@2x.png
-xbuild/emulator/Profesor.app/icon-40@2x.png
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection47"Copy build/emulator/Profesor.app/icon-40@2x.png93"CpResource Profesor/Resources/icons/icon-40@2x.png build/emulator/Profesor.app/icon-40@2x.png3d9c0c51debbb941^0a100d51debbb941^---0#0#1#-19%DVTDocumentLocation2@98"file:///Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app/icon-40@2x.png0000000000000000^931"CpResource Profesor/Resources/icons/icon-40@2x.png build/emulator/Profesor.app/icon-40@2x.png    cd /Users/vpease/Documents/instructor/platforms/ios    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/libs/android-sdk-mac_x86/platform-tools:/libs/android-sdk-mac_x86/tools:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Applications/Server.app/Contents/ServerRoot/usr/bin:/Applications/Server.app/Contents/ServerRoot/usr/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/vpease/Documents/instructor/platforms/ios/Profesor/Resources/icons/icon-40@2x.png /Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app36"A84BC0D4-72F3-4AE6-B55F-48300350CC69-
-b5081172C-91B6-4577-86C2-DE825205BB4F
-
-CCpResource Profesor/Resources/icons/icon-50.png build/emulator/Profesor.app/icon-50.png
-s431742545.053326
-e431742545.057429
-r1
-xCpResource
-xProfesor/Resources/icons/icon-50.png
-xbuild/emulator/Profesor.app/icon-50.png
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection44"Copy build/emulator/Profesor.app/icon-50.png87"CpResource Profesor/Resources/icons/icon-50.png build/emulator/Profesor.app/icon-50.pnge4f80d51debbb941^56d20e51debbb941^---0#0#1#-19%DVTDocumentLocation2@95"file:///Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app/icon-50.png0000000000000000^922"CpResource Profesor/Resources/icons/icon-50.png build/emulator/Profesor.app/icon-50.png    cd /Users/vpease/Documents/instructor/platforms/ios    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/libs/android-sdk-mac_x86/platform-tools:/libs/android-sdk-mac_x86/tools:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Applications/Server.app/Contents/ServerRoot/usr/bin:/Applications/Server.app/Contents/ServerRoot/usr/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/vpease/Documents/instructor/platforms/ios/Profesor/Resources/icons/icon-50.png /Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app36"62B126AB-C249-4AE2-8FF7-CFD4B747DDF4-
-b5081172C-91B6-4577-86C2-DE825205BB4F
-
-CCpResource Profesor/Resources/icons/icon-50@2x.png build/emulator/Profesor.app/icon-50@2x.png
-s431742545.059110
-e431742545.061385
-r1
-xCpResource
-xProfesor/Resources/icons/icon-50@2x.png
-xbuild/emulator/Profesor.app/icon-50@2x.png
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection47"Copy build/emulator/Profesor.app/icon-50@2x.png93"CpResource Profesor/Resources/icons/icon-50@2x.png build/emulator/Profesor.app/icon-50@2x.png1d3c0f51debbb941^cdc90f51debbb941^---0#0#1#-19%DVTDocumentLocation2@98"file:///Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app/icon-50@2x.png0000000000000000^931"CpResource Profesor/Resources/icons/icon-50@2x.png build/emulator/Profesor.app/icon-50@2x.png    cd /Users/vpease/Documents/instructor/platforms/ios    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/libs/android-sdk-mac_x86/platform-tools:/libs/android-sdk-mac_x86/tools:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Applications/Server.app/Contents/ServerRoot/usr/bin:/Applications/Server.app/Contents/ServerRoot/usr/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/vpease/Documents/instructor/platforms/ios/Profesor/Resources/icons/icon-50@2x.png /Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app36"8D38366C-6179-4569-A4C7-0BE65951B899-
-b5081172C-91B6-4577-86C2-DE825205BB4F
-
-CCpResource Profesor/Resources/icons/icon-60.png build/emulator/Profesor.app/icon-60.png
-s431742545.058068
-e431742545.061392
-r1
-xCpResource
-xProfesor/Resources/icons/icon-60.png
-xbuild/emulator/Profesor.app/icon-60.png
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection44"Copy build/emulator/Profesor.app/icon-60.png87"CpResource Profesor/Resources/icons/icon-60.png build/emulator/Profesor.app/icon-60.png54010f51debbb941^8acd0f51debbb941^---0#0#1#-19%DVTDocumentLocation2@95"file:///Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app/icon-60.png0000000000000000^922"CpResource Profesor/Resources/icons/icon-60.png build/emulator/Profesor.app/icon-60.png    cd /Users/vpease/Documents/instructor/platforms/ios    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/libs/android-sdk-mac_x86/platform-tools:/libs/android-sdk-mac_x86/tools:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Applications/Server.app/Contents/ServerRoot/usr/bin:/Applications/Server.app/Contents/ServerRoot/usr/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/vpease/Documents/instructor/platforms/ios/Profesor/Resources/icons/icon-60.png /Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app36"C593ADF0-6F08-4669-88B9-50E47F59EA0D-
-b5081172C-91B6-4577-86C2-DE825205BB4F
-
-CCpResource Profesor/Resources/icons/icon-60@2x.png build/emulator/Profesor.app/icon-60@2x.png
-s431742545.053409
-e431742545.057050
-r1
-xCpResource
-xProfesor/Resources/icons/icon-60@2x.png
-xbuild/emulator/Profesor.app/icon-60@2x.png
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection47"Copy build/emulator/Profesor.app/icon-60@2x.png93"CpResource Profesor/Resources/icons/icon-60@2x.png build/emulator/Profesor.app/icon-60@2x.pngc8060e51debbb941^bda70e51debbb941^---0#0#1#-19%DVTDocumentLocation2@98"file:///Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app/icon-60@2x.png0000000000000000^931"CpResource Profesor/Resources/icons/icon-60@2x.png build/emulator/Profesor.app/icon-60@2x.png    cd /Users/vpease/Documents/instructor/platforms/ios    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/libs/android-sdk-mac_x86/platform-tools:/libs/android-sdk-mac_x86/tools:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Applications/Server.app/Contents/ServerRoot/usr/bin:/Applications/Server.app/Contents/ServerRoot/usr/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/vpease/Documents/instructor/platforms/ios/Profesor/Resources/icons/icon-60@2x.png /Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app36"1E2BFA7B-F73E-4865-B08C-6EFDDE11C25D-
-b5081172C-91B6-4577-86C2-DE825205BB4F
-
-CCpResource Profesor/Resources/icons/icon-72.png build/emulator/Profesor.app/icon-72.png
-s431742545.049449
-e431742545.051882
-r1
-xCpResource
-xProfesor/Resources/icons/icon-72.png
-xbuild/emulator/Profesor.app/icon-72.png
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection44"Copy build/emulator/Profesor.app/icon-72.png87"CpResource Profesor/Resources/icons/icon-72.png build/emulator/Profesor.app/icon-72.pngf0c00c51debbb941^d8490d51debbb941^---0#0#1#-19%DVTDocumentLocation2@95"file:///Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app/icon-72.png0000000000000000^922"CpResource Profesor/Resources/icons/icon-72.png build/emulator/Profesor.app/icon-72.png    cd /Users/vpease/Documents/instructor/platforms/ios    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/libs/android-sdk-mac_x86/platform-tools:/libs/android-sdk-mac_x86/tools:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Applications/Server.app/Contents/ServerRoot/usr/bin:/Applications/Server.app/Contents/ServerRoot/usr/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/vpease/Documents/instructor/platforms/ios/Profesor/Resources/icons/icon-72.png /Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app36"506A9EB9-BCAA-469F-8806-D343AB3B6B2E-
-b5081172C-91B6-4577-86C2-DE825205BB4F
-
-CCpResource Profesor/Resources/icons/icon-72@2x.png build/emulator/Profesor.app/icon-72@2x.png
-s431742545.061123
-e431742545.062995
-r1
-xCpResource
-xProfesor/Resources/icons/icon-72@2x.png
-xbuild/emulator/Profesor.app/icon-72@2x.png
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection47"Copy build/emulator/Profesor.app/icon-72@2x.png93"CpResource Profesor/Resources/icons/icon-72@2x.png build/emulator/Profesor.app/icon-72@2x.pnge4c00f51debbb941^9d2d1051debbb941^---0#0#1#-19%DVTDocumentLocation2@98"file:///Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app/icon-72@2x.png0000000000000000^931"CpResource Profesor/Resources/icons/icon-72@2x.png build/emulator/Profesor.app/icon-72@2x.png    cd /Users/vpease/Documents/instructor/platforms/ios    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/libs/android-sdk-mac_x86/platform-tools:/libs/android-sdk-mac_x86/tools:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Applications/Server.app/Contents/ServerRoot/usr/bin:/Applications/Server.app/Contents/ServerRoot/usr/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/vpease/Documents/instructor/platforms/ios/Profesor/Resources/icons/icon-72@2x.png /Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app36"214BE15C-C77C-4087-B55D-3BDDADA4CCB5-
-b5081172C-91B6-4577-86C2-DE825205BB4F
-
-CCpResource Profesor/Resources/icons/icon-76.png build/emulator/Profesor.app/icon-76.png
-s431742545.048831
-e431742545.052131
-r1
-xCpResource
-xProfesor/Resources/icons/icon-76.png
-xbuild/emulator/Profesor.app/icon-76.png
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection44"Copy build/emulator/Profesor.app/icon-76.png87"CpResource Profesor/Resources/icons/icon-76.png build/emulator/Profesor.app/icon-76.png679a0c51debbb941^e4840d51debbb941^---0#0#1#-19%DVTDocumentLocation2@95"file:///Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app/icon-76.png0000000000000000^922"CpResource Profesor/Resources/icons/icon-76.png build/emulator/Profesor.app/icon-76.png    cd /Users/vpease/Documents/instructor/platforms/ios    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/libs/android-sdk-mac_x86/platform-tools:/libs/android-sdk-mac_x86/tools:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Applications/Server.app/Contents/ServerRoot/usr/bin:/Applications/Server.app/Contents/ServerRoot/usr/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/vpease/Documents/instructor/platforms/ios/Profesor/Resources/icons/icon-76.png /Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app36"F9565CBB-EE6E-4C30-86BB-94091986C483-
-b5081172C-91B6-4577-86C2-DE825205BB4F
-
-CCpResource Profesor/Resources/icons/icon-76@2x.png build/emulator/Profesor.app/icon-76@2x.png
-s431742545.059398
-e431742545.062213
-r1
-xCpResource
-xProfesor/Resources/icons/icon-76@2x.png
-xbuild/emulator/Profesor.app/icon-76@2x.png
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection47"Copy build/emulator/Profesor.app/icon-76@2x.png93"CpResource Profesor/Resources/icons/icon-76@2x.png build/emulator/Profesor.app/icon-76@2x.pngbe4d0f51debbb941^1d011051debbb941^---0#0#1#-19%DVTDocumentLocation2@98"file:///Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app/icon-76@2x.png0000000000000000^931"CpResource Profesor/Resources/icons/icon-76@2x.png build/emulator/Profesor.app/icon-76@2x.png    cd /Users/vpease/Documents/instructor/platforms/ios    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/libs/android-sdk-mac_x86/platform-tools:/libs/android-sdk-mac_x86/tools:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Applications/Server.app/Contents/ServerRoot/usr/bin:/Applications/Server.app/Contents/ServerRoot/usr/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/vpease/Documents/instructor/platforms/ios/Profesor/Resources/icons/icon-76@2x.png /Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app36"4A794E7B-9759-48B6-BAA1-F2267544CF7F-
-b5081172C-91B6-4577-86C2-DE825205BB4F
-
-CCpResource Profesor/Resources/icons/icon-small.png build/emulator/Profesor.app/icon-small.png
-s431742545.053991
-e431742545.057360
-r1
-xCpResource
-xProfesor/Resources/icons/icon-small.png
-xbuild/emulator/Profesor.app/icon-small.png
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection47"Copy build/emulator/Profesor.app/icon-small.png93"CpResource Profesor/Resources/icons/icon-small.png build/emulator/Profesor.app/icon-small.png8ee90d51debbb941^b0aa0e51debbb941^---0#0#1#-19%DVTDocumentLocation2@98"file:///Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app/icon-small.png0000000000000000^931"CpResource Profesor/Resources/icons/icon-small.png build/emulator/Profesor.app/icon-small.png    cd /Users/vpease/Documents/instructor/platforms/ios    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/libs/android-sdk-mac_x86/platform-tools:/libs/android-sdk-mac_x86/tools:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Applications/Server.app/Contents/ServerRoot/usr/bin:/Applications/Server.app/Contents/ServerRoot/usr/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/vpease/Documents/instructor/platforms/ios/Profesor/Resources/icons/icon-small.png /Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app36"0C4A2A95-123C-4264-8837-7450DA93BBD5-
-b5081172C-91B6-4577-86C2-DE825205BB4F
-
-CCpResource Profesor/Resources/icons/icon-small@2x.png build/emulator/Profesor.app/icon-small@2x.png
-s431742545.055076
-e431742545.057008
-r1
-xCpResource
-xProfesor/Resources/icons/icon-small@2x.png
-xbuild/emulator/Profesor.app/icon-small@2x.png
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection50"Copy build/emulator/Profesor.app/icon-small@2x.png99"CpResource Profesor/Resources/icons/icon-small@2x.png build/emulator/Profesor.app/icon-small@2x.pngb9340e51debbb941^cfa30e51debbb941^---0#0#1#-19%DVTDocumentLocation2@101"file:///Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app/icon-small@2x.png0000000000000000^940"CpResource Profesor/Resources/icons/icon-small@2x.png build/emulator/Profesor.app/icon-small@2x.png    cd /Users/vpease/Documents/instructor/platforms/ios    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/libs/android-sdk-mac_x86/platform-tools:/libs/android-sdk-mac_x86/tools:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Applications/Server.app/Contents/ServerRoot/usr/bin:/Applications/Server.app/Contents/ServerRoot/usr/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/vpease/Documents/instructor/platforms/ios/Profesor/Resources/icons/icon-small@2x.png /Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app36"95A7CA40-E2B3-4EB2-A87C-E23C9DCCCA06-
-b5081172C-91B6-4577-86C2-DE825205BB4F
-
-CCpResource Profesor/Resources/icons/icon.png build/emulator/Profesor.app/icon.png
-s431742545.049946
-e431742545.051887
-r1
-xCpResource
-xProfesor/Resources/icons/icon.png
-xbuild/emulator/Profesor.app/icon.png
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection41"Copy build/emulator/Profesor.app/icon.png81"CpResource Profesor/Resources/icons/icon.png build/emulator/Profesor.app/icon.pngcae00c51debbb941^d74d0d51debbb941^---0#0#1#-19%DVTDocumentLocation2@92"file:///Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app/icon.png0000000000000000^913"CpResource Profesor/Resources/icons/icon.png build/emulator/Profesor.app/icon.png    cd /Users/vpease/Documents/instructor/platforms/ios    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/libs/android-sdk-mac_x86/platform-tools:/libs/android-sdk-mac_x86/tools:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Applications/Server.app/Contents/ServerRoot/usr/bin:/Applications/Server.app/Contents/ServerRoot/usr/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/vpease/Documents/instructor/platforms/ios/Profesor/Resources/icons/icon.png /Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app36"192994DD-3494-40B5-B439-180270D9C239-
-b5081172C-91B6-4577-86C2-DE825205BB4F
-
-CCpResource Profesor/Resources/icons/icon@2x.png build/emulator/Profesor.app/icon@2x.png
-s431742545.051510
-e431742545.054837
-r1
-xCpResource
-xProfesor/Resources/icons/icon@2x.png
-xbuild/emulator/Profesor.app/icon@2x.png
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection44"Copy build/emulator/Profesor.app/icon@2x.png87"CpResource Profesor/Resources/icons/icon@2x.png build/emulator/Profesor.app/icon@2x.png4c710d51debbb941^6a180e51debbb941^---0#0#1#-19%DVTDocumentLocation2@95"file:///Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app/icon@2x.png0000000000000000^922"CpResource Profesor/Resources/icons/icon@2x.png build/emulator/Profesor.app/icon@2x.png    cd /Users/vpease/Documents/instructor/platforms/ios    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/libs/android-sdk-mac_x86/platform-tools:/libs/android-sdk-mac_x86/tools:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Applications/Server.app/Contents/ServerRoot/usr/bin:/Applications/Server.app/Contents/ServerRoot/usr/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/vpease/Documents/instructor/platforms/ios/Profesor/Resources/icons/icon@2x.png /Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app36"939C08A8-B3A1-4748-AE92-8A6F9852A099-
-b5081172C-91B6-4577-86C2-DE825205BB4F
-
-CCpResource Profesor/Resources/splash/Default-568h@2x~iphone.png build/emulator/Profesor.app/Default-568h@2x~iphone.png
-s431741619.078267
-e431741619.081606
-r1
-xCpResource
-xProfesor/Resources/splash/Default-568h@2x~iphone.png
-xbuild/emulator/Profesor.app/Default-568h@2x~iphone.png
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection59"Copy build/emulator/Profesor.app/Default-568h@2x~iphone.png118"CpResource Profesor/Resources/splash/Default-568h@2x~iphone.png build/emulator/Profesor.app/Default-568h@2x~iphone.pnge22114b3dabbb941^87a214b3dabbb941^---0#0#1#-19%DVTDocumentLocation2@110"file:///Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app/Default-568h@2x~iphone.png00341cc0ddffdf42^969"CpResource Profesor/Resources/splash/Default-568h@2x~iphone.png build/emulator/Profesor.app/Default-568h@2x~iphone.png    cd /Users/vpease/Documents/instructor/platforms/ios    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/libs/android-sdk-mac_x86/platform-tools:/libs/android-sdk-mac_x86/tools:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Applications/Server.app/Contents/ServerRoot/usr/bin:/Applications/Server.app/Contents/ServerRoot/usr/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/vpease/Documents/instructor/platforms/ios/Profesor/Resources/splash/Default-568h@2x~iphone.png /Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app36"8697D8AB-FC32-4A49-BEFC-FA9B35CCB9C5-
-b48381B91-1051-438F-8D9B-5127DDF2CCD2
-
-CCpResource Profesor/Resources/splash/Default-Landscape@2x~ipad.png build/emulator/Profesor.app/Default-Landscape@2x~ipad.png
-s431741619.070665
-e431741619.072698
-r1
-xCpResource
-xProfesor/Resources/splash/Default-Landscape@2x~ipad.png
-xbuild/emulator/Profesor.app/Default-Landscape@2x~ipad.png
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection62"Copy build/emulator/Profesor.app/Default-Landscape@2x~ipad.png124"CpResource Profesor/Resources/splash/Default-Landscape@2x~ipad.png build/emulator/Profesor.app/Default-Landscape@2x~ipad.png8b3312b3dabbb941^739d12b3dabbb941^---0#0#1#-19%DVTDocumentLocation2@113"file:///Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app/Default-Landscape@2x~ipad.png00341cc0ddffdf42^978"CpResource Profesor/Resources/splash/Default-Landscape@2x~ipad.png build/emulator/Profesor.app/Default-Landscape@2x~ipad.png    cd /Users/vpease/Documents/instructor/platforms/ios    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/libs/android-sdk-mac_x86/platform-tools:/libs/android-sdk-mac_x86/tools:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Applications/Server.app/Contents/ServerRoot/usr/bin:/Applications/Server.app/Contents/ServerRoot/usr/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/vpease/Documents/instructor/platforms/ios/Profesor/Resources/splash/Default-Landscape@2x~ipad.png /Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app36"DF09F163-DC76-4DAD-9D22-0E094AF037F4-
-b48381B91-1051-438F-8D9B-5127DDF2CCD2
-
-CCpResource Profesor/Resources/splash/Default-Landscape~ipad.png build/emulator/Profesor.app/Default-Landscape~ipad.png
-s431741619.072183
-e431741619.073638
-r1
-xCpResource
-xProfesor/Resources/splash/Default-Landscape~ipad.png
-xbuild/emulator/Profesor.app/Default-Landscape~ipad.png
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection59"Copy build/emulator/Profesor.app/Default-Landscape~ipad.png118"CpResource Profesor/Resources/splash/Default-Landscape~ipad.png build/emulator/Profesor.app/Default-Landscape~ipad.png7d9312b3dabbb941^dcda12b3dabbb941^---0#0#1#-19%DVTDocumentLocation2@110"file:///Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app/Default-Landscape~ipad.png00341cc0ddffdf42^969"CpResource Profesor/Resources/splash/Default-Landscape~ipad.png build/emulator/Profesor.app/Default-Landscape~ipad.png    cd /Users/vpease/Documents/instructor/platforms/ios    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/libs/android-sdk-mac_x86/platform-tools:/libs/android-sdk-mac_x86/tools:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Applications/Server.app/Contents/ServerRoot/usr/bin:/Applications/Server.app/Contents/ServerRoot/usr/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/vpease/Documents/instructor/platforms/ios/Profesor/Resources/splash/Default-Landscape~ipad.png /Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app36"14BD3A1D-2418-41C9-ABF1-AC1207654061-
-b48381B91-1051-438F-8D9B-5127DDF2CCD2
-
-CCpResource Profesor/Resources/splash/Default-Portrait@2x~ipad.png build/emulator/Profesor.app/Default-Portrait@2x~ipad.png
-s431741619.072513
-e431741619.075276
-r1
-xCpResource
-xProfesor/Resources/splash/Default-Portrait@2x~ipad.png
-xbuild/emulator/Profesor.app/Default-Portrait@2x~ipad.png
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection61"Copy build/emulator/Profesor.app/Default-Portrait@2x~ipad.png122"CpResource Profesor/Resources/splash/Default-Portrait@2x~ipad.png build/emulator/Profesor.app/Default-Portrait@2x~ipad.png53ea12b3dabbb941^994613b3dabbb941^---0#0#1#-19%DVTDocumentLocation2@112"file:///Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app/Default-Portrait@2x~ipad.png00341cc0ddffdf42^975"CpResource Profesor/Resources/splash/Default-Portrait@2x~ipad.png build/emulator/Profesor.app/Default-Portrait@2x~ipad.png    cd /Users/vpease/Documents/instructor/platforms/ios    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/libs/android-sdk-mac_x86/platform-tools:/libs/android-sdk-mac_x86/tools:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Applications/Server.app/Contents/ServerRoot/usr/bin:/Applications/Server.app/Contents/ServerRoot/usr/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/vpease/Documents/instructor/platforms/ios/Profesor/Resources/splash/Default-Portrait@2x~ipad.png /Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app36"EF4B1AC0-D97C-44DC-BD93-24137BC254E9-
-b48381B91-1051-438F-8D9B-5127DDF2CCD2
-
-CCpResource Profesor/Resources/splash/Default-Portrait~ipad.png build/emulator/Profesor.app/Default-Portrait~ipad.png
-s431741619.074473
-e431741619.076136
-r1
-xCpResource
-xProfesor/Resources/splash/Default-Portrait~ipad.png
-xbuild/emulator/Profesor.app/Default-Portrait~ipad.png
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection58"Copy build/emulator/Profesor.app/Default-Portrait~ipad.png116"CpResource Profesor/Resources/splash/Default-Portrait~ipad.png build/emulator/Profesor.app/Default-Portrait~ipad.pngd02613b3dabbb941^6f7e13b3dabbb941^---0#0#1#-19%DVTDocumentLocation2@109"file:///Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app/Default-Portrait~ipad.png00341cc0ddffdf42^966"CpResource Profesor/Resources/splash/Default-Portrait~ipad.png build/emulator/Profesor.app/Default-Portrait~ipad.png    cd /Users/vpease/Documents/instructor/platforms/ios    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/libs/android-sdk-mac_x86/platform-tools:/libs/android-sdk-mac_x86/tools:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Applications/Server.app/Contents/ServerRoot/usr/bin:/Applications/Server.app/Contents/ServerRoot/usr/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/vpease/Documents/instructor/platforms/ios/Profesor/Resources/splash/Default-Portrait~ipad.png /Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app36"21FDC83B-D66D-4DA6-B731-E81CEB698E0F-
-b48381B91-1051-438F-8D9B-5127DDF2CCD2
-
-CCpResource Profesor/Resources/splash/Default@2x~iphone.png build/emulator/Profesor.app/Default@2x~iphone.png
-s431741619.076355
-e431741619.077981
-r1
-xCpResource
-xProfesor/Resources/splash/Default@2x~iphone.png
-xbuild/emulator/Profesor.app/Default@2x~iphone.png
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection54"Copy build/emulator/Profesor.app/Default@2x~iphone.png108"CpResource Profesor/Resources/splash/Default@2x~iphone.png build/emulator/Profesor.app/Default@2x~iphone.png7ea913b3dabbb941^cd0314b3dabbb941^---0#0#1#-19%DVTDocumentLocation2@105"file:///Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app/Default@2x~iphone.png00341cc0ddffdf42^954"CpResource Profesor/Resources/splash/Default@2x~iphone.png build/emulator/Profesor.app/Default@2x~iphone.png    cd /Users/vpease/Documents/instructor/platforms/ios    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/libs/android-sdk-mac_x86/platform-tools:/libs/android-sdk-mac_x86/tools:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Applications/Server.app/Contents/ServerRoot/usr/bin:/Applications/Server.app/Contents/ServerRoot/usr/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/vpease/Documents/instructor/platforms/ios/Profesor/Resources/splash/Default@2x~iphone.png /Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app36"654581BF-A2F5-474E-B26D-B32A6F92AC18-
-b48381B91-1051-438F-8D9B-5127DDF2CCD2
-
-CCpResource Profesor/Resources/splash/Default~iphone.png build/emulator/Profesor.app/Default~iphone.png
-s431741619.077899
-e431741619.080391
-r1
-xCpResource
-xProfesor/Resources/splash/Default~iphone.png
-xbuild/emulator/Profesor.app/Default~iphone.png
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection51"Copy build/emulator/Profesor.app/Default~iphone.png102"CpResource Profesor/Resources/splash/Default~iphone.png build/emulator/Profesor.app/Default~iphone.pngb81f14b3dabbb941^e69014b3dabbb941^---0#0#1#-19%DVTDocumentLocation2@102"file:///Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app/Default~iphone.png00341cc0ddffdf42^945"CpResource Profesor/Resources/splash/Default~iphone.png build/emulator/Profesor.app/Default~iphone.png    cd /Users/vpease/Documents/instructor/platforms/ios    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/libs/android-sdk-mac_x86/platform-tools:/libs/android-sdk-mac_x86/tools:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Applications/Server.app/Contents/ServerRoot/usr/bin:/Applications/Server.app/Contents/ServerRoot/usr/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/vpease/Documents/instructor/platforms/ios/Profesor/Resources/splash/Default~iphone.png /Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app36"0327C64A-8EC6-4C5D-8434-EB24E27057DF-
-b48381B91-1051-438F-8D9B-5127DDF2CCD2
-
-CGenerateDSYMFile /Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app.dSYM /Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app/Profesor
-s431742545.069867
-e431742545.134126
-r1
-xGenerateDSYMFile
-x/Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app.dSYM
-x/Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app/Profesor
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection90"Generate /Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app.dSYM86"GenerateDSYMFile build/emulator/Profesor.app.dSYM build/emulator/Profesor.app/Profesor8cf51151debbb941^cd562251debbb941^---0#0#1#-19%DVTDocumentLocation2@89"file:///Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app.dSYM/0000000000000000^917"GenerateDSYMFile build/emulator/Profesor.app.dSYM build/emulator/Profesor.app/Profesor    cd /Users/vpease/Documents/instructor/platforms/ios    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/libs/android-sdk-mac_x86/platform-tools:/libs/android-sdk-mac_x86/tools:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Applications/Server.app/Contents/ServerRoot/usr/bin:/Applications/Server.app/Contents/ServerRoot/usr/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dsymutil /Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app/Profesor -o /Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app.dSYM36"E70A433E-2569-4D3D-BE48-43A2BC1844FA-
-b5081172C-91B6-4577-86C2-DE825205BB4F
-
-CLd /Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app/Profesor normal i386
-s431741649.849231
-e431741650.070145
-r1
-xLd
-x/Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app/Profesor
-xnormal
-xi386
-d/Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/Profesor.LinkFileList
-d/Users/vpease/Documents/instructor/platforms/ios/build/emulator/libCordova.a
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/crt1.o
-d/Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/main.o
-d/Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/AppDelegate.o
-d/Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/MainViewController.o
-d/Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/IonicKeyboard.o
-d/Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/UIWebViewExtension.o
-d/Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/SQLitePlugin.o
-d/Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/CDVLogger.o
-d/Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/CDVDevice.o
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/UIKit.framework/UIKit
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/AVFoundation.framework/AVFoundation
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/CoreMedia.framework/CoreMedia
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libSystem.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/AssetsLibrary.framework/AssetsLibrary
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/CoreLocation.framework/CoreLocation
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libsqlite3.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/Foundation.framework/Foundation
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libobjc.dylib
-d/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/5.1/lib/darwin/libclang_rt.ios.a
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/AVFoundation.framework/libAVFAudio.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_override.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libcache_sim.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libcommonCrypto_sim.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libcorecrypto_sim.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libcompiler_rt_sim.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libcopyfile_sim.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libdispatch.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libdyld_sim.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libmacho_sim.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libnotify_sim.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libremovefile_sim.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_sim_blocks.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_sim_c.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_sim_dnssd.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_sim_info.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_sim_m.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_network.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libunwind_sim.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libxpc.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_sim_configuration.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_sim_asl.dylib
-d/usr/lib/libSystem.B.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
-d/usr/lib/system/libcache.dylib
-d/usr/lib/system/libcommonCrypto.dylib
-d/usr/lib/system/libcompiler_rt.dylib
-d/usr/lib/system/libcopyfile.dylib
-d/usr/lib/system/libcorecrypto.dylib
-d/usr/lib/system/libdyld.dylib
-d/usr/lib/system/libkeymgr.dylib
-d/usr/lib/system/liblaunch.dylib
-d/usr/lib/system/libmacho.dylib
-d/usr/lib/system/libquarantine.dylib
-d/usr/lib/system/libremovefile.dylib
-d/usr/lib/system/libsystem_asl.dylib
-d/usr/lib/system/libsystem_blocks.dylib
-d/usr/lib/system/libsystem_c.dylib
-d/usr/lib/system/libsystem_configuration.dylib
-d/usr/lib/system/libsystem_coreservices.dylib
-d/usr/lib/system/libsystem_coretls.dylib
-d/usr/lib/system/libsystem_dnssd.dylib
-d/usr/lib/system/libsystem_info.dylib
-d/usr/lib/system/libsystem_kernel.dylib
-d/usr/lib/system/libsystem_m.dylib
-d/usr/lib/system/libsystem_malloc.dylib
-d/usr/lib/system/libsystem_networkextension.dylib
-d/usr/lib/system/libsystem_notify.dylib
-d/usr/lib/system/libsystem_platform.dylib
-d/usr/lib/system/libsystem_pthread.dylib
-d/usr/lib/system/libsystem_sandbox.dylib
-d/usr/lib/system/libsystem_secinit.dylib
-d/usr/lib/system/libsystem_trace.dylib
-d/usr/lib/system/libunc.dylib
-d/usr/lib/system/libunwind.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/host/libdyld.dylib
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection90"Link /Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app/Profesor51"Ld build/emulator/Profesor.app/Profesor normal i386588dd9d1dabbb941^8cf511d2dabbb941^---0#0#1#--1995"Ld build/emulator/Profesor.app/Profesor normal i386    cd /Users/vpease/Documents/instructor/platforms/ios    export IPHONEOS_DEPLOYMENT_TARGET=6.0    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/libs/android-sdk-mac_x86/platform-tools:/libs/android-sdk-mac_x86/tools:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Applications/Server.app/Contents/ServerRoot/usr/bin:/Applications/Server.app/Contents/ServerRoot/usr/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -arch i386 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -L/Users/vpease/Documents/instructor/platforms/ios/build/emulator -F/Users/vpease/Documents/instructor/platforms/ios/build/emulator -filelist /Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/Profesor.LinkFileList -Xlinker -objc_abi_version -Xlinker 2 -weak_framework CoreFoundation -weak_framework UIKit -weak_framework AVFoundation -weak_framework CoreMedia -weak-lSystem -force_load /Users/vpease/Documents/instructor/platforms/ios/build/emulator/libCordova.a -ObjC -fobjc-arc -fobjc-link-runtime -Xlinker -no_implicit_dylibs -mios-simulator-version-min=6.0 -framework AssetsLibrary /Users/vpease/Documents/instructor/platforms/ios/build/emulator/libCordova.a -framework CoreGraphics -framework MobileCoreServices -framework CoreLocation -lsqlite3 -Xlinker -dependency_info -Xlinker /Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Objects-normal/i386/Profesor_dependency_info.dat -o /Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app/Profesor36"535E5F03-4097-40AF-B88A-28DAE13C79CD-
-b48381B91-1051-438F-8D9B-5127DDF2CCD2
-
-CPhaseScriptExecution Copy\ www\ directory /Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Script-304B58A110DAC018002A0835.sh
-s431742544.627717
-e431742545.048204
-r1
-xPhaseScriptExecution
-xCopy www directory
-x/Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Script-304B58A110DAC018002A0835.sh
-o
-oreal	0m0.389s
-ouser	0m0.117s
-osys	0m0.200s
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection44"Run custom shell script 'Copy www directory'134"PhaseScriptExecution Copy\ www\ directory build/Profesor.build/Debug-iphonesimulator/Profesor.build/Script-304B58A110DAC018002A0835.sh5682a150debbb941^e55e0c51debbb941^-42"real	0m0.389suser	0m0.117ssys	0m0.200s3(21%IDEActivityLogMessage2@14"real	0m0.389s-431742545#1#14#-0#-----2@14"user	0m0.117s-431742545#15#14#-0#-----2@13"sys	0m0.200s-431742545#29#13#-0#-----0#0#1#--348"PhaseScriptExecution Copy\ www\ directory build/Profesor.build/Debug-iphonesimulator/Profesor.build/Script-304B58A110DAC018002A0835.sh    cd /Users/vpease/Documents/instructor/platforms/ios    /bin/sh -c /Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Script-304B58A110DAC018002A0835.sh36"6AAE3B3B-5DB4-4C0C-8F66-008921BC971D-
-b5081172C-91B6-4577-86C2-DE825205BB4F
-
-CProcessInfoPlistFile /Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app/Info.plist /Users/vpease/Documents/instructor/platforms/ios/Profesor/Profesor-Info.plist
-s431742544.621176
-e431742544.625674
-r1
-xProcessInfoPlistFile
-x/Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app/Info.plist
-x/Users/vpease/Documents/instructor/platforms/ios/Profesor/Profesor-Info.plist
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection85"Process /Users/vpease/Documents/instructor/platforms/ios/Profesor/Profesor-Info.plist88"ProcessInfoPlistFile build/emulator/Profesor.app/Info.plist Profesor/Profesor-Info.plist971c9f50debbb941^2236a050debbb941^---0#0#1#-19%DVTDocumentLocation2@84"file:///Users/vpease/Documents/instructor/platforms/ios/Profesor/Profesor-Info.plist0000000000000000^1005"ProcessInfoPlistFile build/emulator/Profesor.app/Info.plist Profesor/Profesor-Info.plist    cd /Users/vpease/Documents/instructor/platforms/ios    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/libs/android-sdk-mac_x86/platform-tools:/libs/android-sdk-mac_x86/tools:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Applications/Server.app/Contents/ServerRoot/usr/bin:/Applications/Server.app/Contents/ServerRoot/usr/sbin"    builtin-infoPlistUtility /Users/vpease/Documents/instructor/platforms/ios/Profesor/Profesor-Info.plist -genpkginfo /Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -o /Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app/Info.plist36"7270F45D-D125-44F1-B846-B85A1F131A17-
-b5081172C-91B6-4577-86C2-DE825205BB4F
-
-CProcessPCH /var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/Profesor-Prefix-bafqxsqjfqwhhfesmrfaqwdlqiez/Profesor-Prefix.pch.pch Profesor/Profesor-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s431741648.868260
-e431741649.380790
-r1
-xProcessPCH
-x/var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/Profesor-Prefix-bafqxsqjfqwhhfesmrfaqwdlqiez/Profesor-Prefix.pch.pch
-xProfesor/Profesor-Prefix.pch
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.llvm.clang.1_0.compiler
-d/Users/vpease/Documents/instructor/platforms/ios/Profesor/Profesor-Prefix.pch
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection39"Precompile Profesor/Profesor-Prefix.pch294"ProcessPCH /var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/Profesor-Prefix-bafqxsqjfqwhhfesmrfaqwdlqiez/Profesor-Prefix.pch.pch Profesor/Profesor-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler7572ded0dabbb941^1c7c61d1dabbb941^---0#0#1#-19%DVTDocumentLocation2@84"file:///Users/vpease/Documents/instructor/platforms/ios/Profesor/Profesor-Prefix.pch0000000000000000^4006"ProcessPCH /var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/Profesor-Prefix-bafqxsqjfqwhhfesmrfaqwdlqiez/Profesor-Prefix.pch.pch Profesor/Profesor-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/vpease/Documents/instructor/platforms/ios    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/libs/android-sdk-mac_x86/platform-tools:/libs/android-sdk-mac_x86/tools:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Applications/Server.app/Contents/ServerRoot/usr/bin:/Applications/Server.app/Contents/ServerRoot/usr/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c-header -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=c99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -fvisibility=hidden -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=6.0 -iquote /Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Profesor-generated-files.hmap -I/Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Profesor-own-target-headers.hmap -I/Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Profesor-all-target-headers.hmap -iquote /Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/Profesor-project-headers.hmap -I/Users/vpease/Documents/instructor/platforms/ios/build/emulator/include -I/Users/vpease/Documents/instructor/platforms/ios/build/emulator/usr/local/lib/include -I/Users/vpease/Documents/instructor/platforms/ios/build/UninstalledProducts/include -I/Users/vpease/Documents/instructor/platforms/ios/build/emulator -I/Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/DerivedSources/i386 -I/Users/vpease/Documents/instructor/platforms/ios/build/Profesor.build/Debug-iphonesimulator/Profesor.build/DerivedSources -F/Users/vpease/Documents/instructor/platforms/ios/build/emulator --serialize-diagnostics /var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/Profesor-Prefix-bafqxsqjfqwhhfesmrfaqwdlqiez/Profesor-Prefix.pch.dia -MMD -MT dependencies -MF /var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/Profesor-Prefix-bafqxsqjfqwhhfesmrfaqwdlqiez/Profesor-Prefix.pch.d -c /Users/vpease/Documents/instructor/platforms/ios/Profesor/Profesor-Prefix.pch -o /var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders/Profesor-Prefix-bafqxsqjfqwhhfesmrfaqwdlqiez/Profesor-Prefix.pch.pch36"3CB64ACF-EAD3-42AF-B30C-B20083A19098-
-b48381B91-1051-438F-8D9B-5127DDF2CCD2
-
-CTouch /Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app
-s431742545.135683
-e431742545.142116
-r1
-xTouch
-x/Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection82"Touch /Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app33"Touch build/emulator/Profesor.appdcd62251debbb941^fa612451debbb941^---0#0#1#--692"Touch build/emulator/Profesor.app    cd /Users/vpease/Documents/instructor/platforms/ios    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/libs/android-sdk-mac_x86/platform-tools:/libs/android-sdk-mac_x86/tools:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Applications/Server.app/Contents/ServerRoot/usr/bin:/Applications/Server.app/Contents/ServerRoot/usr/sbin"    /usr/bin/touch -c /Users/vpease/Documents/instructor/platforms/ios/build/emulator/Profesor.app36"3A320092-E78D-4B95-80AD-B94A21EDED63-
-b5081172C-91B6-4577-86C2-DE825205BB4F
-

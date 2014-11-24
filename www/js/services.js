@@ -7,9 +7,10 @@ service.factory('estadoFactory',['$http','$state','Consultas',
     function($http,$state,Consultas){
         var self = this;
         var cambiarUser = false;
-        var credenciales = {
+        var credDb = {
             user: '',
-            pass: ''
+            pass: '',
+            fecha:''
         };
         var local = {
             idLocal:'',
@@ -21,7 +22,13 @@ service.factory('estadoFactory',['$http','$state','Consultas',
             nombre: '',
             user: '',
             idLocal:'',
-            pass:''
+            pass:'',
+            fecha:'',
+            fechatran:''
+        };
+        var userDatos = {
+            user:'',
+            fecha:''
         };
         var horario = {
             idHorario: '',
@@ -61,12 +68,52 @@ service.factory('estadoFactory',['$http','$state','Consultas',
         };
         factory.salir = function(){
             Consultas.deleteAll();
-            credenciales.user = '';
-            credenciales.pass = '';
+            this.credenciales.user = '';
+            this.credenciales.pass = '';
+            this.credenciales.fecha = '';
             $state.go('login');
         };
+        factory.getUserDatos = function(){
+            return credDb;
+        };
+        factory.setNoUser = function(pusuario,state){
+            credDb = pusuario;
+            dataOk = !state;
+        };
+        factory.getNoUser = function(){
+            return dataOk;
+        };
         factory.checkData = function(){
-
+            console.log('llamando a Checkdata y getsynced');
+            Consultas.getSynced()
+                .then(function(usuarios){
+                    if (typeof usuarios =='undefined'){
+                        dataOk = false;
+                        console.log('No hay Usuario guardado');
+                    } else {
+                        var tempAr=[];
+                        for(i=0;i< usuarios.length;i++){
+                            var temp = {fecha:'',usuario:''};
+                            temp.fecha = usuarios[i].syncdate;
+                            temp.usuario = usuarios[i].usuario;
+                            tempAr.push(temp);
+                        };
+                        if (tempAr.length>0){
+                            credDb = {
+                                user: tempAr[0].usuario,
+                                fecha: tempAr[0].fecha,
+                                pass: tempAr[0].pass
+                            };
+                            dataOk= true;
+                        } else {
+                            dataOk = false;
+                        }
+                        console.log('Usuario ya guardado');
+                    }
+                });
+            return credDb;
+        };
+        factory.hayData = function () {
             return dataOk;
         };
         factory.checkDataToSend= function(){
@@ -114,137 +161,73 @@ service.factory('estadoFactory',['$http','$state','Consultas',
         factory.login2 = function(puser,ppass){
             var res='';
             var url=server+'/usuario/instructor.json';
-            if (credenciales.user == puser){
-                if (credenciales.pass == ppass){
+            /*if (this.credDb.user == puser){
+                if (this.credDb.pass == ppass){
                     console.log('usuario conocido, que pase');
-                    Consultas.init();
+                    //Consultas.init();
                     res = true;
                     $state.go('data');
                 } else {
-                    alert('Usuario inválido: '+ puser + '/'+ ppass +'vs:'+ credenciales.user +'/'+ credenciales.pass);
+                    alert('Usuario inválido: '+ puser + '/'+ ppass +'vs:'+ this.credenciales.user +'/'+ this.credenciales.pass);
                 };
-            } else {
-                $http({url: url,
-                    method: "GET",
-                    params: {usuario: puser, clave: ppass}})
-                    .success(function (data) {
-                        console.log('Ya llamé a instructor.json');
-                        res = data;
-                        valido = true;
-                        if (res !== '"NO"' && res.length > 0 && res !== '0') {
-                            var result = res.substr(1, res.length - 2).split(":");
-                            usuario = {
-                                idInstructor: '',
-                                idOperador: '',
-                                nombre: '',
-                                user: '',
-                                idLocal: '',
-                                pass: '',
-                                fecha: ''
-                            };
-                            usuario.idInstructor = result[0];
-                            usuario.idOperador = result[1];
-                            usuario.user = result[2];
-                            usuario.nombre = result[3];
-                            usuario.fecha = result[4];
-                            fecha = result[4];
-                            usuario.idLocal = result[5];
-                            console.log('voy a comparar si hay cambio de usuario');
-                            if (credenciales.user != puser) {
-                                console.log('Si hay cambiod de usuario');
-                                cambiarUser = true
-                                credenciales = {
-                                    user: puser,
-                                    pass: ppass
-                                };
-                                Consultas.deleteAll();
-                                console.log('Ya mandé a borrar todo');
-                            } else {
-                                console.log('No hay cambio de usuario');
-                                cambiarUser = false;
-                            }
-                            Consultas.init();
-                            console.log('Ya llame a init y ahora voy por getsynced');
-                            Consultas.getSynced()
-                                .then(function (result) {
-                                    var res = false;
-                                    console.log('getSynced ya se ejecutó');
-                                    if (result.length > 0) res = true;
-                                    else res = false;
-                                    dataOk = res;
-                                    $state.go('data');
-                                });
-                        } else {
-                            alert('Usuario inválido');
-                        };
-                    });
+            } else {*/
+            var pusuario = {
+                idInstructor: '',
+                idOperador: '',
+                nombre: '',
+                user: '',
+                idLocal: '',
+                pass: '',
+                fecha: '',
+                fechatran:''
             };
-            return res;
-        };
-        factory.login = function(puser,ppass){
-            var res='';
-            var url=server+'/usuario/instructor.json';
-            $http({url:url,
-                method:"GET",
-                params:{usuario:puser, clave: ppass}})
-                .success(function(data){
+            $http({url: url,method: "GET",params: {usuario: puser, clave: ppass}})
+                .success(function (data) {
                     console.log('Ya llamé a instructor.json');
                     res = data;
                     valido = true;
-                    if (res !== '"NO"' && res.length > 0 && res!=='0') {
-                        var result = res.substr(1,res.length-2).split(":");
-                        usuario = {
-                            idInstructor:'',
-                            idOperador: '',
-                            nombre: '',
-                            user: '',
-                            idLocal:''
-                        };
-                        usuario.idInstructor = result[0];
-                        usuario.idOperador = result[1];
-                        usuario.user = result[2];
-                        usuario.nombre = result[3];
-                        fecha = result[4];
-                        usuario.idLocal = result[5];
+                    if (res !== '"NO"' && res.length > 0 && res !== '0') {
+                        var result = res.substr(1, res.length - 2).split(":");
+                        pusuario.idInstructor = result[0];
+                        pusuario.idOperador = result[1];
+                        pusuario.user = result[2];
+                        pusuario.nombre = result[3];
+                        pusuario.fecha = result[4];
+                        pusuario.fechatran = result[4];
+                        pusuario.idLocal = result[5];
+                        usuario = pusuario;
                         console.log('voy a comparar si hay cambio de usuario');
-                        if (credenciales.user != puser)
-                        {
-                            console.log('Si hay cambiod de usuario');
+                        if (credDb.user != puser) {
+                            console.log('Si hay cambio de usuario');
                             cambiarUser = true
-                            credenciales = {
+                            credDb = {
                                 user: puser,
-                                pass: ppass
+                                pass: ppass,
+                                fecha: result[4]
                             };
                             Consultas.deleteAll();
                             console.log('Ya mandé a borrar todo');
+                            $state.go('date');
                         } else {
                             console.log('No hay cambio de usuario');
                             cambiarUser = false;
-                        }
-                        Consultas.init();
+                            $state.go('data');
+                        };
                         console.log('Ya llame a init y ahora voy por getsynced');
-                        Consultas.getSynced()
-                            .then(function(result){
-                                var res = false;
-                                console.log('getSynced ya se ejecutó');
-                                if (result.length>0) res = true;
-                                else res = false;
-                                dataOk = res;
-                                $state.go('data');
-                            });
                     } else {
-                        alert('Usuario inválido');
+                        usuario = pusuario;
+                        alert('Usuario inválido: '+ puser + '/'+ ppass);
                     };
                 });
+            //};
             return res;
         };
         factory.getdata = function(){
             var res='';
             var url=server+'/usuario/tablas.json';
-            var pfecha = '2014-11-19';
             $http({url:url,
                 method:"GET",
-                params:{idInstructor:usuario.idInstructor, idLocal: usuario.idLocal, fecha: pfecha}})
+                params:{idInstructor:usuario.idInstructor, idLocal: usuario.idLocal, fecha: usuario.fechatran}})
                 .success(function(data){
                     var horarios = data.Horarios;
                     var alumnos = data.Alumnos;
@@ -273,11 +256,16 @@ service.factory('estadoFactory',['$http','$state','Consultas',
                             valor.nombreValor);
                     });
                     console.log('Ya termine de insertar datos remotos');
-                    Consultas.insSync(pfecha,usuario.user)
+                    Consultas.insSync(usuario.fechatran,usuario.user,usuario.pass)
                         .then(function(result){
                             dataOk = true;
                             dataToSend = true;
                             console.log("Hay datos para envair");
+                            $state.go('horarios');
+                        },function(error){
+                            dataOk = false;
+                            dataToSend = false;
+                            console.log('No hay datos para enviar');
                             $state.go('horarios');
                         });
                 })
@@ -289,7 +277,7 @@ service.factory('estadoFactory',['$http','$state','Consultas',
         factory.dbInit = function() {
             Consultas.init()
                 .then(function(result){
-                    Consultas.getSynced()
+                   /* Consultas.getSynced()
                         .then(function(result){
                             var res = false;
                             if (result.length()>0)
@@ -298,7 +286,7 @@ service.factory('estadoFactory',['$http','$state','Consultas',
                                 res = false;
                             dataOk = res;
                             $state.go('data');
-                        });
+                        });*/
                 });
         };
         factory.query = function(query, bindings){
@@ -347,90 +335,91 @@ service.factory('estadoFactory',['$http','$state','Consultas',
         return factory;
     }]);
 
-service.factory('Consultas', function(DB) {
+service.factory('Consultas', function(DB,$q) {
     var self = this;
     self.init= function(){
         DB.init();
     };
     self.execTx = function(lista){
-        if (DB.db){
-            DB.db.transaction(function(tx){
-                for (var i = 0; i < lista.length; i++){
-                    tx.executeSql(lista[i]),
-                        [],
-                        function(tx,res){
-                            console.log(lista[i]+' exito');
-                        },
-                        function(tx,error){
-                            console.log(lista[i]+' fallo');
-                        };
-                };
-            });
-            console.log('Todos los comandos ejecutados');
+        if (!DB.db) {
+            DB.init();
         }
+        DB.db.transaction(function(tx){
+            for (var i = 0; i < lista.length; i++){
+                tx.executeSql(lista[i]),[],
+                    function(tx,res){
+                        console.log(lista[i]+' exito');
+                    },
+                    function(tx,error){
+                        console.log(lista[i]+' fallo');
+                    };
+            };
+        });
+        console.log('Todos los comandos ejecutados');
     };
     self.deleteAll = function(){
-        if (DB.db) {
-            DB.db.transaction(function(tx){
-                tx.executeSql('drop table asistencia',
-                    [],
-                    function(tx,res){
-                        console.log('asistencia borrado');
-                    },
-                    function(tx,error){
-                        console.log('Error en asistencia:'+error.toString());
-                    });
-                tx.executeSql('drop table horario',
-                    [],
-                    function(tx,res){
-                        console.log('horario borrado');
-                    },
-                    function(tx,error){
-                        console.log('Error en horario:'+error.toString());
-                    });
-                tx.executeSql('drop table alumno',
-                    [],
-                    function(tx,res){
-                        console.log('alumno borrado');
-                    },
-                    function(tx,error){
-                        console.log('Error en alumno:'+error.toString());
-                    });
-                tx.executeSql('drop table valor',
-                    [],
-                    function(tx,res){
-                        console.log('valor borrado');
-                    },
-                    function(tx,error){
-                        console.log('Error en valor:'+error.toString());
-                    });
-                tx.executeSql('drop table evaluacion',
-                    [],
-                    function(tx,res){
-                        console.log('evaluacion borrado');
-                    },
-                    function(tx,error){
-                        console.log('Error en evaluacion:'+error.toString());
-                    });
-                tx.executeSql('drop table sync',
-                    [],
-                    function(tx,res){
-                        console.log('sync borrado');
-                    },
-                    function(tx,error){
-                        console.log('Error en sync:'+error.toString());
-                    });
-            });
-            console.log('Todos los datos borrados');
+        if (!DB.db) {
+            DB.init();
         }
+        DB.db.transaction(function(tx){
+            tx.executeSql('delete * from asistencia',[],
+                function(tx,res){
+                    console.log('asistencia borrado');
+                },
+                function(tx,error){
+                    console.log('Error en asistencia:'+error.toString());
+                });
+            tx.executeSql('delete * from horario',[],
+                function(tx,res){
+                    console.log('horario borrado');
+                },
+                function(tx,error){
+                    console.log('Error en horario:'+error.toString());
+                });
+            tx.executeSql('delete * from alumno',[],
+                function(tx,res){
+                    console.log('alumno borrado');
+                },
+                function(tx,error){
+                    console.log('Error en alumno:'+error.toString());
+                });
+            tx.executeSql('delete * from valor',[],
+                function(tx,res){
+                    console.log('valor borrado');
+                },
+                function(tx,error){
+                    console.log('Error en valor:'+error.toString());
+                });
+            tx.executeSql('delete * from evaluacion',[],
+                function(tx,res){
+                    console.log('evaluacion borrado');
+                },
+                function(tx,error){
+                    console.log('Error en evaluacion:'+error.toString());
+                });
+            tx.executeSql('delete * from sync',[],
+                function(tx,res){
+                    console.log('sync borrado');
+                },
+                function(tx,error){
+                    console.log('Error en sync:'+error.toString());
+                });
+        });
+        console.log('Todos los datos borrados');
     };
     self.getAsistencias = function(){
+        if (!DB.db) {
+            DB.init();
+        }
         return DB.query('select * from asistencia')
             .then(function(result){
                 return DB.fetchAll(result);
             });
     };
     self.getHorarios = function() {
+        if (!DB.db) {
+            DB.init();
+        }
         return DB.query('select idHorario,nombre,cancha FROM horario')
             .then(function(result){
                 console.log('Horarios ok');
@@ -438,6 +427,9 @@ service.factory('Consultas', function(DB) {
             });
     };
     self.getAlumnos = function(idHorario) {
+        if (!DB.db) {
+            DB.init();
+        }
         return DB.query('select idJugador,idInscripcion,nombre,asiste from alumno where idHorario= ?',[idHorario])
             .then(function(result){
                 console.log('Alumnos ok');
@@ -445,6 +437,9 @@ service.factory('Consultas', function(DB) {
             });
     };
     self.getValores = function(idHorario) {
+        if (!DB.db) {
+            DB.init();
+        }
         return DB.query('select idValorhorario,idValor,nombre from valor where idHorario= ?',[idHorario])
             .then(function(result){
                 console.log('Valores ok');
@@ -454,6 +449,9 @@ service.factory('Consultas', function(DB) {
             });
     };
     self.getEvaluacion = function(idInscripcion) {
+        if (!DB.db) {
+            DB.init();
+        }
         return DB.query('select idEvalua,idValorhorario,res,nombre from valor where idInscripcion= ?',[idInscripcion])
             .then(function(result){
                 console.log('Valores ok');
@@ -484,25 +482,27 @@ service.factory('Consultas', function(DB) {
         return res.notas;
     };
     self.getSynced = function() {
-        return DB.query('SELECT * FROM sync')
-            .then(function(result){
-                if (result.rowsAffected>0){
-                    console.log('hay algo en sync!!');
-                    return DB.fetchAll(result);
-                }
-                else {
-                    console.log('Sync está vacio');
-                    return false;
-                }
-            },function(error){
-                console.log('Error en Sync');
-                return false;
+       if (!DB.db) {
+            DB.init();
+        }
+        var dfd = $q.defer();
+        var res;
+        DB.query('SELECT * FROM sync')
+            .then(
+            function(result){
+                console.log('Ya revisé sync!!');
+                res = DB.fetchAll(result);
+                dfd.resolve(res);
             });
+        return dfd.promise;
     };
-    self.insSync = function(fecha,user) {
+    self.insSync = function(fecha,user,pass) {
+        if (!DB.db) {
+            DB.init();
+        }
         console.log('insertando fecha de sync');
         var synced = fecha;
-        return DB.query('insert into sync (syncdate,usuario) values (?,?)', [synced,user])
+        return DB.query('insert into sync (syncdate,usuario,pass) values (?,?,?)', [synced,user,pass])
             .then(function(result){
                 console.log('Ya inserte la fecha de sync');
                 console.log("Sync insertId: " + result.insertId + " -- probably 1");
@@ -512,6 +512,9 @@ service.factory('Consultas', function(DB) {
             });
     };
     self.insHorario = function(idHorario,nombre,cancha) {
+        if (!DB.db) {
+            DB.init();
+        }
         return DB.query('insert into horario values (?,?,?)',
             [idHorario,nombre,cancha])
             .then(function(result){
@@ -520,6 +523,9 @@ service.factory('Consultas', function(DB) {
             });
     };
     self.insAlumnos = function(idJugador,idHorario,idInscripcion,nombre) {
+        if (!DB.db) {
+            DB.init();
+        }
         return DB.query('insert into alumno values (?,?,?,?,0)',
             [idJugador,idHorario,idInscripcion,nombre])
             .then(function(result){
@@ -528,6 +534,9 @@ service.factory('Consultas', function(DB) {
             });
     };
     self.updAsiste = function(idJugador,idHorario,asiste) {
+        if (!DB.db) {
+            DB.init();
+        }
         return DB.query('update alumno set asiste =? where idJugador=? and idHorario=?',
             [asiste,idJugador,idHorario])
             .then(function(result){
@@ -535,6 +544,9 @@ service.factory('Consultas', function(DB) {
             });
     };
     self.insValores = function(idValorHorario,idValor,idHorario,nombre) {
+        if (!DB.db) {
+            DB.init();
+        }
         return DB.query('insert into valor(idValorhorario,idValor,idHorario,nombre) values (?,?,?,?)',
             [idValorHorario,idValor,idHorario,nombre])
             .then(function(result){
@@ -543,6 +555,9 @@ service.factory('Consultas', function(DB) {
             });
     };
     self.insEvaluacion = function(idValorHorario,idJugador,res,nombre) {
+        if (!DB.db) {
+            DB.init();
+        }
         return DB.query("insert into evaluacion(idEvalua,idValorhorario,idInscripcion,res,nombre) values (NULL,?,?,?,?)",
             [idValorHorario,idJugador,res,nombre])
             .then(function(result){

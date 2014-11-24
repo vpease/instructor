@@ -3,10 +3,33 @@
  */
 var control = angular.module('controllers',[]);
 
-control.controller('LoginController',['estadoFactory',
-    function(estadoFactory){
-        this.usuario = { user: '', fecha: ''};
-        this.usuario = estadoFactory.checkData();
+control.controller('LoginController',['estadoFactory','creds',
+    function(estadoFactory,creds){
+        var regs = creds;
+        this.usuario = { user: '', pass:'',fecha: ''};
+        if (typeof regs =='undefined'){
+            estadoFactory.setNoUser(this.usuario,true);
+            console.log('No hay Usuario guardado');
+        } else {
+            var tempAr=[];
+            for(var i=0;i< regs.length;i++){
+                var temp = {fecha:'',user:'',pass:''};
+                temp.fecha = regs[i].syncdate;
+                temp.user = regs[i].usuario;
+                temp.pass = regs[i].pass;
+                tempAr.push(temp);
+            };
+            if (tempAr.length>0){
+                this.usuario = {
+                    user: tempAr[0].user,
+                    fecha: tempAr[0].fecha,
+                    pass: tempAr[0].pass
+                };
+            };
+            estadoFactory.setNoUser(this.usuario,false);
+            console.log('Usuario ya guardado');
+        }
+        console.log('Usuario ingresado es:' + this.usuario.user);
         this.checkUser = function () {
             var res = estadoFactory.login2(this.usuario.user, this.usuario.pass);
         }
@@ -22,7 +45,6 @@ control.controller('DateController',
         }]);
 control.controller('DataController',['$state','$ionicActionSheet','estadoFactory',
     function($state,$ionicActionSheet,estadoFactory){
-        this.fecha = estadoFactory.getFecha();
         this.usuario = estadoFactory.getUser();
         this.showMenu = function() {
             console.log('Voy a mostrar el menu oculto');
@@ -42,7 +64,7 @@ control.controller('DataController',['$state','$ionicActionSheet','estadoFactory
             estadoFactory.salir();
         };
         this.getFecha = function(){
-            return this.fecha;
+            return this.usuario.fecha;
         };
         this.getUsuario = function(){
             return this.usuario;
@@ -50,15 +72,15 @@ control.controller('DataController',['$state','$ionicActionSheet','estadoFactory
         this.opciones = function(){
             this.showMenu();
         };
-        this.checkData = function(){
-            return estadoFactory.checkData();
+        this.hayData = function(){
+            return estadoFactory.hayData()
         };
         this.checkDataToSend = function(){
             return estadoFactory.checkDataToSend();
         };
         this.descargar = function(){
             estadoFactory.getdata();
-            console.log('Db creada');
+            console.log('Datos llamados');
         };
         this.irInicio = function(){
             estadoFactory.irInicio();
@@ -66,23 +88,25 @@ control.controller('DataController',['$state','$ionicActionSheet','estadoFactory
     }]);
 control.controller('HoraController',['$scope','estadoFactory',
     function($scope,estadoFactory){
+        this.usuario = estadoFactory.getUser();
+        $scope.horarios = [];
         this.irInicio = function(){
             estadoFactory.irInicio();
         };
-        this.fecha = estadoFactory.getFecha();
-        this.usuario = estadoFactory.getUser();
-        $scope.horarios = [];
         estadoFactory.getHorarios().then(function(horarios){
             $scope.horarios = horarios;
         });
         this.getFecha = function(){
-            return this.fecha;
+            return this.usuario.fecha;
+        };
+        this.getFechaTran = function(){
+            return this.usuario.fechatran;
         };
         this.getUsuario = function(){
             return this.usuario;
         };
-        this.checkData = function(){
-            return estadoFactory.checkData();
+        this.hayData = function(){
+            return estadoFactory.hayData();
         };
         this.checkDataToSend = function(){
             return estadoFactory.checkDataToSend();

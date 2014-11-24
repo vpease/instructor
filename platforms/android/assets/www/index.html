@@ -5,7 +5,9 @@
     <meta name="viewport"
           content="initial-scale=1, maximum-scale=1, user-scalable=yes, width=device-width">
     <title>Boca Juniors Perú</title>
-    <!-- compiled css output -->
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet" >
+    <!-- link href="css/style.css" rel="stylesheet" -->
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above-->
     <link href="css/ionic.app.css" rel="stylesheet">
 
       <script src="lib/ionic/js/ionic.bundle.js"></script>
@@ -13,7 +15,10 @@
       <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
     <!-- your app's js -->
-    <script src="js/app.js"></script>
+      <script src="js/services.js"></script>
+      <script src="js/controllers.js"></script>
+      <script src="js/db.js"></script>
+      <script src="js/app.js"></script>
   </head>
   <body ng-app="control" class="platform-android platform-cordova platform-webview">
   <ion-nav-bar class="bar-positive nav-title-slide-ios7">
@@ -46,19 +51,47 @@
                                  placeholder="******" title="Clave" required/>
                       </label>
                       <button ng-click="submit()"
-                              class="button button-block button-positive ion-log-in"/>
+                              class="button button-block button-positive ion-log-in"></button>
                   </div>
               </form>
+          </ion-content>
+      </ion-view>
+  </script>
+  <script id="date.html" type="text/ng-template" nav-clear="true">
+      <ion-view title='Fecha'>
+          <ion-nav-back-button class="button-clear">
+              <i class="ion-arrow-left-c"></i> Regresar
+          </ion-nav-back-button>
+          <ion-content>
+              <div class="card">
+                  <form name="dateForm" novalidate>
+                      <div class="list">
+                          <label class="item item-input item-stacked-label">
+                              <span class="input-label">Elegir Fecha: {{date.usuario.fechatran | date:'yyyy-MM-dd'}}</span>
+                              <input type="date" ng-model = "date.usuario.fechatran"
+                                     placeholder="Elegir Fecha" value="{{ date.usuario.fechatran | date:'yyyy-MM-dd'}}" required>
+                          </label>
+                      </div>
+                      <div class="padding">
+                          <button class="button button-block button-positive"
+                                  ng-click="date.ingresar()">Siguiente</button>
+                      </div>
+                      <div class="list">
+                          <p>Error message</p>
+                      </div>
+                  </form>
+              </div>
           </ion-content>
       </ion-view>
   </script>
   <script id="data.html" type="text/ng-template" nav-clear="true">
       <ion-view title='Datos' >
           <ion-content >
-              <div class="list" name="sinDatos" ng-show="!data.checkData()">
+              <div class="list" name="sinDatos" ng-show="!data.hayData()">
                   <div class="card">
                       <p><b>Bienvenido: {{data.getUsuario().nombre}}</b></p>
-                      <p><b>Fecha: {{ data.getFecha()| date}}</b></p>
+                      <p><b>Fecha:  {{ data.getUsuario().fecha | date}}</b></p>
+                      <p><b>Fecha de Control:  {{ data.getUsuario().fechatran | date}}</b></p>
                       <div class="item item-divider">
                           <button name="descargar"
                                   class="button ion-ios7-download-outline"
@@ -66,7 +99,7 @@
                       </div>
                   </div>
               </div>
-              <div class="list" name="conDatos" ng-show="data.checkData()">
+              <div class="list" name="conDatos" ng-show="data.hayData()">
                   <div class="card">
                       <p><b>Bienvenido: {{data.getUsuario().nombre}}</b></p>
                       <p><b>Fecha: {{ data.getFecha()| date}}</b></p>
@@ -96,10 +129,11 @@
                   <div class="card">
                       <p><b>Bienvenido: {{hora.getUsuario().nombre}}</b></p>
                       <p><b>Fecha:  {{ hora.getFecha()| date}}</b></p>
+                      <p><b>Fecha de Control:  {{ hora.getFechaTran()| date}}</b></p>
                       <div class="item item-divider">
                           <button name="descargar"
                                   class="button ion-ios7-download-outline"
-                                  ng-show="!hora.checkData()"></button>
+                                  ng-show="!hora.hayData()"></button>
                           <button name="enviar"
                                   class="button ion-ios7-upload-outline"
                                   ng-show="hora.checkDataToSend()"></button>
@@ -224,7 +258,8 @@
                           <div class ="input-label">
                               {{valor.nombre}}
                           </div>
-                          <select ng-model="valores[$index].res"
+                          <select
+                                  ng-model="valores[$index].res"
                                   ng-options="nota.valor as nota.nota for nota in evalua.notas"></select>
                       </div>
                   </div>

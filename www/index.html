@@ -87,10 +87,11 @@
   <script id="data.html" type="text/ng-template" nav-clear="true">
       <ion-view title='Datos' >
           <ion-content >
-              <div class="list" name="sinDatos" ng-show="!data.checkData()">
+              <div class="list" name="sinDatos" ng-show="!data.hayData()">
                   <div class="card">
                       <p><b>Bienvenido: {{data.getUsuario().nombre}}</b></p>
-                      <p><b>Fecha: {{ data.getFecha()| date}}</b></p>
+                      <p><b>Fecha:  {{ data.getUsuario().fecha | date}}</b></p>
+                      <p><b>Fecha de Control:  {{ data.getUsuario().fechatran | date}}</b></p>
                       <div class="item item-divider">
                           <button name="descargar"
                                   class="button ion-ios7-download-outline"
@@ -98,7 +99,7 @@
                       </div>
                   </div>
               </div>
-              <div class="list" name="conDatos" ng-show="data.checkData()">
+              <div class="list" name="conDatos" ng-show="data.hayData()">
                   <div class="card">
                       <p><b>Bienvenido: {{data.getUsuario().nombre}}</b></p>
                       <p><b>Fecha: {{ data.getFecha()| date}}</b></p>
@@ -112,7 +113,7 @@
                                   ng-show="data.checkDataToSend()"></button>
                       </div>
                   </div>
-                  <div class="card" ng-show="data.checkData()">
+                  <div class="card" ng-show="data.hayData()">
                       <button name="opciones"
                               class="button ion-ios7-gear-outline"
                               ng-click="data.opciones()"></button>
@@ -128,10 +129,11 @@
                   <div class="card">
                       <p><b>Bienvenido: {{hora.getUsuario().nombre}}</b></p>
                       <p><b>Fecha:  {{ hora.getFecha()| date}}</b></p>
+                      <p><b>Fecha de Control:  {{ hora.getFechaTran()| date}}</b></p>
                       <div class="item item-divider">
                           <button name="descargar"
                                   class="button ion-ios7-download-outline"
-                                  ng-show="!hora.checkData()"></button>
+                                  ng-show="!hora.hayData()"></button>
                           <button name="enviar"
                                   class="button ion-ios7-upload-outline"
                                   ng-show="hora.checkDataToSend()"></button>

@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.inst.boca" version="1.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <preference name="loglevel" value="DEBUG" />
-    <preference name="AndroidLaunchMode" value="singleTop" />
-    <feature name="App">
-        <param name="android-package" value="org.apache.cordova.App" />
-    </feature>
     <feature name="SQLitePlugin">
         <param name="android-package" value="org.pgsqlite.SQLitePlugin" />
+    </feature>
+    <feature name="Keyboard">
+        <param name="android-package" value="com.ionic.keyboard.IonicKeyboard" />
+        <param name="onload" value="true" />
     </feature>
     <feature name="Device">
         <param name="android-package" value="org.apache.cordova.device.Device" />
@@ -25,14 +25,6 @@
     <preference name="UIWebViewBounce" value="false" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="BackupWebStorage" value="none" />
-    <feature name="StatusBar">
-        <param name="ios-package" onload="true" value="CDVStatusBar" />
-    </feature>
-    <feature name="Keyboard">
-        <param name="android-package" value="com.ionic.keyboard.IonicKeyboard" />
-        <param name="onload" value="true" />
-        <param name="ios-package" onload="true" value="IonicKeyboard" />
-    </feature>
     <preference name="SplashScreen" value="splash" />
     <preference name="SplashScreenDelay" value="10000" />
     <icon src="www/img/icon.png" />

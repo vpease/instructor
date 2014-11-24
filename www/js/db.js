@@ -13,36 +13,40 @@ db.factory('DB',function($q, DB_CONFIG) {
             } else {
                 self.db = window.openDatabase(DB_CONFIG.name,"1.0",DB_CONFIG,-1);
             };
-
-            angular.forEach(DB_CONFIG.tables, function(table) {
-                var columns = [];
-                angular.forEach(table.columns, function(column) {
-                    columns.push(column.name + ' ' + column.type);
-                });
-                var query = 'CREATE TABLE IF NOT EXISTS ' + table.name + ' (' + columns.join(',') + ')';
-                self.query(query);
-                console.log('Table ' + table.name + ' initialized');
-            });
-            console.log('Terminó el Init de la base de datos');
+            console.log('DB abierta');
+            self.tablas();
+            console.log('Tablas creadas');
         }
     };
-
+    self.tablas = function(){
+        angular.forEach(DB_CONFIG.tables, function(table) {
+            var columns = [];
+            angular.forEach(table.columns, function(column) {
+                columns.push(column.name + ' ' + column.type);
+            });
+            var query = 'CREATE TABLE IF NOT EXISTS ' + table.name + ' (' + columns.join(',') + ')';
+            self.query(query);
+            console.log('Table ' + table.name + ' initialized');
+        });
+        console.log('Terminó el Init de la base de datos');
+    };
     self.query = function(query, bindings) {
         bindings = typeof bindings !== 'undefined' ? bindings : [];
         var deferred = $q.defer();
 
         self.db.transaction(function(transaction) {
-            transaction.executeSql(query, bindings, function(transaction, result) {
-                console.log("Todo ok en : "+query + "//"+ bindings);
-                deferred.resolve(result);
-            }, function(transaction, error) {
-                console.log("Todo ko en : "+query + "//"+ bindings);
-                deferred.reject(error);
-            });
+            transaction.executeSql(query, bindings,
+                function(transaction, result) {
+                    console.log("Todo ok en : "+query + "//"+ bindings);
+                    deferred.resolve(result);
+                },
+                function(transaction, error) {
+                    console.log("Todo ko en : "+query + "//"+ bindings);
+                    deferred.reject(error);
+                });
         });
         return deferred.promise;
     };
-
     self.fetchAll = function(result) {
         var output = [];
         for (var i = 0; i < result.rows.length; i++) {

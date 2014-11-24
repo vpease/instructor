@@ -50,7 +50,8 @@ app.constant('DB_CONFIG', {
                 name: 'sync',
                 columns: [
                     {name: 'syncdate', type: 'text primary key'},
-                    {name: 'usuario', type: 'text'}
+                    {name: 'usuario', type: 'text'},
+                    {name: 'pass', type: 'text'}
                 ]
             }
         ]
@@ -63,7 +64,17 @@ app.config(function($stateProvider,$urlRouterProvider){
         .state('login',{
             url: "/login",
             templateUrl:"login.html",
-            controller: 'LoginController as login'
+            controller: 'LoginController as login',
+            resolve: {
+                creds: function(Consultas){
+                    return Consultas.getSynced();
+                }
+            }
+        })
+        .state('date',{
+            url: "/date",
+            templateUrl:"date.html",
+            controller: 'DateController as date'
         })
         .state('data',{
             url: "/data",
