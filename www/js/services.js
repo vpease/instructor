@@ -70,9 +70,9 @@ service.factory('estadoFactory',['$http','$state','Consultas',
         };
         factory.salir = function(){
             Consultas.deleteAll();
-            this.credenciales.user = '';
-            this.credenciales.pass = '';
-            this.credenciales.fecha = '';
+            credDb.user = '';
+            credDb.pass = '';
+            credDb.fecha = '';
             $state.go('login');
         };
         factory.getUserDatos = function(){
@@ -199,12 +199,15 @@ service.factory('estadoFactory',['$http','$state','Consultas',
                         pusuario.fecha = result[4];
                         pusuario.fechatran = result[4];
                         pusuario.idLocal = result[5];
+                        if (typeof userDb.fecha !='undefined' | userDb.fecha != ''){
+                            pusuario.fechatran = userDb.fecha;
+                        };
                         usuario = pusuario;
                         console.log('voy a comparar si hay cambio de usuario');
                         console.log('el userDb es:'+olduser);
                         if (olduser != puser) {
                             console.log('Si hay cambio de usuario');
-                            cambiarUser = true
+                            cambiarUser = true;
                             userDb = {
                                 user: puser,
                                 pass: ppass,
@@ -514,7 +517,7 @@ service.factory('Consultas', function(DB,$q) {
                 console.log("Sync insertId: " + result.insertId + " -- probably 1");
                 console.log("Sync rowsAffected: " + result.rowsAffected + " -- should be 1");
             },function(error){
-                console.log(error.toString());
+                console.log(error.detail );
             });
     };
     self.insHorario = function(idHorario,nombre,cancha) {
