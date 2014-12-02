@@ -73,6 +73,10 @@ service.factory('estadoFactory',['$http','$state','Consultas',
             credDb.user = '';
             credDb.pass = '';
             credDb.fecha = '';
+            olduser ='';
+            dataOk = false;
+            userDb = {user:'',fecha:''};
+            this.usuario = {idInstructor:'',idOperador: '',nombre: '',user: '',idLocal:'',pass:'',fecha:'',fechatran:''};
             $state.go('login');
         };
         factory.getUserDatos = function(){
@@ -254,7 +258,9 @@ service.factory('estadoFactory',['$http','$state','Consultas',
                             alumno.idJugador,
                             alumno.idHorario,
                             alumno.idInscripcion,
-                            alumno.nombre);
+                            alumno.nombre,
+                            alumno.asiste,
+                            alumno.deuda);
                     });
                     angular.forEach(valores,function(valor) {
                         console.log('insertando: ' + valor.idValor);
@@ -280,6 +286,25 @@ service.factory('estadoFactory',['$http','$state','Consultas',
                 })
                 .error(function(data){
                     dataOk = false;
+                });
+            return res;
+        };
+        factory.senddata = function(){
+            var res='';
+            var url = server+'/usuario/tablas.json';
+            var pDatos = Consultas.getAsistencias().
+                then(function(result){
+                    //var asis = JSON.stringify(result);
+                    //var asisObj = JSON.parse(asis);
+                    var datos = { fecha: usuario.fechatran, Asistencias: result };
+                    $http.post(url,datos)
+                    .success(function(){
+                        alert('Ya se envió todo');
+                        res =result;
+                    }).error(function (result){
+                        alert('Error');
+                        res = result;
+                    })
                 });
             return res;
         };
@@ -371,13 +396,13 @@ service.factory('Consultas', function(DB,$q) {
             DB.init();
         }
         DB.db.transaction(function(tx){
-            tx.executeSql('delete from asistencia',[],
+            /*tx.executeSql('delete from asistencia',[],
                 function(tx,res){
                     console.log('asistencia borrado');
                 },
                 function(tx,error){
                     console.log('Error al borrar asistencia:'+error.details);
-                });
+                });*/
             tx.executeSql('delete from horario',[],
                 function(tx,res){
                     console.log('horario borrado');
@@ -420,7 +445,7 @@ service.factory('Consultas', function(DB,$q) {
         if (!DB.db) {
             DB.init();
         }
-        return DB.query('select * from asistencia')
+        return DB.query('select idInscripcion as ins,asiste as asis from alumno')
             .then(function(result){
                 return DB.fetchAll(result);
             });
@@ -531,15 +556,20 @@ service.factory('Consultas', function(DB,$q) {
                 console.log("rowsAffected: " + result.rowsAffected + " -- should be 1");
             });
     };
-    self.insAlumnos = function(idJugador,idHorario,idInscripcion,nombre) {
+    self.insAlumnos = function(idJugador,idHorario,idInscripcion,nombre,asiste,deuda) {
         if (!DB.db) {
             DB.init();
         }
-        return DB.query('insert into alumno values (?,?,?,?,0)',
-            [idJugador,idHorario,idInscripcion,nombre])
+        return DB.query('insert into alumno(idJugador,idHorario,idInscripcion,nombre,asiste,deuda) values (?,?,?,?,?,?)',
+            [idJugador,idHorario,idInscripcion,nombre,asiste,deuda])
             .then(function(result){
                 console.log("insertId: " + result.insertId + " -- probably 1");
                 console.log("rowsAffected: " + result.rowsAffected + " -- should be 1");
+            })
+            .then(function(error){
+                if (typeof error != "undefined")
+                console.log("El error es: "+error.toString());
+                return false;
             });
     };
     self.updAsiste = function(idJugador,idHorario,asiste) {

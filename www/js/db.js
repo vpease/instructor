@@ -1,19 +1,28 @@
 /**
  * Created by vpease on 22/11/14.
  */
-var db = angular.module('db',[]);
+var db = angular.module('db',['ngCordova']);
 
-db.factory('DB',function($q, DB_CONFIG) {
+db.factory('DB',function($q, $cordovaSQLite,DB_CONFIG) {
     var self = this;
     self.db = null;
     self.init = function() {
         if (!self.db) {
-            if (window.sqlitePlugin !== undefined){
+            console.log('database is closed');
+           if (window.sqlitePlugin !== undefined){
+                console.log('database sqlite plugin si existe');
                 self.db = window.sqlitePlugin.openDatabase({name: DB_CONFIG.name});
             } else {
-                self.db = window.openDatabase(DB_CONFIG.name,"1.0",DB_CONFIG,-1);
+                console.log('database sqlite plugin no existe');
+                self.db = window.openDatabase(DB_CONFIG.name,"1.0",DB_CONFIG,1024*1024);
             };
-            console.log('DB abierta');
+            //self.db = $cordovaSQLite.openDB({name: DB_CONFIG.name, bgType: 1});
+
+            if (!self.db){
+                console.log('falló ngCordova sqlite');
+            } else {
+                console.log('DB abierta');
+            }
             self.tablas();
             console.log('Tablas creadas');
         }

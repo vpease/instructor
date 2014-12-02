@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 
-var app = angular.module('control', ['ionic','ngCordova','services','controllers']);
+var app = angular.module('control', ['ionic','ngCordova','services','controllers','pickadate']);
 
 app.constant('DB_CONFIG', {
     name: 'PBoca',
@@ -24,7 +24,8 @@ app.constant('DB_CONFIG', {
                     {name: 'idHorario', type: 'integer'},
                     {name: 'idInscripcion', type: 'integer'},
                     {name: 'nombre', type: 'text'},
-                    {name: 'asiste', type: 'integer'}
+                    {name: 'asiste', type: 'integer'},
+                    {name: 'deuda', type: 'integer'},
                 ]
             },
             {
@@ -50,7 +51,8 @@ app.constant('DB_CONFIG', {
                 name: 'sync',
                 columns: [
                     {name: 'syncdate', type: 'text primary key'},
-                    {name: 'usuario', type: 'text'}
+                    {name: 'usuario', type: 'text'},
+                    {name: 'pass', type: 'text'}
                 ]
             }
         ]
@@ -58,12 +60,21 @@ app.constant('DB_CONFIG', {
 
 
 app.config(function($stateProvider,$urlRouterProvider){
-    $urlRouterProvider.otherwise("/login");
+    $urlRouterProvider.otherwise("/splash");
     $stateProvider
+        .state('splash',{
+            url: "/splash",
+            templateUrl:'splash.html'
+        })
         .state('login',{
             url: "/login",
             templateUrl:"login.html",
-            controller: 'LoginController as login'
+            controller: 'LoginController as login',
+            resolve: {
+                creds: function(Consultas){
+                    return Consultas.getSynced();
+                }
+            }
         })
         .state('date',{
             url: "/date",
@@ -101,7 +112,7 @@ app.config(function($stateProvider,$urlRouterProvider){
             controller:'EvalAlumnoController as evalua'
         })
 });
-app.run(function($ionicPlatform) {
+app.run(function($ionicPlatform,$location,$rootScope) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -111,5 +122,8 @@ app.run(function($ionicPlatform) {
     if(window.StatusBar) {
       StatusBar.styleDefault();
     }
+      console.log('Cordova is ready!!!');
+      $location.path('/login');
+      $rootScope.$apply();
   });
 });

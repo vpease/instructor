@@ -40,7 +40,8 @@ control.controller('DateController',
     ['estadoFactory',
         function(estadoFactory){
             this.usuario = { fechatran: '' };
-            this.usuario.fechatran = new Date();
+            var temp = new Date();
+            this.usuario.fechatran = temp.getFullYear()+'-'+(temp.getMonth()+1)+'-'+temp.getDate();
             this.ingresar = function() {
                 estadoFactory.setFecha(this.usuario.fechatran);
             }
@@ -87,6 +88,9 @@ control.controller('DataController',['$state','$ionicActionSheet','estadoFactory
         this.irInicio = function(){
             estadoFactory.irInicio();
         };
+        this.enviar = function(){
+            estadoFactory.senddata();
+        };
     }]);
 control.controller('HoraController',['$scope','estadoFactory',
     function($scope,estadoFactory){
@@ -115,6 +119,9 @@ control.controller('HoraController',['$scope','estadoFactory',
         };
         this.select = function(idHorario,nombre,cancha){
             estadoFactory.selectHorario(idHorario,nombre,cancha);
+        };
+        this.enviar = function(){
+            estadoFactory.senddata();
         };
     }]);
 
@@ -150,8 +157,8 @@ control.controller('AsistenciaController',['$scope','estadoFactory',
         this.updAsiste = function(index){
             var temp = $scope.alumnos[index];
             var asiste;
-            if (temp.asiste) asiste=1;
-            else asiste=0;
+            if (temp.asiste) asiste = 2;
+            else asiste = 1;
             estadoFactory.updAsiste(temp.idJugador,this.horario.idHorario,asiste);
         };
     }]);
