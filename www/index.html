@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport"
-          content="initial-scale=1, maximum-scale=1, user-scalable=yes, width=device-width">
+          content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title>Boca Juniors Perú</title>
     <link href="lib/ionic/css/ionic.css" rel="stylesheet" >
     <!-- link href="css/style.css" rel="stylesheet" -->
@@ -23,7 +23,6 @@
       <script src="js/app.js"></script>
   </head>
   <body ng-app="control">
-  <ion-nav-bar class="bar-positive"></ion-nav-bar>
   <ion-nav-view animation="slide-left-right">
   </ion-nav-view>
   <script id="splash.html" type="text/ng-template">
@@ -38,15 +37,13 @@
   <script id="login.html" type="text/ng-template" nav-clear="true">
       <ion-view title="Boca Juniors Perú - Profesores"
                 hide-back-button="true">
-          <ion-header-bar class="bar-positive">
-              <h1 class="title">Boca Juniors Perú - Profesores</h1>
-          </ion-header-bar>
+          <ion-nav-bar class="bar-positive"></ion-nav-bar>
           <ion-content>
               <form novalidate
                     name="loginForm"
                     class="form"
                     ng-submit="loginForm.$valid && login.checkUser()">
-                  <div class="list">
+                  <div class="list list-inset">
                       <div align="center" class="list">
                           <img align="center" src="img/logo-small.png"/>
                       </div>
@@ -60,8 +57,9 @@
                           <input ng-model="login.usuario.pass" type="password"
                                  placeholder="******" title="Clave" required/>
                       </label>
+
                       <button ng-click="submit()"
-                              class="button button-block button-positive ion-log-in"></button>
+                              class="button button-block button-positive"><i class="icon ion-log-in" style="{font-size:90px}"> Ingresar</i></button>
                   </div>
               </form>
           </ion-content>
@@ -73,7 +71,8 @@
           <ion-content>
               <div class="card">
                   <form name="dateForm"
-                        ng-submit="dateForm.$valid && date.ingresar()" novalidate>
+                        ng-submit="dateForm.$valid && date.ingresar()"
+                        novalidate>
                       <div class="list list-inset">
                           <label class="item item-input">
                               <span class="input-label">Elegir Fecha: {{date.usuario.fechatran | date:'yyyy-MM-dd'}}</span>
@@ -110,8 +109,12 @@
                       <p><b>Fecha de Control:  {{ data.getUsuario().fechatran | date}}</b></p>
                       <div class="item item-divider">
                           <button name="descargar"
-                                  class="button ion-ios7-download-outline"
-                                  ng-click="data.descargar()"></button>
+                                  class="button"
+                                  ng-click="data.descargar()">
+                              <i class="icon ion-ios7-download-outline">
+                                  Descargar Información
+                              </i>
+                          </button>
                       </div>
                   </div>
               </div>
@@ -119,21 +122,29 @@
                   <div class="card">
                       <p><b>Bienvenido: {{data.getUsuario().nombre}}</b></p>
                       <p><b>Fecha: {{ data.getFecha()| date}}</b></p>
-                      <div class="item-divider">
-                          <button name="inicio"
-                                  class="button ion-ios7-arrow-forward"
-                                  ng-click="data.irInicio()"></button>
-                          <button name="enviar"
-                                  class="button ion-ios7-upload-outline"
-                                  ng-click="data.enviar()"
-                                  ng-show="data.checkDataToSend()"></button>
+                      <div class="list card">
+                          <div class="card">
+                              <button name="inicio"
+                                      class="button"
+                                      ng-click="data.irInicio()">
+                                  <i class="icon ion-clock"> Ver horarios</i></button>
+                          </div>
+                          <div class="card">
+                              <button name="enviar"
+                                      class="button"
+                                      ng-click="data.enviar()"
+                                      ng-show="data.checkDataToSend()">
+                                  <i class="icon ion-ios7-upload-outline"> Enviar datos</i>
+                              </button>
+                          </div>
+                          <div class="card" ng-show="data.hayData()">
+                              <button name="opciones"
+                                      class="button"
+                                      ng-click="data.opciones()"><i class="icon ion-ios7-gear-outline"> Ver Opciones</i></button>
+                          </div>
                       </div>
                   </div>
-                  <div class="card" ng-show="data.hayData()">
-                      <button name="opciones"
-                              class="button ion-ios7-gear-outline"
-                              ng-click="data.opciones()"></button>
-                  </div>
+
               </div>
           </ion-content>
       </ion-view>
@@ -154,11 +165,19 @@
                       <p><b>Fecha de Control:  {{ hora.getFechaTran()| date}}</b></p>
                       <div class="item item-divider">
                           <button name="descargar"
-                                  class="button ion-ios7-download-outline"
-                                  ng-show="!hora.hayData()"></button>
+                                  class="button"
+                                  ng-show="!hora.hayData()">
+                              <i class="icon ion-ios7-download-outline">
+                                  Descargar datos
+                              </i>
+                                  </button>
                           <button name="enviar"
-                                  class="button ion-ios7-upload-outline"
-                                  ng-show="hora.checkDataToSend()"></button>
+                                  class="button"
+                                  ng-show="hora.checkDataToSend()">
+                              <i class="icon ion-ios7-upload-outline">
+                                  Enviar datos
+                              </i>
+                                  </button>
                       </div>
                   </div>
               </div>
@@ -196,8 +215,9 @@
                           Asistencia:
                       </div>
                       <div align="center">
-                          <button class="button button-positive ion-ios7-people-outline"
+                          <button class="button button-positive"
                                   ng-click="acciones.irAsistencia()">
+                              <i class="ion-ios7-people-outline"> Tomar lista</i>
                           </button>
                       </div>
                   </div>
@@ -206,8 +226,9 @@
                           Evaluación:
                       </div>
                       <div align="center">
-                          <button class="button button-positive ion-ios7-compose-outline"
+                          <button class="button button-positive"
                                   ng-click="acciones.irEvaluacion()">
+                              <i class="icon ion-ios7-compose-outline"> Evaluar</i>
                           </button>
                       </div>
                   </div>
@@ -221,7 +242,7 @@
           <ion-nav-bar class="bar-positive nav-title-slide-ios7">
               <ion-nav-back-button> Regresar</ion-nav-back-button>
               <ion-nav-buttons side="right">
-                  <button class="button icon ion-home" ui-sref="data">Home</button>
+                  <button class="button icon ion-home" ui-sref="data"> Home</button>
               </ion-nav-buttons>
           </ion-nav-bar>
           <ion-content>
@@ -239,9 +260,20 @@
                                     ng-checked = "alumno.asiste==2"
                                     ng-true="2"
                                     ng-false="1"
-                                    ng-change="asiste.updAsiste($index)">{{alumno.nombre}}
+                                    ng-change="asiste.updAsiste($index)">
+                          <p ng-show="alumno.deuda==0"
+                             style="color:black">
+                              {{alumno.nombre}}
+                          </p>
+                          <p ng-show="alumno.deuda>0"
+                             style="color:darkred">
+                              {{alumno.nombre}}
+                          </p>
                       </ion-checkbox>
                   </div>
+              </div>
+              <div class="card">
+                  <br>
               </div>
           </ion-content>
       </ion-view>

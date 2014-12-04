@@ -53,8 +53,8 @@ service.factory('estadoFactory',['$http','$state','Consultas',
         var fecha='';
         var factory = {};
         var valido=false;
-        //var server ='http://www.bocajuniors.com.pe/app/bocarest/index.php';
-        var server ='http://192.168.1.100/bocarest'
+        var server ='http://www.bocajuniors.com.pe/app/bocarest/index.php';
+        //var server ='http://192.168.1.100/bocarest'
 
         factory.irInicio = function(){
             $state.go('data');
@@ -464,7 +464,7 @@ service.factory('Consultas', function(DB,$q) {
         if (!DB.db) {
             DB.init();
         }
-        return DB.query('select idJugador,idInscripcion,nombre,asiste from alumno where idHorario= ?',[idHorario])
+        return DB.query('select idJugador,idInscripcion,nombre,deuda,asiste from alumno where idHorario= ?',[idHorario])
             .then(function(result){
                 console.log('Alumnos ok');
                 return DB.fetchAll(result);
