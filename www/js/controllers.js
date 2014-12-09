@@ -89,19 +89,19 @@ control.controller('DataController',['$state','$ionicActionSheet','estadoFactory
             estadoFactory.irInicio();
         };
         this.enviar = function(){
-            estadoFactory.senddata();
+            estadoFactory.senddata1();
         };
     }]);
-control.controller('HoraController',['$scope','estadoFactory',
-    function($scope,estadoFactory){
+control.controller('HoraController',['$scope','estadoFactory','horas',
+    function($scope,estadoFactory,horas){
+        $scope.horarios= horas;
         this.usuario = estadoFactory.getUser();
-        $scope.horarios = [];
         this.irInicio = function(){
             estadoFactory.irInicio();
         };
-        estadoFactory.getHorarios().then(function(horarios){
+        /*estadoFactory.getHorarios().then(function(horarios){
             $scope.horarios = horarios;
-        });
+        });*/
         this.getFecha = function(){
             return this.usuario.fecha;
         };
@@ -132,24 +132,24 @@ control.controller('AccionesController',['$scope','estadoFactory',
         //return this.horario;
         };
         this.irAsistencia = function(){
-            estadoFactory.irAsistencia();
+            estadoFactory.irAsistencia(this.horario.idHorario);
         };
         this.irEvaluacion = function(){
-            estadoFactory.irEvaluacion();
+            estadoFactory.irEvaluacion(this.horario.idHorario);
         };
         this.checkEvaluacion = function(){
             return estadoFactory.checkEvaluacion();
         };
     }]);
-control.controller('AsistenciaController',['$scope','estadoFactory',
-    function($scope,estadoFactory){
+control.controller('AsistenciaController',['$scope','estadoFactory','alumnos',
+    function($scope,estadoFactory,alumnos){
         this.horario = estadoFactory.getHorario();
-        $scope.alumnos = [];
-        estadoFactory.getAlumnos(this.horario.idHorario)
+        $scope.alumnos = alumnos;
+        /*estadoFactory.getAlumnos(this.horario.idHorario)
             .then(function(alumnos){
                 var res = alumnos;
                 $scope.alumnos = res;
-            });
+            });*/
         this.fecha = estadoFactory.getFecha();
         this.getFecha = function(){
             return this.fecha;
@@ -162,31 +162,34 @@ control.controller('AsistenciaController',['$scope','estadoFactory',
             estadoFactory.updAsiste(temp.idJugador,this.horario.idHorario,asiste);
         };
     }]);
-control.controller('EvaluaController',['$scope','estadoFactory',
-    function($scope,estadoFactory){
+control.controller('EvaluaController',['$scope','estadoFactory','alumnos',
+    function($scope,estadoFactory,alumnos){
         this.horario = estadoFactory.getHorario();
-        $scope.alumnos = [];
-        estadoFactory.getAlumnos(this.horario.idHorario)
+        $scope.alumnos = alumnos;
+        /*estadoFactory.getAlumnos(this.horario.idHorario)
             .then(function(alumnos){
                 var res = alumnos;
                 $scope.alumnos = res;
-            });
+            });*/
         this.Evaluar = function (idJugador,nombre,idInscripcion){
-            estadoFactory.Evaluar(idJugador,nombre,idInscripcion,this.horario.idHorario);
+            estadoFactory.Evaluar1(idJugador,nombre,idInscripcion,this.horario.idHorario);
         };
     }]);
-control.controller('EvalAlumnoController',['$scope','estadoFactory',
-    function($scope,estadoFactory){
+control.controller('EvalAlumnoController',['$scope','$filter','estadoFactory','vals','evals',
+    function($scope,$filter,estadoFactory,valores,evals){
         this.horario = estadoFactory.getHorario();
         this.notas = estadoFactory.getNotas();
         this.alumno = estadoFactory.getAlumno();
-        this.eval = [];
-        $scope.valores = [];
-        var evals;
-        evals = estadoFactory.getEvaluacion(this.alumno.idInscripcion);
+        this.evals = evals;
+        $scope.valores = valores;
 
+        for(i=0;i<evals.length;i++){
+            temp = $filter('getById')($scope.valores,this.evals[i].idValorhorario);
+            this.evals[i].valor = temp.nombre;
+        }
+        console.log('evals actualizado');
 
-        if (evals.length == 0 || typeof evals.length === 'undefined')
+        /*if (evals.length == 0 || typeof evals.length === 'undefined')
             estadoFactory.getValores(this.horario.idHorario)
                 .then(function(valores){
                     var res = valores;
@@ -205,25 +208,26 @@ control.controller('EvalAlumnoController',['$scope','estadoFactory',
                     }
                     $scope.valores = tempAr;
                 });
-        else $scope.valores = evals;
+        else $scope.valores = evals;*/
 
         this.enviar = function(){
-            for (i=0;i< $scope.valores.length; i++){
-                estadoFactory.insEvaluacion(
-                    $scope.valores[i].idEvalua,
-                    $scope.valores[i].idValorhorario,
+            for (i=0;i< this.evals.length; i++){
+                estadoFactory.updEvaluacion(
+                    this.evals[i].idEvalua,
+                    this.horario.idHorario,
+                    this.evals[i].idValorhorario,
                     this.alumno.idInscripcion,
-                    $scope.valores[i].res,
-                    $scope.valores[i].nombre);
+                    this.evals[i].res,
+                    this.evals[i].nombre);
             }
 
             estadoFactory.irInicio();
         };
         this.alerta = function(indice){
-            var val = $scope.valores[indice].res;
+            var val = this.evals[indice].res;
             val = val + 5;
             if (val>20) val=5;
             console.log('El valor de val es:'+ val);
-            $scope.valores[indice].res=val;
+            this.evals[indice].res=val;
         };
     }]);

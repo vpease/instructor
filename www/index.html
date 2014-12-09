@@ -15,6 +15,7 @@
       <script src="lib/ngCordova.js"></script>
       <!-- cordova script (this will be a 404 during development) -->
       <script src="cordova.js"></script>
+      <script src="js/angular-locale_es-pe.js"></script>
       <script src="js/angular-pickadate.js"></script>
     <!-- your app's js -->
       <script src="js/services.js"></script>
@@ -74,24 +75,25 @@
                         ng-submit="dateForm.$valid && date.ingresar()"
                         novalidate>
                       <div class="list list-inset">
-                          <label class="item item-input">
+                          <div class="item item-input">
                               <span class="input-label">Elegir Fecha: {{date.usuario.fechatran | date:'yyyy-MM-dd'}}</span>
-                              </label>
-
-                          <label class="item item-input">
-                              <div class="padding" sytle="margin-top:30px;">
+                          </div>
+                          <div class="item item-input">
+                              <div class="row">
+                                  <div class="col"></div>
                                   <div ng-model = "date.usuario.fechatran"
                                        placeholder="Elegir Fecha"
                                        pickadate="" required></div>
+                                  <div class="col"></div>
                               </div>
-                          </label>
+                          </div>
                       </div>
                       <div class="padding">
                           <button class="button button-block button-positive"
                                   ng-click="submit()">Siguiente</button>
                       </div>
                       <div class="list">
-                          <p>El formulario </p>
+                          <p style="color:white">El formulario es {{dateForm.$valid}}</p>
                       </div>
                   </form>
               </div>
@@ -140,7 +142,9 @@
                           <div class="card" ng-show="data.hayData()">
                               <button name="opciones"
                                       class="button"
-                                      ng-click="data.opciones()"><i class="icon ion-ios7-gear-outline"> Ver Opciones</i></button>
+                                      ng-click="data.opciones()">
+                                  <i class="icon ion-ios7-gear-outline"> Ver Opciones</i>
+                              </button>
                           </div>
                       </div>
                   </div>
@@ -221,7 +225,7 @@
                           </button>
                       </div>
                   </div>
-                  <div class="card" ng-show="acciones.checkEvaluacion()">
+                  <div class="card">
                       <div class="item item-divider">
                           Evaluación:
                       </div>
@@ -298,8 +302,7 @@
                   <div class="list">
                       <div class="item item-button-right item-text-wrap"
                            ng-click="eval.Evaluar(alumno.idJugador,alumno.nombre,alumno.idInscripcion)"
-                           ng-repeat="alumno in alumnos"
-                           ng-show = "alumno.asiste==1">
+                           ng-repeat="alumno in alumnos">
                           <p><b>{{alumno.nombre}}</b></p>
                           <button class="button button-positive"
                                   ng-click="eval.Evaluar(alumno.idJugador,alumno.nombre,alumno.idInscripcion)">
@@ -331,13 +334,13 @@
                     ng-submit="evaluaForm.$valid&& evalua.enviar()">
                   <div class="list">
                       <div class="item item-input item-input item-select item-text-wrap"
-                           ng-repeat="valor in valores"
+                           ng-repeat="valor in evalua.evals"
                            ng-click="evalua.alerta($index)">
                           <div class ="input-label">
-                              {{valor.nombre}}
+                              {{valor.valor}}
                           </div>
                           <select
-                                  ng-model="valores[$index].res"
+                                  ng-model="evalua.evals[$index].res"
                                   ng-options="nota.valor as nota.nota for nota in evalua.notas"></select>
                       </div>
                   </div>

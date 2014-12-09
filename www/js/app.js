@@ -25,7 +25,7 @@ app.constant('DB_CONFIG', {
                     {name: 'idInscripcion', type: 'integer'},
                     {name: 'nombre', type: 'text'},
                     {name: 'asiste', type: 'integer'},
-                    {name: 'deuda', type: 'integer'},
+                    {name: 'deuda', type: 'integer'}
                 ]
             },
             {
@@ -41,6 +41,7 @@ app.constant('DB_CONFIG', {
                 name: 'evaluacion',
                 columns: [
                     {name: 'idEvalua', type: 'integer primary key autoincrement'},
+                    {name: 'idHorario', type: 'integer'},
                     {name: 'idValorhorario', type: 'integer'},
                     {name: 'idInscripcion', type: 'integer'},
                     {name: 'res', type: 'integer'},
@@ -57,7 +58,36 @@ app.constant('DB_CONFIG', {
             }
         ]
     });
-
+app.filter('getById',function(){
+    return function(input,id){
+        var i= 0,len=input.length;
+        for(;i<len;i++){
+            if(+input[i].idValorhorario== +id){
+                return input[i];
+            }
+        }
+        return null;
+    }
+});
+app.config(function($httpProvider){
+    $httpProvider.interceptors.push(function($rootScope){
+        return {
+            request: function(config){
+                if (config.url.substring(0,1) == 'h') {
+                    $rootScope.$broadcast('loading:show');
+                    console.log('request interceptado:' + config.method + '/' + config.url);
+                }
+                console.log(config.url.substring(0,1)+'request :' + config.method + '/' + config.url);
+                return config;
+            },
+            response: function(response){
+                $rootScope.$broadcast('loading:hide');
+                console.log('Response recibido para: ');
+                return response;
+            }
+        }
+    })
+});
 
 app.config(function($stateProvider,$urlRouterProvider){
     $urlRouterProvider.otherwise("/splash");
@@ -89,7 +119,12 @@ app.config(function($stateProvider,$urlRouterProvider){
         .state('horarios',{
             url: "/horarios",
             templateUrl:"horarios.html",
-            controller: 'HoraController as hora'
+            controller: 'HoraController as hora',
+            resolve:{
+                horas: function(Consultas){
+                    return Consultas.getHorarios1();
+                }
+            }
         })
         .state('acciones',{
             url:"/acciones",
@@ -97,19 +132,37 @@ app.config(function($stateProvider,$urlRouterProvider){
             controller:'AccionesController as acciones'
         })
         .state('asistencia',{
-            url:"/asistencia",
+            url:"/asistencia/:idHora",
             templateUrl:"asistencia.html",
-            controller:'AsistenciaController as asiste'
+            controller:'AsistenciaController as asiste',
+            resolve: {
+                alumnos: function($stateParams,Consultas){
+                    return Consultas.getAlumnos1($stateParams.idHora)
+                }
+            }
         })
         .state('evaluacion',{
-            url:"/evaluacion",
+            url:"/evaluacion/:idHora",
             templateUrl:"evaluacion.html",
-            controller:'EvaluaController as eval'
+            controller:'EvaluaController as eval',
+            resolve:{
+                alumnos: function($stateParams,Consultas){
+                    return Consultas.getAlumnos1($stateParams.idHora)
+                }
+            }
         })
         .state('evalalumno',{
-            url:"/evalalumno",
+            url:"/evalalumno/:idHora/:idIns",
             templateUrl:"evalalumno.html",
-            controller:'EvalAlumnoController as evalua'
+            controller:'EvalAlumnoController as evalua',
+            resolve:{
+                vals: function($stateParams,Consultas){
+                    return Consultas.getValores($stateParams.idHora)
+                },
+                evals: function($stateParams,Consultas){
+                    return Consultas.getEvaluacion($stateParams.idIns)
+                }
+            }
         })
 });
 app.run(function($ionicPlatform,$location,$rootScope) {
@@ -127,3 +180,12 @@ app.run(function($ionicPlatform,$location,$rootScope) {
       $rootScope.$apply();
   });
 });
+app.run(function($rootScope,$ionicLoading){
+    $rootScope.$on('loading:show',function(){
+        $ionicLoading.show({template: '<p> Conversando con servidores</p>'});
+    });
+    $rootScope.$on('loading:hide',function(){
+        $ionicLoading.hide();
+        console.log('Ocultando fantasmas');
+    })
+})

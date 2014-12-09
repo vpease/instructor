@@ -3,8 +3,8 @@
  */
 var service = angular.module('services',['db']);
 
-service.factory('estadoFactory',['$http','$state','Consultas',
-    function($http,$state,Consultas){
+service.factory('estadoFactory',['$ionicLoading','$http','$state','Consultas',
+    function($ionicLoading,$http,$state,Consultas){
         var self = this;
         var cambiarUser = false;
         var credDb = {
@@ -148,19 +148,25 @@ service.factory('estadoFactory',['$http','$state','Consultas',
         factory.irInicio = function(){
             $state.go('horarios');
         };
-        factory.irAsistencia = function(){
+        factory.irAsistencia = function(idhorario){
             dataToSend = true;
             dataOkEvaluacion = true;
-            $state.go('asistencia');
+            $state.go('asistencia',{idHora: idhorario});
         };
-        factory.irEvaluacion = function() {
-            $state.go('evaluacion');
+        factory.irEvaluacion = function(idhorario) {
+            $state.go('evaluacion',{idHora: idhorario});
         };
         factory.Evaluar = function(idJugador,nombre,idInscripcion){
             alumno.idJugador = idJugador;
             alumno.nombre = nombre;
             alumno.idInscripcion = idInscripcion;
             $state.go('evalalumno');
+        };
+        factory.Evaluar1 = function(idJugador,nombre,idInscripcion,idHorario){
+            alumno.idJugador = idJugador;
+            alumno.nombre = nombre;
+            alumno.idInscripcion = idInscripcion;
+            $state.go('evalalumno',{idHora:idHorario,idIns:idInscripcion});
         };
         factory.setFecha = function(pDate) {
             usuario.fechatran = pDate;
@@ -245,6 +251,8 @@ service.factory('estadoFactory',['$http','$state','Consultas',
                     var horarios = data.Horarios;
                     var alumnos = data.Alumnos;
                     var valores = data.Valores;
+                    var evals = data.Evals;
+                    $ionicLoading.show({template: '<p> Grabando datos locales</p>'});
                     angular.forEach(horarios,function(horario) {
                         console.log('insertando: ' + horario.idHorario);
                         Consultas.insHorario(
@@ -270,6 +278,17 @@ service.factory('estadoFactory',['$http','$state','Consultas',
                             valor.idHorario,
                             valor.nombreValor);
                     });
+                    angular.forEach(evals,function(eval) {
+                        console.log('insertando: ' + eval.idEvalua);
+                        Consultas.insEvaluacion(
+                            eval.idEvalua,
+                            eval.idHorario,
+                            eval.idValorHorario,
+                            eval.idInscripcion,
+                            eval.res,
+                            eval.nombre);
+                    });
+                    $ionicLoading.hide();
                     console.log('Ya termine de insertar datos remotos');
                     Consultas.insSync(usuario.fechatran,usuario.user,usuario.pass)
                         .then(function(result){
@@ -304,6 +323,25 @@ service.factory('estadoFactory',['$http','$state','Consultas',
                     }).error(function (result){
                         alert('Error');
                         res = result;
+                    })
+                });
+            return res;
+        };
+        factory.senddata1 = function(){
+            var res='';
+            var url = server+'/usuario/tablas.json';
+            Consultas.getAsistencias().
+                then(function(resAsis){
+                    Consultas.getEvaluaciones().then(function(resEval){
+                        var datos = {fecha: usuario.fechatran,Asistencias: resAsis,Evaluaciones: resEval};
+                        $http.post(url,datos)
+                            .success(function(result){
+                                alert('Ya se envió todo');
+                                res =result;
+                            }).error(function (result){
+                                alert('Error');
+                                res = result;
+                            })
                     })
                 });
             return res;
@@ -355,10 +393,12 @@ service.factory('estadoFactory',['$http','$state','Consultas',
                 nombre);
             if (res) dataToSend = true;
         };
-        factory.insEvaluacion = function(idValorHorario,idJugador,res,nombre) {
-            var res = Consultas.insEvaluacion(
+        factory.updEvaluacion = function(idEvalua,idHorario,idValorHorario,idInscripcion,res,nombre) {
+            var res = Consultas.updEvaluacion(
+                idEvalua,
+                idHorario,
                 idValorHorario,
-                idJugador,
+                idInscripcion,
                 res,
                 nombre);
             if (res) dataToSend = true;
@@ -445,10 +485,41 @@ service.factory('Consultas', function(DB,$q) {
         if (!DB.db) {
             DB.init();
         }
-        return DB.query('select idInscripcion as ins,asiste as asis from alumno')
+        var dfd = $q.defer();
+        var res;
+        DB.query('select idInscripcion as ins,asiste as asis from alumno where asiste>1')
             .then(function(result){
-                return DB.fetchAll(result);
+                res = DB.fetchAll(result);
+                dfd.resolve(res);
             });
+        return dfd.promise;
+    };
+    self.getEvaluaciones = function() {
+        if (!DB.db) {
+            DB.init();
+        }
+        var dfd = $q.defer();
+        var res;
+        DB.query('select idEvalua,res from evaluacion where res>0')
+            .then(function(result){
+                res =DB.fetchAll(result);
+                dfd.resolve(res);
+            });
+        return dfd.promise;
+    };
+    self.getHorarios1 = function() {
+        if (!DB.db) {
+            DB.init();
+        }
+        var dfd = $q.defer();
+        var res;
+        DB.query('select idHorario,nombre,cancha FROM horario')
+            .then(function(result){
+                console.log('Horarios ok');
+                res=DB.fetchAll(result);
+                dfd.resolve(res);
+            });
+        return dfd.promise;
     };
     self.getHorarios = function() {
         if (!DB.db) {
@@ -459,6 +530,20 @@ service.factory('Consultas', function(DB,$q) {
                 console.log('Horarios ok');
                 return DB.fetchAll(result);
             });
+    };
+    self.getAlumnos1 = function(idHorario) {
+        if (!DB.db) {
+            DB.init();
+        }
+        var dfd = $q.defer();
+        var res;
+        DB.query('select idJugador,idInscripcion,nombre,deuda,asiste from alumno where idHorario= ?',[idHorario])
+            .then(function(result){
+                console.log('Alumnos ok');
+                res=DB.fetchAll(result);
+                dfd.resolve(res);
+            });
+        return dfd.promise;
     };
     self.getAlumnos = function(idHorario) {
         if (!DB.db) {
@@ -482,11 +567,25 @@ service.factory('Consultas', function(DB,$q) {
                 console.log('Error en getValores:'+error.toString());
             });
     };
+    self.getValores1 = function(idHorario) {
+        if (!DB.db) {
+            DB.init();
+        }
+        var dfd = $q.defer();
+        var res;
+        DB.query('select idValorhorario,idValor,nombre from valor where idHorario= ?',[idHorario])
+            .then(function(result){
+                console.log('Valores ok');
+                res=DB.fetchAll(result);
+                dfd.resolve(res);
+            });
+        return dfd.promise;
+    };
     self.getEvaluacion = function(idInscripcion) {
         if (!DB.db) {
             DB.init();
         }
-        return DB.query('select idEvalua,idValorhorario,res,nombre from valor where idInscripcion= ?',[idInscripcion])
+        return DB.query('select idEvalua,idValorhorario,res,nombre,"" as valor from evaluacion where idInscripcion= ?',[idInscripcion])
             .then(function(result){
                 console.log('Valores ok');
                 return DB.fetchAll(result);
@@ -495,6 +594,10 @@ service.factory('Consultas', function(DB,$q) {
     self.getNotas = function () {
         var res = {
             'notas': [
+                {
+                    'valor':0,
+                    'nota': "sin nota"
+                },
                 {
                     'valor': 5,
                     'nota': "malo"
@@ -593,12 +696,28 @@ service.factory('Consultas', function(DB,$q) {
                 console.log("rowsAffected: " + result.rowsAffected + " -- should be 1");
             });
     };
-    self.insEvaluacion = function(idValorHorario,idJugador,res,nombre) {
+    self.updEvaluacion = function(idEvalua,idHorario,idValorHorario,idInscripcion,res,nombre) {
         if (!DB.db) {
             DB.init();
         }
-        return DB.query("insert into evaluacion(idEvalua,idValorhorario,idInscripcion,res,nombre) values (NULL,?,?,?,?)",
-            [idValorHorario,idJugador,res,nombre])
+        return DB.query("update evaluacion set idHorario= ?,idValorhorario=?,idInscripcion=?,res=?,nombre=? where idEvalua=?",
+            [idHorario,idValorHorario,idInscripcion,res,nombre,idEvalua])
+            .then(function(result){
+                console.log("insertId: " + result.insertId + " -- probably 1");
+                console.log("rowsAffected: " + result.rowsAffected + " -- should be 1");
+                return true;
+            })
+            .then(function(error){
+                console.log("El error es: "+error.toString());
+                return false;
+            })
+    };
+    self.insEvaluacion = function(idEvalua,idHorario,idValorHorario,idInscripcion,res,nombre) {
+        if (!DB.db) {
+            DB.init();
+        }
+        return DB.query("insert into evaluacion(idEvalua,idHorario,idValorhorario,idInscripcion,res,nombre) values (?,?,?,?,?,?)",
+            [idEvalua,idHorario,idValorHorario,idInscripcion,res,nombre])
             .then(function(result){
                 console.log("insertId: " + result.insertId + " -- probably 1");
                 console.log("rowsAffected: " + result.rowsAffected + " -- should be 1");
