@@ -40,7 +40,7 @@ app.constant('DB_CONFIG', {
             {
                 name: 'evaluacion',
                 columns: [
-                    {name: 'idEvalua', type: 'integer primary key autoincrement'},
+                    {name: 'idEvalua', type: 'integer primary key'},
                     {name: 'idHorario', type: 'integer'},
                     {name: 'idValorhorario', type: 'integer'},
                     {name: 'idInscripcion', type: 'integer'},

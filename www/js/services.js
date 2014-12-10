@@ -253,14 +253,16 @@ service.factory('estadoFactory',['$ionicLoading','$http','$state','Consultas',
                     var valores = data.Valores;
                     var evals = data.Evals;
                     $ionicLoading.show({template: '<p> Grabando datos locales</p>'});
-                    angular.forEach(horarios,function(horario) {
+                    Consultas.insBulkHoras(horarios);
+                    /*angular.forEach(horarios,function(horario) {
                         console.log('insertando: ' + horario.idHorario);
                         Consultas.insHorario(
                             horario.idHorario,
                             horario.nombre,
                             horario.cancha);
-                    });
-                    angular.forEach(alumnos,function(alumno) {
+                    });*/
+                    Consultas.insBulkAlums(alumnos);
+                    /*angular.forEach(alumnos,function(alumno) {
                         console.log('insertando: ' + alumno.idJugador);
                         Consultas.insAlumnos(
                             alumno.idJugador,
@@ -269,16 +271,17 @@ service.factory('estadoFactory',['$ionicLoading','$http','$state','Consultas',
                             alumno.nombre,
                             alumno.asiste,
                             alumno.deuda);
-                    });
-                    angular.forEach(valores,function(valor) {
+                    });*/
+                    Consultas.insBulkVals(valores);
+                    /*angular.forEach(valores,function(valor) {
                         console.log('insertando: ' + valor.idValor);
                         Consultas.insValores(
                             valor.idValorHorario,
                             valor.idValor,
                             valor.idHorario,
                             valor.nombreValor);
-                    });
-                    angular.forEach(evals,function(eval) {
+                    });*/
+                    /*angular.forEach(evals,function(eval) {
                         console.log('insertando: ' + eval.idEvalua);
                         Consultas.insEvaluacion(
                             eval.idEvalua,
@@ -287,7 +290,8 @@ service.factory('estadoFactory',['$ionicLoading','$http','$state','Consultas',
                             eval.idInscripcion,
                             eval.res,
                             eval.nombre);
-                    });
+                    });*/
+                    Consultas.insBulkEvals(evals);
                     $ionicLoading.hide();
                     console.log('Ya termine de insertar datos remotos');
                     Consultas.insSync(usuario.fechatran,usuario.user,usuario.pass)
@@ -727,6 +731,66 @@ service.factory('Consultas', function(DB,$q) {
                 console.log("El error es: "+error.toString());
                 return false;
             })
+    };
+    self.insBulkEvals = function(Evals){
+        if (!DB.db) {
+            DB.init();
+        }
+        var sql = "insert into evaluacion(idEvalua,idHorario,idValorhorario,idInscripcion,res,nombre) values (?,?,?,?,?,?)";
+        var queries = new Array();
+        angular.forEach(Evals,function(eval){
+            query = {sql:'',bindings:[]};
+            query.sql = sql;
+            query.bindings =[eval.idEvalua,eval.idHorario,eval.idValorHorario,eval.idInscripcion,eval.res,eval.nombre];
+            queries.push(query);
+            delete query;
+        });
+        DB.queryArray(queries);
+    };
+    self.insBulkVals = function(Vals){
+        if (!DB.db) {
+            DB.init();
+        }
+        var sql = 'insert into valor(idValorhorario,idValor,idHorario,nombre) values (?,?,?,?)';
+        var queries = new Array();
+        angular.forEach(Vals,function(val){
+            query = {sql:'',bindings:[]};
+            query.sql = sql;
+            query.bindings =[val.idValorHorario,val.idValor,val.idHorario,val.nombreValor];
+            queries.push(query);
+            delete query;
+        });
+        DB.queryArray(queries);
+    };
+    self.insBulkAlums = function(Alums){
+        if (!DB.db) {
+            DB.init();
+        }
+        var sql = 'insert into alumno(idJugador,idHorario,idInscripcion,nombre,asiste,deuda) values (?,?,?,?,?,?)';
+        var queries = new Array();
+        angular.forEach(Alums,function(Alum){
+            query = {sql:'',bindings:[]};
+            query.sql = sql;
+            query.bindings =[Alum.idJugador,Alum.idHorario,Alum.idInscripcion,Alum.nombre,Alum.asiste,Alum.deuda];
+            queries.push(query);
+            delete query;
+        });
+        DB.queryArray(queries);
+    };
+    self.insBulkHoras = function(Horas){
+        if (!DB.db) {
+            DB.init();
+        }
+        var sql = 'insert into horario values (?,?,?)';
+        var queries = new Array();
+        angular.forEach(Horas,function(Hora){
+            query = {sql:'',bindings:[]};
+            query.sql = sql;
+            query.bindings =[Hora.idHorario,Hora.nombre,Hora.cancha];
+            queries.push(query);
+            delete query;
+        });
+        DB.queryArray(queries);
     };
     return self;
 });

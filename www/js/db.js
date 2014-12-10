@@ -56,6 +56,19 @@ db.factory('DB',function($q, $cordovaSQLite,DB_CONFIG) {
         });
         return deferred.promise;
     };
+    self.queryArray = function(queries){
+        self.db.transaction(function(transaction){
+            angular.forEach(queries,function(query){
+                transaction.executeSql(query.sql, query.bindings,
+                    function(transaction,result){
+                        console.log("Todo Ok en : "+query.sql+ "//"+query.bindings);
+                    },
+                    function(transaction,error){
+                        console.log("Todo ko en: "+query.sql+ "//"+query.bindings);
+                    })
+            })
+        })
+    }
     self.fetchAll = function(result) {
         var output = [];
         for (var i = 0; i < result.rows.length; i++) {
