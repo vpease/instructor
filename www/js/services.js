@@ -201,7 +201,7 @@ service.factory('estadoFactory',['$ionicLoading','$http','$state','Consultas',
                     res = data;
                     valido = true;
                     if (res !== '"NO"' && res.length > 0 && res !== '0') {
-                        var result = res.substr(1, res.length - 2).split(":");
+                        var result = res.substr(0, res.length).split(":");
                         pusuario.idInstructor = result[0];
                         pusuario.idOperador = result[1];
                         pusuario.user = result[2];

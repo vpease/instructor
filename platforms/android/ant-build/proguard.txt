@@ -1,6 +1,3 @@
 # view AndroidManifest.xml #generated:6
--keep class com.inst.boca.CordovaApp { <init>(...); }
-
-# view AndroidManifest.xml #generated:12
--keep class org.pgsqlite.SQLitePlugin { <init>(...); }
+-keep class com.inst.boca.MainActivity { <init>(...); }
 

@@ -1,2 +1,2 @@
-H:\projects\instructor\platforms\android\ant-build\AndroidManifest.xml : \
-H:\projects\instructor\platforms\android\AndroidManifest.xml \
+/Users/vpease/Documents/boca/instructor/platforms/android/ant-build/AndroidManifest.xml : \
+/Users/vpease/Documents/boca/instructor/platforms/android/AndroidManifest.xml \
